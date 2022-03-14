@@ -1,0 +1,79 @@
+@charset "UTF-8";
+body {
+  background-color: #FFF;
+  font-family: Roboto,'noto sans tc','思源黑體 tc','思源黑體 tw','思源黑體','微軟正黑體','繁黑體','microsoft jhenghei',Lato,Arial,'segoe ui emoji','segoe ui symbol','新細明體',sans-serif;
+}
+a {
+  color: #003a9f;
+}
+a:hover {
+  color:#9d0505;
+}
+.policycontent {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 100px 0;
+  line-height: 1.7;
+}
+.policycontent .logo {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px 1rem;
+  background-color: rgba(255,255,255,.65);
+  z-index: 10;
+  line-height: 0;
+}
+.policycontent .logo img {
+  width: 160px;
+}
+.policycontent h1 {
+  font-size: 33px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+.policycontent p, .policycontent ol {
+  margin-bottom: 1rem;
+}
+.policycontent > ol > li {
+  list-style: decimal;
+  list-style-position: outside;
+  margin-left: 1.4rem;
+}
+.policycontent li {
+  margin-bottom: .3rem;
+}
+.policycontent .date {
+  opacity: .65;
+  text-align: right;
+  font-size: 90%;
+}
+.policycontent strong {
+  font-weight: 600;
+}
+footer {
+  background-color: #eee;
+  font-size: 80%;
+  padding: 30px;
+  text-align: center;
+  color: #888;
+}
+@media screen and (max-width: 500px) {
+  .policycontent {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+  .policycontent .logo {
+    padding: 10px;
+  }
+  .policycontent .logo img {
+    width: 130px;
+  }
+  footer {
+    padding: 20px;
+  }
+}
