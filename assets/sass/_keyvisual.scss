@@ -1,0 +1,391 @@
+.key-visual {
+    height: 100vh;
+    background-color: #ebe7de;
+}
+
+$width: 57px;
+$height: 66px;
+
+$trans-x: 4.350877192982456;
+$trans-y: 1.742424242424242;
+
+$kv-flint: #69655a;
+$kv-gunsmoke: #888;
+$kv-gray: #95928a;
+$kv-silver-rust: #c8c9ca;
+$kv-silver-sand: #cac1bc;
+
+$kv-abbey: #4b5356;
+$kv-bitter: #858d7f;
+$kv-bud: #a9afa4;
+
+$kv-domino: #9c8268;
+$kv-muddy-waters: #c69c6d;
+$kv-bison-hide: #c2b7a3;
+
+$kv-comet: #505a78;
+$kv-waterloo: #737b92;
+
+$kv-night-rider: #231815;
+$kv-white: #fff;
+
+$kv-yellow: #ff0;
+$kv-burning-orange: #ea6120;
+
+.flip-group {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .flip {
+        position: absolute;
+        &.flip-y-1 {
+            transform: skewY(30deg);
+        }
+        &.flip-x-1 {
+            transform: skewY(-30deg);
+        }
+        &.flip-x-2 {
+            transform: skew(60deg, -30deg);
+        }
+    }
+    .flip-1-1 {
+        top: 248px;
+        left: 115px;
+        width: $width;
+        height: $height;
+        background-color: $kv-gunsmoke;
+    }
+    .flip-1-2 {
+        top: 17px;
+        left: 515px;
+        width: $width;
+        height: $height;
+        background-color: $kv-gunsmoke;
+    }
+    .flip-2-1 {
+        top: 264px;
+        left: 172px;
+        width: $width * 2;
+        height: $height;
+        background-color: $kv-muddy-waters;
+    }
+    .flip-2-2 {
+        top: 248px;
+        left: 229px;
+        width: $width * 3;
+        height: $height;
+        background-color: $kv-gray;
+    }
+    .flip-2-3 {
+        top: 182px;
+        left: 343px;
+        width: $width;
+        height: $height;
+        background-color: $kv-domino;
+    }
+    .flip-2-4 {
+        top: 199px;
+        left: 400px;
+        width: $width * 2;
+        height: $height;
+        background-color: $kv-waterloo;
+    }
+    .flip-2-5 {
+        top: 133px;
+        left: 457px;
+        width: $width * 2;
+        height: $height;
+        background-color: $kv-comet;
+    }
+    .flip-3-1 {
+        top: 396px;
+        left: 58px;
+        width: $width * 2;
+        height: $height;
+        background-color: $kv-flint;
+    }
+    .flip-3-2 {
+        top: 380px;
+        left: 172px;
+        width: $width;
+        height: $height * 3;
+        background-color: $kv-gray;
+        z-index: 1;
+    }
+    .flip-3-3 {
+        top: 330px;
+        left: 200px;
+        width: $width * 2;
+        height: $height * 0.5;
+        background-color: $kv-white;
+    }
+    .flip-4-1 {
+        top: 265px;
+        left: 400px;
+        width: $width * 2;
+        height: $height;
+        background-color: $kv-flint;
+    }
+    .flip-4-2 {
+        top: 199px;
+        left: 514px;
+        width: $width * 2;
+        height: $height;
+        background-color: $kv-yellow;
+    }
+    .flip-4-3 {
+        top: 116px;
+        left: 686px;
+        width: $width;
+        height: $height * 3;
+        background-color: $kv-burning-orange;
+    }
+    .flip-5-1 {
+        top: 495px;
+        left: 115px;
+        width: $width * 4;
+        height: $height;
+        background-color: $kv-comet;
+    }
+    .flip-5-2 {
+        top: 397px;
+        left: 286px;
+        width: $width * 2;
+        height: $height * 3;
+        background-color: $kv-silver-rust;
+    }
+    .flip-5-3 {
+        top: 298px;
+        left: 343px;
+        width: $width * 4;
+        height: $height;
+        background-color: $kv-night-rider;
+    }
+    .flip-5-4 {
+        top: 232px;
+        left: 572px;
+        width: $width * 2;
+        height: $height;
+        background-color: $kv-muddy-waters;
+    }
+    .flip-5-5 {
+        top: 182px;
+        left: 743px;
+        width: $width;
+        height: $height;
+        background-color: $kv-silver-sand;
+    }
+    .flip-6-1 {
+        top: 495px;
+        left: 229px;
+        width: $width * 2;
+        height: $height;
+        background-color: $kv-bitter;
+    }
+    .flip-7-1 {
+        top: 545px;
+        left: 343px;
+        width: $width;
+        height: $height;
+        background-color: $kv-yellow;
+    }
+    .flip-7-2 {
+        top: 495px;
+        left: 343px;
+        width: $width * 2;
+        height: $height;
+        background-color: $kv-silver-rust;
+    }
+    .flip-7-3 {
+        top: 380px;
+        left: 400px;
+        width: $width * 5;
+        height: $height;
+        background-color: $kv-night-rider;
+        &.flip-transparent {
+            background-color: transparent;
+        }
+        span {
+            display: block;
+            padding-left: 0.3em;
+            color: $kv-white;
+            font-size: 3em;
+            text-align: center;
+            letter-spacing: 0.3em;
+            transform: scaleY(0.75) translateY(-0.5rem);
+        }
+    }
+    .flip-8-1 {
+        top: 346px;
+        left: 572px;
+        width: $width * 5;
+        height: $height;
+        background-color: $kv-night-rider;
+        &.flip-transparent {
+            background-color: transparent;
+        }
+        span {
+            display: block;
+            padding-left: 0.3em;
+            color: $kv-white;
+            font-size: 3em;
+            text-align: center;
+            letter-spacing: 0.3em;
+            transform: scaleY(0.75) translateY(0.25rem);
+        }
+    }
+    .flip-8-2 {
+        top: 247px;
+        left: 800px;
+        width: $width;
+        height: $height * 2;
+        background-color: $kv-gunsmoke;
+    }
+    .flip-8-3 {
+        top: 627px;
+        left: 258px;
+        width: $width * 2;
+        height: $height * 0.5;
+        span {
+            display: block;
+            padding-left: 0.2em;
+            font-size: 1.6em;
+            text-align: center;
+            letter-spacing: 0.2em;
+            transform: scaleY(0.75) translateY(-0.25rem);
+        }
+    }
+    .flip-9-1 {
+        top: 676px;
+        left: 286px;
+        width: $width;
+        height: $height;
+        background-color: $kv-burning-orange;
+    }
+    .flip-9-2 {
+        top: 611px;
+        left: 401px;
+        width: $width;
+        height: $height;
+        background-color: $kv-bison-hide;
+    }
+    .flip-9-3 {
+        top: 496px;
+        left: 457px;
+        width: $width * 2;
+        height: $height * 2;
+        background-color: $kv-bison-hide;
+    }
+    .flip-9-4 {
+        top: 478px;
+        left: 571px;
+        width: $width;
+        height: $height;
+        background-color: $kv-bison-hide;
+    }
+    .flip-9-5 {
+        top: 412px;
+        left: 628px;
+        width: $width * 5;
+        height: $height;
+        background-color: $kv-flint;
+    }
+    .flip-9-6 {
+        top: 281px;
+        left: 971px;
+        width: $width;
+        height: $height;
+        background-color: $kv-white;
+    }
+    .flip-10-1 {
+        top: 396px;
+        left: 885px;
+        width: $width * 2;
+        height: $height * 0.5;
+        background-color: $kv-comet;
+    }
+    .flip-10-2 {
+        top: 429px;
+        left: 914px;
+        width: $width * 2;
+        height: $height;
+        background-color: $kv-yellow;
+    }
+    .flip-10-3 {
+        top: 445px;
+        left: 857px;
+        width: $width;
+        height: $height * 2;
+        background-color: $kv-waterloo;
+    }
+    .flip-11-1 {
+        top: 544px;
+        left: 514px;
+        width: $width * 5;
+        height: $height * 2;
+        background-color: $kv-abbey;
+        span {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            color: $kv-white;
+            font-size: 2.5em;
+            text-align: center;
+            transform: scaleY(0.75) translateY(-52.5%);
+        }
+    }
+    .flip-11-2 {
+        top: 709px;
+        left: 457px;
+        width: $width * 3;
+        height: $height;
+        background-color: $kv-muddy-waters;
+    }
+    .flip-11-3 {
+        top: 577px;
+        left: 800px;
+        width: $width * 3;
+        height: $height;
+        background-color: $kv-silver-sand;
+        span {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            padding-left: 0.1em;
+            font-size: 1.6em;
+            text-align: center;
+            letter-spacing: 0.1em;
+            transform: scaleY(0.75) translateY(-55%);
+        }
+    }
+    .flip-12-1 {
+        top: 495px;
+        left: 943px;
+        width: $width * 2;
+        height: $height * 0.5;
+        background-color: $kv-muddy-waters;
+    }
+    .flip-13-1 {
+        top: 528px;
+        left: 971px;
+        width: $width * 2;
+        height: $height * 2;
+        background-color: $kv-bison-hide;
+        span {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            font-size: 2em;
+            text-align: center;
+            transform: scaleX(0.75) translateY(-50%);
+        }
+    }
+}
+
