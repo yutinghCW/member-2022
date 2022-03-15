@@ -139,7 +139,7 @@ $kv-burning-orange: #ea6120;
         background-color: $kv-white;
     }
     .flip-4-1 {
-        top: 33.4%;
+        top: 33.54%;
         left: 33.35%;
         width: $width * 2;
         height: $height;
@@ -375,9 +375,9 @@ $kv-burning-orange: #ea6120;
         background-color: $kv-muddy-waters;
     }
     .flip-11-3 {
-        top: 59.64%;
+        top: 59.68%;
         left: 66.65%;
-        width: $width * 3;
+        width: $width * 3 * 1.005;
         height: $height;
         background-color: $kv-silver-sand;
         span {
