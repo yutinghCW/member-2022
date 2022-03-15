@@ -4850,6 +4850,11 @@ progress {
           transform: skew(60deg, -30deg);
 }
 
+.flip-group .flip span {
+  display: block;
+  font-weight: 500;
+}
+
 .flip-group .flip-1-1 {
   top: 32.16%;
   left: 9.6%;
@@ -5032,7 +5037,6 @@ progress {
 }
 
 .flip-group .flip-7-3 span {
-  display: block;
   padding-left: 0.3em;
   color: #fff;
   font-size: 3.5vw;
@@ -5061,7 +5065,6 @@ progress {
 }
 
 .flip-group .flip-8-1 span {
-  display: block;
   padding-left: 0.3em;
   color: #fff;
   font-size: 3.5vw;
@@ -5093,7 +5096,6 @@ progress {
 }
 
 .flip-group .flip-8-3 span {
-  display: block;
   padding-left: 0.2em;
   font-size: 1.9vw;
   text-align: center;
@@ -5189,7 +5191,6 @@ progress {
 }
 
 .flip-group .flip-11-1 span {
-  display: block;
   position: absolute;
   top: 50%;
   left: 0;
@@ -5224,7 +5225,6 @@ progress {
 }
 
 .flip-group .flip-11-3 span {
-  display: block;
   position: absolute;
   top: 50%;
   left: 0;
@@ -5258,7 +5258,6 @@ progress {
 }
 
 .flip-group .flip-13-1 span {
-  display: block;
   position: absolute;
   top: 50%;
   left: 0;

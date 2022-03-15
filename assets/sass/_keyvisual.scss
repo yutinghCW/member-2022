@@ -66,6 +66,10 @@ $kv-burning-orange: #ea6120;
         &.flip-x-2 {
             transform: skew(60deg, -30deg);
         }
+        span {
+            display: block;
+            font-weight: 500;
+        }
     }
     .flip-1-1 {
         top: 32.16%;
@@ -225,7 +229,6 @@ $kv-burning-orange: #ea6120;
             background-color: transparent;
         }
         span {
-            display: block;
             padding-left: 0.3em;
             color: $kv-white;
             font-size: 3.5vw;
@@ -247,7 +250,6 @@ $kv-burning-orange: #ea6120;
             background-color: transparent;
         }
         span {
-            display: block;
             padding-left: 0.3em;
             color: $kv-white;
             font-size: 3.5vw;
@@ -272,7 +274,6 @@ $kv-burning-orange: #ea6120;
         width: $width * 2;
         height: $height * 0.5;
         span {
-            display: block;
             padding-left: 0.2em;
             font-size: 1.9vw;
             text-align: center;
@@ -353,7 +354,6 @@ $kv-burning-orange: #ea6120;
         height: $height * 2;
         background-color: $kv-abbey;
         span {
-            display: block;
             position: absolute;
             top: 50%;
             left: 0;
@@ -381,7 +381,6 @@ $kv-burning-orange: #ea6120;
         height: $height;
         background-color: $kv-silver-sand;
         span {
-            display: block;
             position: absolute;
             top: 50%;
             left: 0;
@@ -408,7 +407,6 @@ $kv-burning-orange: #ea6120;
         height: $height * 2;
         background-color: $kv-bison-hide;
         span {
-            display: block;
             position: absolute;
             top: 50%;
             left: 0;
