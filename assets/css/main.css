@@ -4793,14 +4793,40 @@ progress {
 }
 
 .key-visual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100vh;
   background-color: #ebe7de;
+  overflow: hidden;
 }
 
 .flip-group {
+  position: relative;
+  width: 1200px;
+  margin-top: -10%;
+  margin-bottom: -10%;
+}
+
+.flip-group::before {
+  content: '';
+  display: block;
+  width: 100%;
+  padding-top: 100%;
+}
+
+.flip-group img {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
+  height: auto;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -4825,179 +4851,179 @@ progress {
 }
 
 .flip-group .flip-1-1 {
-  top: 248px;
-  left: 115px;
-  width: 57px;
-  height: 66px;
+  top: 32.16%;
+  left: 9.6%;
+  width: 4.75%;
+  height: 5.52%;
   background-color: #888;
 }
 
 .flip-group .flip-1-2 {
-  top: 17px;
-  left: 515px;
-  width: 57px;
-  height: 66px;
+  top: 12.94%;
+  left: 42.9%;
+  width: 4.75%;
+  height: 5.52%;
   background-color: #888;
 }
 
 .flip-group .flip-2-1 {
-  top: 264px;
-  left: 172px;
-  width: 114px;
-  height: 66px;
+  top: 33.57%;
+  left: 14.35%;
+  width: 9.5%;
+  height: 5.52%;
   background-color: #c69c6d;
 }
 
 .flip-group .flip-2-2 {
-  top: 248px;
-  left: 229px;
-  width: 171px;
-  height: 66px;
+  top: 32.16%;
+  left: 19.1%;
+  width: 14.25%;
+  height: 5.52%;
   background-color: #95928a;
 }
 
 .flip-group .flip-2-3 {
-  top: 182px;
-  left: 343px;
-  width: 57px;
-  height: 66px;
+  top: 26.65%;
+  left: 28.67%;
+  width: 4.75%;
+  height: 5.52%;
   background-color: #9c8268;
 }
 
 .flip-group .flip-2-4 {
-  top: 199px;
-  left: 400px;
-  width: 114px;
-  height: 66px;
+  top: 28.05%;
+  left: 33.42%;
+  width: 9.5%;
+  height: 5.52%;
   background-color: #737b92;
 }
 
 .flip-group .flip-2-5 {
-  top: 133px;
-  left: 457px;
-  width: 114px;
-  height: 66px;
+  top: 22.563%;
+  left: 38.18%;
+  width: 9.5%;
+  height: 5.52%;
   background-color: #505a78;
 }
 
 .flip-group .flip-3-1 {
-  top: 396px;
-  left: 58px;
-  width: 114px;
-  height: 66px;
+  top: 44.54%;
+  left: 4.84%;
+  width: 9.5%;
+  height: 5.52%;
   background-color: #69655a;
 }
 
 .flip-group .flip-3-2 {
-  top: 380px;
-  left: 172px;
-  width: 57px;
-  height: 198px;
+  top: 43.15%;
+  left: 14.35%;
+  width: 4.75%;
+  height: 16.56%;
   background-color: #95928a;
   z-index: 1;
 }
 
 .flip-group .flip-3-3 {
-  top: 330px;
-  left: 200px;
-  width: 114px;
-  height: 33px;
+  top: 39.03%;
+  left: 16.7%;
+  width: 9.5%;
+  height: 2.76%;
   background-color: #fff;
 }
 
 .flip-group .flip-4-1 {
-  top: 265px;
-  left: 400px;
-  width: 114px;
-  height: 66px;
+  top: 33.4%;
+  left: 33.35%;
+  width: 9.5%;
+  height: 5.52%;
   background-color: #69655a;
 }
 
 .flip-group .flip-4-2 {
-  top: 199px;
-  left: 514px;
-  width: 114px;
-  height: 66px;
+  top: 28.05%;
+  left: 42.89%;
+  width: 9.5%;
+  height: 5.52%;
   background-color: #ff0;
 }
 
 .flip-group .flip-4-3 {
-  top: 116px;
-  left: 686px;
-  width: 57px;
-  height: 198px;
+  top: 21.19%;
+  left: 57.18%;
+  width: 4.75%;
+  height: 16.56%;
   background-color: #ea6120;
 }
 
 .flip-group .flip-5-1 {
-  top: 495px;
-  left: 115px;
-  width: 228px;
-  height: 66px;
+  top: 52.81%;
+  left: 9.6%;
+  width: 19%;
+  height: 5.52%;
   background-color: #505a78;
 }
 
 .flip-group .flip-5-2 {
-  top: 397px;
-  left: 286px;
-  width: 114px;
-  height: 198px;
+  top: 44.56%;
+  left: 23.85%;
+  width: 9.5%;
+  height: 16.56%;
   background-color: #c8c9ca;
 }
 
 .flip-group .flip-5-3 {
-  top: 298px;
-  left: 343px;
-  width: 228px;
-  height: 66px;
+  top: 36.34%;
+  left: 28.6%;
+  width: 19%;
+  height: 5.52%;
   background-color: #231815;
 }
 
 .flip-group .flip-5-4 {
-  top: 232px;
-  left: 572px;
-  width: 114px;
-  height: 66px;
+  top: 30.78%;
+  left: 47.65%;
+  width: 9.6%;
+  height: 5.52%;
   background-color: #c69c6d;
 }
 
 .flip-group .flip-5-5 {
-  top: 182px;
-  left: 743px;
-  width: 57px;
-  height: 66px;
+  top: 26.68%;
+  left: 61.93%;
+  width: 4.75%;
+  height: 5.52%;
   background-color: #cac1bc;
 }
 
 .flip-group .flip-6-1 {
-  top: 495px;
-  left: 229px;
-  width: 114px;
-  height: 66px;
+  top: 52.85%;
+  left: 19.1%;
+  width: 9.5%;
+  height: 5.52%;
   background-color: #858d7f;
 }
 
 .flip-group .flip-7-1 {
-  top: 545px;
-  left: 343px;
-  width: 57px;
-  height: 66px;
+  top: 57%;
+  left: 28.6%;
+  width: 4.75%;
+  height: 5.52%;
   background-color: #ff0;
 }
 
 .flip-group .flip-7-2 {
-  top: 495px;
-  left: 343px;
-  width: 114px;
-  height: 66px;
+  top: 52.85%;
+  left: 28.6%;
+  width: 9.5%;
+  height: 5.52%;
   background-color: #c8c9ca;
 }
 
 .flip-group .flip-7-3 {
-  top: 380px;
-  left: 400px;
-  width: 285px;
-  height: 66px;
+  top: 43.19%;
+  left: 33.35%;
+  width: 23.75%;
+  height: 5.52%;
   background-color: #231815;
 }
 
@@ -5009,18 +5035,24 @@ progress {
   display: block;
   padding-left: 0.3em;
   color: #fff;
-  font-size: 3em;
+  font-size: 3.5vw;
   text-align: center;
   letter-spacing: 0.3em;
-  -webkit-transform: scaleY(0.75) translateY(-0.5rem);
-          transform: scaleY(0.75) translateY(-0.5rem);
+  -webkit-transform: scaleY(0.6) translateY(-0.2em);
+          transform: scaleY(0.6) translateY(-0.2em);
+}
+
+@media screen and (min-width: 1200px) {
+  .flip-group .flip-7-3 span {
+    font-size: 3em;
+  }
 }
 
 .flip-group .flip-8-1 {
-  top: 346px;
-  left: 572px;
-  width: 285px;
-  height: 66px;
+  top: 40.4%;
+  left: 47.66%;
+  width: 23.75%;
+  height: 5.52%;
   background-color: #231815;
 }
 
@@ -5032,115 +5064,127 @@ progress {
   display: block;
   padding-left: 0.3em;
   color: #fff;
-  font-size: 3em;
+  font-size: 3.5vw;
   text-align: center;
   letter-spacing: 0.3em;
-  -webkit-transform: scaleY(0.75) translateY(0.25rem);
-          transform: scaleY(0.75) translateY(0.25rem);
+  -webkit-transform: scaleY(0.6) translateY(0.2em);
+          transform: scaleY(0.6) translateY(0.2em);
+}
+
+@media screen and (min-width: 1200px) {
+  .flip-group .flip-8-1 span {
+    font-size: 3em;
+  }
 }
 
 .flip-group .flip-8-2 {
-  top: 247px;
-  left: 800px;
-  width: 57px;
-  height: 132px;
+  top: 26.86%;
+  left: 66.72%;
+  width: 4.75%;
+  height: 11.04%;
   background-color: #888;
 }
 
 .flip-group .flip-8-3 {
-  top: 627px;
-  left: 258px;
-  width: 114px;
-  height: 33px;
+  top: 63.8%;
+  left: 21.47%;
+  width: 9.5%;
+  height: 2.76%;
 }
 
 .flip-group .flip-8-3 span {
   display: block;
   padding-left: 0.2em;
-  font-size: 1.6em;
+  font-size: 1.9vw;
   text-align: center;
   letter-spacing: 0.2em;
   -webkit-transform: scaleY(0.75) translateY(-0.25rem);
           transform: scaleY(0.75) translateY(-0.25rem);
 }
 
+@media screen and (min-width: 1200px) {
+  .flip-group .flip-8-3 span {
+    font-size: 1.6em;
+  }
+}
+
 .flip-group .flip-9-1 {
-  top: 676px;
-  left: 286px;
-  width: 57px;
-  height: 66px;
+  top: 67.86%;
+  left: 23.86%;
+  width: 4.75%;
+  height: 5.52%;
   background-color: #ea6120;
 }
 
 .flip-group .flip-9-2 {
-  top: 611px;
-  left: 401px;
-  width: 57px;
-  height: 66px;
+  top: 62.37%;
+  left: 33.38%;
+  width: 4.75%;
+  height: 5.52%;
   background-color: #c2b7a3;
 }
 
 .flip-group .flip-9-3 {
-  top: 496px;
-  left: 457px;
-  width: 114px;
-  height: 132px;
+  top: 52.74%;
+  left: 38.1%;
+  width: 9.6%;
+  height: 11.04%;
   background-color: #c2b7a3;
 }
 
 .flip-group .flip-9-4 {
-  top: 478px;
-  left: 571px;
-  width: 57px;
-  height: 66px;
+  top: 51.38%;
+  left: 47.65%;
+  width: 4.75%;
+  height: 5.52%;
   background-color: #c2b7a3;
 }
 
 .flip-group .flip-9-5 {
-  top: 412px;
-  left: 628px;
-  width: 285px;
-  height: 66px;
+  top: 45.9%;
+  left: 52.4%;
+  width: 23.75%;
+  height: 5.52%;
   background-color: #69655a;
 }
 
 .flip-group .flip-9-6 {
-  top: 281px;
-  left: 971px;
-  width: 57px;
-  height: 66px;
+  top: 34.89%;
+  left: 80.94%;
+  width: 4.75%;
+  height: 5.52%;
   background-color: #fff;
 }
 
 .flip-group .flip-10-1 {
-  top: 396px;
-  left: 885px;
-  width: 114px;
-  height: 33px;
+  top: 44.56%;
+  left: 73.83%;
+  width: 9.5%;
+  height: 2.76%;
   background-color: #505a78;
 }
 
 .flip-group .flip-10-2 {
-  top: 429px;
-  left: 914px;
-  width: 114px;
-  height: 66px;
+  top: 47.35%;
+  left: 76.19%;
+  width: 9.5%;
+  height: 5.52%;
   background-color: #ff0;
 }
 
 .flip-group .flip-10-3 {
-  top: 445px;
-  left: 857px;
-  width: 57px;
-  height: 132px;
+  top: 48.65%;
+  left: 71.45%;
+  width: 4.75%;
+  height: 11.04%;
   background-color: #737b92;
 }
 
 .flip-group .flip-11-1 {
-  top: 544px;
-  left: 514px;
-  width: 285px;
-  height: 132px;
+  top: 56.86%;
+  left: 42.9%;
+  width: 23.75%;
+  height: 11.04%;
   background-color: #4b5356;
 }
 
@@ -5151,25 +5195,31 @@ progress {
   left: 0;
   width: 100%;
   color: #fff;
-  font-size: 2.5em;
+  font-size: 2.9vw;
   text-align: center;
-  -webkit-transform: scaleY(0.75) translateY(-52.5%);
-          transform: scaleY(0.75) translateY(-52.5%);
+  -webkit-transform: scaleY(0.75) translateY(-60%);
+          transform: scaleY(0.75) translateY(-60%);
+}
+
+@media screen and (min-width: 1200px) {
+  .flip-group .flip-11-1 span {
+    font-size: 2.5em;
+  }
 }
 
 .flip-group .flip-11-2 {
-  top: 709px;
-  left: 457px;
-  width: 171px;
-  height: 66px;
+  top: 70.64%;
+  left: 38.12%;
+  width: 14.25%;
+  height: 5.52%;
   background-color: #c69c6d;
 }
 
 .flip-group .flip-11-3 {
-  top: 577px;
-  left: 800px;
-  width: 171px;
-  height: 66px;
+  top: 59.64%;
+  left: 66.65%;
+  width: 14.25%;
+  height: 5.52%;
   background-color: #cac1bc;
 }
 
@@ -5179,27 +5229,31 @@ progress {
   top: 50%;
   left: 0;
   width: 100%;
-  padding-left: 0.1em;
-  font-size: 1.6em;
+  font-size: 2.7vw;
   text-align: center;
-  letter-spacing: 0.1em;
-  -webkit-transform: scaleY(0.75) translateY(-55%);
-          transform: scaleY(0.75) translateY(-55%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media screen and (min-width: 1200px) {
+  .flip-group .flip-11-3 span {
+    font-size: 2.4em;
+  }
 }
 
 .flip-group .flip-12-1 {
-  top: 495px;
-  left: 943px;
-  width: 114px;
-  height: 33px;
+  top: 52.85%;
+  left: 78.6%;
+  width: 9.5%;
+  height: 2.76%;
   background-color: #c69c6d;
 }
 
 .flip-group .flip-13-1 {
-  top: 528px;
-  left: 971px;
-  width: 114px;
-  height: 132px;
+  top: 55.58%;
+  left: 80.97%;
+  width: 9.5%;
+  height: 11.04%;
   background-color: #c2b7a3;
 }
 
@@ -5209,10 +5263,17 @@ progress {
   top: 50%;
   left: 0;
   width: 100%;
-  font-size: 2em;
+  font-size: 3vw;
   text-align: center;
+  line-height: 1;
   -webkit-transform: scaleX(0.75) translateY(-50%);
           transform: scaleX(0.75) translateY(-50%);
+}
+
+@media screen and (min-width: 1200px) {
+  .flip-group .flip-13-1 span {
+    font-size: 2.5em;
+  }
 }
 
 body {

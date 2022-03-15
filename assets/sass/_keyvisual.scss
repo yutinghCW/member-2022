@@ -1,10 +1,5 @@
-.key-visual {
-    height: 100vh;
-    background-color: #ebe7de;
-}
-
-$width: 57px;
-$height: 66px;
+$width: 4.75%;
+$height: 5.52%;
 
 $trans-x: 4.350877192982456;
 $trans-y: 1.742424242424242;
@@ -32,11 +27,34 @@ $kv-white: #fff;
 $kv-yellow: #ff0;
 $kv-burning-orange: #ea6120;
 
+.key-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ebe7de;
+    overflow: hidden;
+}
+
 .flip-group {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    width: 1200px;
+    margin-top: -10%;
+    margin-bottom: -10%;
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-top: 100%;
+    }
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: auto;
+        transform: translate(-50%, -50%);
+    }
     .flip {
         position: absolute;
         &.flip-y-1 {
@@ -50,156 +68,156 @@ $kv-burning-orange: #ea6120;
         }
     }
     .flip-1-1 {
-        top: 248px;
-        left: 115px;
+        top: 32.16%;
+        left: 9.6%;
         width: $width;
         height: $height;
         background-color: $kv-gunsmoke;
     }
     .flip-1-2 {
-        top: 17px;
-        left: 515px;
+        top: 12.94%;
+        left: 42.9%;
         width: $width;
         height: $height;
         background-color: $kv-gunsmoke;
     }
     .flip-2-1 {
-        top: 264px;
-        left: 172px;
+        top: 33.57%;
+        left: 14.35%;
         width: $width * 2;
         height: $height;
         background-color: $kv-muddy-waters;
     }
     .flip-2-2 {
-        top: 248px;
-        left: 229px;
+        top: 32.16%;
+        left: 19.1%;
         width: $width * 3;
         height: $height;
         background-color: $kv-gray;
     }
     .flip-2-3 {
-        top: 182px;
-        left: 343px;
+        top: 26.65%;
+        left: 28.67%;
         width: $width;
         height: $height;
         background-color: $kv-domino;
     }
     .flip-2-4 {
-        top: 199px;
-        left: 400px;
+        top: 28.05%;
+        left: 33.42%;
         width: $width * 2;
         height: $height;
         background-color: $kv-waterloo;
     }
     .flip-2-5 {
-        top: 133px;
-        left: 457px;
+        top: 22.563%;
+        left: 38.18%;
         width: $width * 2;
         height: $height;
         background-color: $kv-comet;
     }
     .flip-3-1 {
-        top: 396px;
-        left: 58px;
+        top: 44.54%;
+        left: 4.84%;
         width: $width * 2;
         height: $height;
         background-color: $kv-flint;
     }
     .flip-3-2 {
-        top: 380px;
-        left: 172px;
+        top: 43.15%;
+        left: 14.35%;
         width: $width;
         height: $height * 3;
         background-color: $kv-gray;
         z-index: 1;
     }
     .flip-3-3 {
-        top: 330px;
-        left: 200px;
+        top: 39.03%;
+        left: 16.7%;
         width: $width * 2;
         height: $height * 0.5;
         background-color: $kv-white;
     }
     .flip-4-1 {
-        top: 265px;
-        left: 400px;
+        top: 33.4%;
+        left: 33.35%;
         width: $width * 2;
         height: $height;
         background-color: $kv-flint;
     }
     .flip-4-2 {
-        top: 199px;
-        left: 514px;
+        top: 28.05%;
+        left: 42.89%;
         width: $width * 2;
         height: $height;
         background-color: $kv-yellow;
     }
     .flip-4-3 {
-        top: 116px;
-        left: 686px;
+        top: 21.19%;
+        left: 57.18%;
         width: $width;
         height: $height * 3;
         background-color: $kv-burning-orange;
     }
     .flip-5-1 {
-        top: 495px;
-        left: 115px;
+        top: 52.81%;
+        left: 9.6%;
         width: $width * 4;
         height: $height;
         background-color: $kv-comet;
     }
     .flip-5-2 {
-        top: 397px;
-        left: 286px;
+        top: 44.56%;
+        left: 23.85%;
         width: $width * 2;
         height: $height * 3;
         background-color: $kv-silver-rust;
     }
     .flip-5-3 {
-        top: 298px;
-        left: 343px;
+        top: 36.34%;
+        left: 28.6%;
         width: $width * 4;
         height: $height;
         background-color: $kv-night-rider;
     }
     .flip-5-4 {
-        top: 232px;
-        left: 572px;
-        width: $width * 2;
+        top: 30.78%;
+        left: 47.65%;
+        width: $width * 2 * 1.010526315789474;;
         height: $height;
         background-color: $kv-muddy-waters;
     }
     .flip-5-5 {
-        top: 182px;
-        left: 743px;
+        top: 26.68%;
+        left: 61.93%;
         width: $width;
         height: $height;
         background-color: $kv-silver-sand;
     }
     .flip-6-1 {
-        top: 495px;
-        left: 229px;
+        top: 52.85%;
+        left: 19.1%;
         width: $width * 2;
         height: $height;
         background-color: $kv-bitter;
     }
     .flip-7-1 {
-        top: 545px;
-        left: 343px;
+        top: 57%;
+        left: 28.6%;
         width: $width;
         height: $height;
         background-color: $kv-yellow;
     }
     .flip-7-2 {
-        top: 495px;
-        left: 343px;
+        top: 52.85%;
+        left: 28.6%;
         width: $width * 2;
         height: $height;
         background-color: $kv-silver-rust;
     }
     .flip-7-3 {
-        top: 380px;
-        left: 400px;
+        top: 43.19%;
+        left: 33.35%;
         width: $width * 5;
         height: $height;
         background-color: $kv-night-rider;
@@ -210,15 +228,18 @@ $kv-burning-orange: #ea6120;
             display: block;
             padding-left: 0.3em;
             color: $kv-white;
-            font-size: 3em;
+            font-size: 3.5vw;
             text-align: center;
             letter-spacing: 0.3em;
-            transform: scaleY(0.75) translateY(-0.5rem);
+            transform: scaleY(0.6) translateY(-0.2em);
+            @media screen and (min-width: 1200px) {
+                font-size: 3em;
+            }
         }
     }
     .flip-8-1 {
-        top: 346px;
-        left: 572px;
+        top: 40.4%;
+        left: 47.66%;
         width: $width * 5;
         height: $height;
         background-color: $kv-night-rider;
@@ -229,99 +250,105 @@ $kv-burning-orange: #ea6120;
             display: block;
             padding-left: 0.3em;
             color: $kv-white;
-            font-size: 3em;
+            font-size: 3.5vw;
             text-align: center;
             letter-spacing: 0.3em;
-            transform: scaleY(0.75) translateY(0.25rem);
+            transform: scaleY(0.6) translateY(0.2em);
+            @media screen and (min-width: 1200px) {
+                font-size: 3em;
+            }
         }
     }
     .flip-8-2 {
-        top: 247px;
-        left: 800px;
+        top: 26.86%;
+        left: 66.72%;
         width: $width;
         height: $height * 2;
         background-color: $kv-gunsmoke;
     }
     .flip-8-3 {
-        top: 627px;
-        left: 258px;
+        top: 63.8%;
+        left: 21.47%;
         width: $width * 2;
         height: $height * 0.5;
         span {
             display: block;
             padding-left: 0.2em;
-            font-size: 1.6em;
+            font-size: 1.9vw;
             text-align: center;
             letter-spacing: 0.2em;
             transform: scaleY(0.75) translateY(-0.25rem);
+            @media screen and (min-width: 1200px) {
+                font-size: 1.6em;
+            }
         }
     }
     .flip-9-1 {
-        top: 676px;
-        left: 286px;
+        top: 67.86%;
+        left: 23.86%;
         width: $width;
         height: $height;
         background-color: $kv-burning-orange;
     }
     .flip-9-2 {
-        top: 611px;
-        left: 401px;
+        top: 62.37%;
+        left: 33.38%;
         width: $width;
         height: $height;
         background-color: $kv-bison-hide;
     }
     .flip-9-3 {
-        top: 496px;
-        left: 457px;
-        width: $width * 2;
+        top: 52.74%;
+        left: 38.1%;
+        width: $width * 2 * 1.010526315789474;
         height: $height * 2;
         background-color: $kv-bison-hide;
     }
     .flip-9-4 {
-        top: 478px;
-        left: 571px;
+        top: 51.38%;
+        left: 47.65%;
         width: $width;
         height: $height;
         background-color: $kv-bison-hide;
     }
     .flip-9-5 {
-        top: 412px;
-        left: 628px;
+        top: 45.9%;
+        left: 52.4%;
         width: $width * 5;
         height: $height;
         background-color: $kv-flint;
     }
     .flip-9-6 {
-        top: 281px;
-        left: 971px;
+        top: 34.89%;
+        left: 80.94%;
         width: $width;
         height: $height;
         background-color: $kv-white;
     }
     .flip-10-1 {
-        top: 396px;
-        left: 885px;
+        top: 44.56%;
+        left: 73.83%;
         width: $width * 2;
         height: $height * 0.5;
         background-color: $kv-comet;
     }
     .flip-10-2 {
-        top: 429px;
-        left: 914px;
+        top: 47.35%;
+        left: 76.19%;
         width: $width * 2;
         height: $height;
         background-color: $kv-yellow;
     }
     .flip-10-3 {
-        top: 445px;
-        left: 857px;
+        top: 48.65%;
+        left: 71.45%;
         width: $width;
         height: $height * 2;
         background-color: $kv-waterloo;
     }
     .flip-11-1 {
-        top: 544px;
-        left: 514px;
+        top: 56.86%;
+        left: 42.9%;
         width: $width * 5;
         height: $height * 2;
         background-color: $kv-abbey;
@@ -332,21 +359,24 @@ $kv-burning-orange: #ea6120;
             left: 0;
             width: 100%;
             color: $kv-white;
-            font-size: 2.5em;
+            font-size: 2.9vw;
             text-align: center;
-            transform: scaleY(0.75) translateY(-52.5%);
+            transform: scaleY(0.75) translateY(-60%);
+            @media screen and (min-width: 1200px) {
+                font-size: 2.5em;
+            }
         }
     }
     .flip-11-2 {
-        top: 709px;
-        left: 457px;
+        top: 70.64%;
+        left: 38.12%;
         width: $width * 3;
         height: $height;
         background-color: $kv-muddy-waters;
     }
     .flip-11-3 {
-        top: 577px;
-        left: 800px;
+        top: 59.64%;
+        left: 66.65%;
         width: $width * 3;
         height: $height;
         background-color: $kv-silver-sand;
@@ -356,23 +386,24 @@ $kv-burning-orange: #ea6120;
             top: 50%;
             left: 0;
             width: 100%;
-            padding-left: 0.1em;
-            font-size: 1.6em;
+            font-size: 2.7vw;
             text-align: center;
-            letter-spacing: 0.1em;
-            transform: scaleY(0.75) translateY(-55%);
+            transform: translateY(-50%);
+            @media screen and (min-width: 1200px) {
+                font-size: 2.4em;
+            }
         }
     }
     .flip-12-1 {
-        top: 495px;
-        left: 943px;
+        top: 52.85%;
+        left: 78.6%;
         width: $width * 2;
         height: $height * 0.5;
         background-color: $kv-muddy-waters;
     }
     .flip-13-1 {
-        top: 528px;
-        left: 971px;
+        top: 55.58%;
+        left: 80.97%;
         width: $width * 2;
         height: $height * 2;
         background-color: $kv-bison-hide;
@@ -382,9 +413,13 @@ $kv-burning-orange: #ea6120;
             top: 50%;
             left: 0;
             width: 100%;
-            font-size: 2em;
+            font-size: 3vw;
             text-align: center;
+            line-height: 1;
             transform: scaleX(0.75) translateY(-50%);
+            @media screen and (min-width: 1200px) {
+                font-size: 2.5em;
+            }
         }
     }
 }
