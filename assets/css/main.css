@@ -4803,8 +4803,11 @@ progress {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100vh;
-  background-color: #ebe7de;
-  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .flip-group {
@@ -5081,7 +5084,7 @@ progress {
 }
 
 .flip-group .flip-8-2 {
-  top: 26.86%;
+  top: 26.7%;
   left: 66.72%;
   width: 4.75%;
   height: 11.04%;
@@ -5135,11 +5138,11 @@ progress {
 }
 
 .flip-group .flip-9-4 {
-  top: 51.38%;
-  left: 47.65%;
-  width: 4.75%;
+  top: 50.06%;
+  left: 42.9%;
+  width: 9.5%;
   height: 5.52%;
-  background-color: #c2b7a3;
+  background-color: #a9afa4;
 }
 
 .flip-group .flip-9-5 {
@@ -5156,6 +5159,14 @@ progress {
   width: 4.75%;
   height: 5.52%;
   background-color: #fff;
+}
+
+.flip-group .flip-9-7 {
+  top: 55.56%;
+  left: 42.9%;
+  width: 9.5%;
+  height: 5.52%;
+  background-color: #c8c9ca;
 }
 
 .flip-group .flip-10-1 {
@@ -5278,5 +5289,6 @@ progress {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ebe7de;
 }
 /*# sourceMappingURL=main.css.map */

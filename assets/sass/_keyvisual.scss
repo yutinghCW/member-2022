@@ -32,8 +32,11 @@ $kv-burning-orange: #ea6120;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #ebe7de;
-    overflow: hidden;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .flip-group {
@@ -262,7 +265,7 @@ $kv-burning-orange: #ea6120;
         }
     }
     .flip-8-2 {
-        top: 26.86%;
+        top: 26.7%;
         left: 66.72%;
         width: $width;
         height: $height * 2;
@@ -306,11 +309,11 @@ $kv-burning-orange: #ea6120;
         background-color: $kv-bison-hide;
     }
     .flip-9-4 {
-        top: 51.38%;
-        left: 47.65%;
-        width: $width;
+        top: 50.06%;
+        left: 42.9%;
+        width: $width * 2;
         height: $height;
-        background-color: $kv-bison-hide;
+        background-color: $kv-bud;
     }
     .flip-9-5 {
         top: 45.9%;
@@ -325,6 +328,13 @@ $kv-burning-orange: #ea6120;
         width: $width;
         height: $height;
         background-color: $kv-white;
+    }
+    .flip-9-7 {
+        top: 55.56%;
+        left: 42.9%;
+        width: $width * 2;
+        height: $height;
+        background-color: $kv-silver-rust;
     }
     .flip-10-1 {
         top: 44.56%;
