@@ -6,70 +6,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css" />
 </head>
 <body>
-    <section class="key-visual">
-        <div class="flip-group">
-            <img id="kv" src="assets/images/visual-grid.svg" width="1200" alt="">
-            <div class="flip flip-x-1 flip-5-4 flip-east"></div>
-            <div class="flip flip-x-2 flip-5-3 flip-north"></div>
-            <div class="flip flip-x-1 flip-1-1 flip-west"></div>
-            <div class="flip flip-x-1 flip-1-2 flip-east"></div>
-            <div class="flip flip-y-1 flip-2-2 flip-north"></div>
-            <div class="flip flip-x-1 flip-2-1 flip-east"></div>
-            <div class="flip flip-x-1 flip-2-3 flip-west"></div>
-            <div class="flip flip-x-2 flip-2-5 flip-north"></div>
-            <div class="flip flip-y-1 flip-3-1 flip-north"></div>
-            <div class="flip flip-y-1 flip-3-2 flip-north"></div>
-            <div class="flip flip-x-2 flip-3-3 flip-north"></div>
-            <div class="flip flip-x-1 flip-4-2 flip-west"></div>
-            <div class="flip flip-y-1 flip-2-4 flip-south"></div>
-            <div class="flip flip-x-1 flip-4-1 flip-east"></div>
-            <div class="flip flip-x-1 flip-4-3 flip-east"></div>
-            <div class="flip flip-x-2 flip-5-1 flip-west"></div>
-            <div class="flip flip-y-1 flip-5-2 flip-north"></div>
-            <div class="flip flip-x-2 flip-5-5 flip-south"></div>
-            <div class="flip flip-x-1 flip-6-1 flip-east"></div>
-            <div class="flip flip-x-2 flip-7-1 flip-south"></div>
-            <div class="flip flip-y-1 flip-7-2 flip-west"></div>
-            <div class="flip flip-x-1 flip-8-2 flip-south"></div>
-            <div class="flip flip-x-2 flip-8-3 flip-west">
-                <span>Daily</span>
-            </div>
-            <div class="flip flip-x-1 flip-9-1 flip-east"></div>
-            <div class="flip flip-x-1 flip-9-2 flip-west"></div>
-            <div class="flip flip-y-1 flip-9-4 flip-north"></div>
-            <div class="flip flip-y-1 flip-9-7 flip-south"></div>
-            <div class="flip flip-x-1 flip-9-3 flip-east"></div>
-            <div class="flip flip-x-1 flip-9-6 flip-north"></div>
-            <div class="flip flip-x-1 flip-9-5 flip-west"></div>
-            <div class="flip flip-x-2 flip-10-1 flip-north"></div>
-            <div class="flip flip-x-1 flip-10-2 flip-east"></div>
-            <div class="flip flip-y-1 flip-10-3 flip-north"></div>
-            <div class="flip flip-x-2 flip-11-2 flip-south"></div>
-            <div class="flip flip-x-2 flip-7-3 flip-west"></div>
-            <div class="flip flip-x-2 flip-8-1 flip-east"></div>
-            <div class="flip flip-x-2 flip-7-3 flip-west flip-transparent">
-                <span>探索天下</span>
-            </div>
-            <div class="flip flip-x-2 flip-8-1 flip-east flip-transparent">
-                <span>觸手可及</span>
-            </div>
-            <div class="flip flip-x-1 flip-11-1 flip-west">
-                <span>3D知識力<br/>任務大挑戰</span>
-            </div>
-            <div class="flip flip-y-1 flip-11-3 flip-south">
-                <span>Dialogue</span>
-            </div>
-            <div class="flip flip-x-2 flip-12-1 flip-south"></div>
-            <div class="flip flip-x-1 flip-13-1 flip-west">
-                <span>Dig<br/>Deep</span>
-            </div>
+    <header class="position-fixed top-0 w-100">
+        <div class="container-fluid d-flex align-items-center py-20 px-md-40">
+            <a href="https://www.cw.com.tw/" class="logo">
+                <img src="https://www.cw.com.tw/images/common/logo.svg" height="40" alt="">
+            </a>
+            <nav class="ms-auto">
+                <ul class="d-flex">
+                    <li><a href="#!" class="btn ms-5">3D 知識力</a></li>
+                    <li><a href="#!" class="btn ms-5">挑戰任務</a></li>
+                    <li><a href="#!" class="btn ms-5">抽獎獎品與辦法</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
-    <section style="padding-top: 100vh;">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </section>
+    </header>
+    <main>
+        <section class="key-visual">
+            <div class="flip-group">
+                <img id="kv" src="assets/images/visual-grid.svg" width="1200" alt="">
+                <div class="flip flip-x-1 flip-5-4 flip-east" data-offset="170"></div>
+                <div class="flip flip-x-2 flip-5-3 flip-north" data-offset="100"></div>
+                <div class="flip flip-x-2 flip-3-3 flip-north" data-offset="80"></div>
+                <div class="flip flip-x-1 flip-1-1 flip-west" data-offset="130"></div>
+                <div class="flip flip-x-1 flip-1-2 flip-east" data-offset="90"></div>
+                <div class="flip flip-y-1 flip-2-2 flip-north" data-offset="100"></div>
+                <div class="flip flip-x-1 flip-2-1 flip-east" data-offset="130"></div>
+                <div class="flip flip-x-1 flip-2-3 flip-west" data-offset="170"></div>
+                <div class="flip flip-x-2 flip-2-5 flip-north" data-offset="50"></div>
+                <div class="flip flip-y-1 flip-3-1 flip-north" data-offset="130"></div>
+                <div class="flip flip-y-1 flip-3-2 flip-north" data-offset="100"></div>
+                <div class="flip flip-x-1 flip-4-2 flip-west" data-offset="180"></div>
+                <div class="flip flip-y-1 flip-2-4 flip-south" data-offset="150"></div>
+                <div class="flip flip-x-1 flip-4-1 flip-east" data-offset="140"></div>
+                <div class="flip flip-x-1 flip-4-3 flip-east" data-offset="120"></div>
+                <div class="flip flip-x-2 flip-5-1 flip-west" data-offset="160"></div>
+                <div class="flip flip-y-1 flip-5-2 flip-north" data-offset="100"></div>
+                <div class="flip flip-x-2 flip-5-5 flip-south" data-offset="80"></div>
+                <div class="flip flip-x-1 flip-6-1 flip-east" data-offset="170"></div>
+                <div class="flip flip-x-2 flip-7-1 flip-south" data-offset="70"></div>
+                <div class="flip flip-y-1 flip-7-2 flip-south" data-offset="160"></div>
+                <div class="flip flip-x-1 flip-8-2 flip-south" data-offset="100"></div>
+                <div class="flip flip-x-2 flip-8-3 flip-west" data-offset="100">
+                    <span>Daily</span>
+                </div>
+                <div class="flip flip-x-1 flip-9-1 flip-east" data-offset="200"></div>
+                <div class="flip flip-x-1 flip-9-2 flip-west" data-offset="100"></div>
+                <div class="flip flip-y-1 flip-9-4 flip-north" data-offset="120"></div>
+                <div class="flip flip-y-1 flip-9-7 flip-south" data-offset="80"></div>
+                <div class="flip flip-x-1 flip-9-3 flip-east" data-offset="200"></div>
+                <div class="flip flip-x-1 flip-9-6 flip-east" data-offset="160"></div>
+                <div class="flip flip-x-1 flip-9-5 flip-west" data-offset="270"></div>
+                <div class="flip flip-x-2 flip-10-1 flip-north" data-offset="90"></div>
+                <div class="flip flip-x-1 flip-10-2 flip-east" data-offset="125"></div>
+                <div class="flip flip-y-1 flip-10-3 flip-south" data-offset="130"></div>
+                <div class="flip flip-x-2 flip-11-2 flip-south" data-offset="25"></div>
+                <div class="flip flip-x-2 flip-7-3 flip-west" data-offset="140"></div>
+                <div class="flip flip-x-2 flip-8-1 flip-east" data-offset="150"></div>
+                <div class="flip flip-x-2 flip-7-3 flip-west flip-transparent" data-offset="140">
+                    <span>探索天下</span>
+                </div>
+                <div class="flip flip-x-2 flip-8-1 flip-east flip-transparent" data-offset="150">
+                    <span>觸手可及</span>
+                </div>
+                <div class="flip flip-x-1 flip-11-1 flip-west" data-offset="110">
+                    <span>3D知識力<br/>任務大挑戰</span>
+                </div>
+                <div class="flip flip-y-1 flip-11-3 flip-south" data-offset="80">
+                    <span>Dialogue</span>
+                </div>
+                <div class="flip flip-x-2 flip-12-1 flip-south" data-offset="50"></div>
+                <div class="flip flip-x-1 flip-13-1 flip-west" data-offset="200">
+                    <span>Dig<br/>Deep</span>
+                </div>
+            </div>
+        </section>
+        <section></section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 py-40 bg-light">
+                        <div class="row justify-content-center">
+                            <div class="col-md-9 py-40 text-center">
+                                要成功改變會經過三個階段：7天、21天與90天是關鍵，只要重複了90天，就會形成穩定的習慣，在職場這場馬拉松中，唯有持續自我學習，才有機會帶動團隊創新動能，朝學習性組織前進。讓我們從養成3D知識力開始吧！
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 py-40 bg-light">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 py-40">
+                                <h2 class="mb-40 text-center">3D 知識力</h2>
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <h5>晴耕雨讀的恆毅力修煉</h5>
+                                        <p>
+                                            知識的鍛鍊往往透過細微的累積、然後匯聚成一股穩重而深沉的力量；天下的深度報導，透過天下每日報app、天下雜誌app、天下官網還有天下雜誌雙週刊等線上線下途徑，提供你每天不間斷的知識養分。
+                                        </p>
+                                        <h5>遍覽群書的博學力修煉</h5>
+                                        <p>
+                                            從經典到創新，每一本書、都蘊藏著當代的智慧，邀請你一起走進閱讀、走進文字的寶庫。天下雜誌出版引介國際經濟與社會的新趨勢、新思潮與管理新知；傳遞台灣企業的故事與經營管理的智慧。
+                                        </p>
+                                        <h5>博學審問的思辨力修煉</h5>
+                                        <p>
+                                            以「專業、視野、領先」作為課程設計的核心，與跨產業智者共同鍛造最頂尖的課程，天下學習讓你用最自在而流暢的方式，透過線上課程汲取最精粹而深厚的知識。
+                                        </p>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <img src="https://dummyimage.com/640x640/aaa/fff" alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 py-40 bg-light">
+                        <div class="row justify-content-center">
+                            <div class="col-md-9 py-40">
+                                <h2 class="mb-20 text-center">立刻點擊一個挑戰  完成任務  抽大獎</h2>
+                                <p>
+                                    於活動期間（2022/3/29~4/28）可選擇從恆毅力、博學力或思辨力任一挑戰開始，七天內完成三項3D知識力挑戰不僅可參加抽大獎，還可以分別獲得神秘小禮物共三份。
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-4 mt-40 text-center">
+                                        <h6>恆毅力</h6>
+                                        <img src="https://dummyimage.com/640x360/aaa/fff" alt="" class="img-fluid my-20">
+                                        <h5 class="mb-20">天下報導</h5>
+                                        <button type="button" class="btn btn-primary">我要登入參加挑戰</button>
+                                        <small class="d-block mt-10">已有 6,263 人完成挑戰</small>
+                                    </div>
+                                    <div class="col-md-4 mt-40 text-center">
+                                        <h6>恆毅力</h6>
+                                        <img src="https://dummyimage.com/640x360/aaa/fff" alt="" class="img-fluid my-20">
+                                        <h5 class="mb-20">天下報導</h5>
+                                        <button type="button" class="btn btn-primary">我要登入參加挑戰</button>
+                                        <small class="d-block mt-10">已有 6,263 人完成挑戰</small>
+                                    </div>
+                                    <div class="col-md-4 mt-40 text-center">
+                                        <h6>恆毅力</h6>
+                                        <img src="https://dummyimage.com/640x360/aaa/fff" alt="" class="img-fluid my-20">
+                                        <h5 class="mb-20">天下報導</h5>
+                                        <button type="button" class="btn btn-primary">我要登入參加挑戰</button>
+                                        <small class="d-block mt-10">已有 6,263 人完成挑戰</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="key-visual-text container-fluid position-fixed bottom-0 p-md-40">
+        <h4>2022 <span class="fs-3">3/29 ~ 4/28</span></h4>
+        <h4>成為天下人、完成挑戰、立即抽大獎</h4>
+    </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>

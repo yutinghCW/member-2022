@@ -28,22 +28,20 @@ $kv-yellow: #ff0;
 $kv-burning-orange: #ea6120;
 
 .key-visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-
     position: fixed;
     top: 50%;
     left: 50%;
+    width: 100%;
     transform: translate(-50%, -50%);
 }
 
 .flip-group {
-    position: relative;
-    width: 1200px;
-    margin-top: -10%;
-    margin-bottom: -10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 920px;
+    transform: translate(-50%, -50%);
     &::before {
         content: '';
         display: block;
@@ -72,6 +70,12 @@ $kv-burning-orange: #ea6120;
         span {
             display: block;
             font-weight: 500;
+            transition: opacity 0.5s;
+        }
+        &.scroll {
+            span {
+                opacity: 0;
+            }
         }
     }
     .flip-1-1 {
@@ -239,7 +243,7 @@ $kv-burning-orange: #ea6120;
             letter-spacing: 0.3em;
             transform: scaleY(0.6) translateY(-0.2em);
             @media screen and (min-width: 1200px) {
-                font-size: 3em;
+                font-size: 2.3em;
             }
         }
     }
@@ -260,7 +264,7 @@ $kv-burning-orange: #ea6120;
             letter-spacing: 0.3em;
             transform: scaleY(0.6) translateY(0.2em);
             @media screen and (min-width: 1200px) {
-                font-size: 3em;
+                font-size: 2.3em;
             }
         }
     }
@@ -277,13 +281,18 @@ $kv-burning-orange: #ea6120;
         width: $width * 2;
         height: $height * 0.5;
         span {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
             padding-left: 0.2em;
             font-size: 1.9vw;
             text-align: center;
             letter-spacing: 0.2em;
-            transform: scaleY(0.75) translateY(-0.25rem);
+            transform: scaleY(0.75) translateY(-50%);
+            transform-origin: top;
             @media screen and (min-width: 1200px) {
-                font-size: 1.6em;
+                font-size: 1.2em;
             }
         }
     }
@@ -341,7 +350,7 @@ $kv-burning-orange: #ea6120;
         left: 73.83%;
         width: $width * 2;
         height: $height * 0.5;
-        background-color: $kv-comet;
+        background-color: $kv-burning-orange;
     }
     .flip-10-2 {
         top: 47.35%;
@@ -373,7 +382,7 @@ $kv-burning-orange: #ea6120;
             text-align: center;
             transform: scaleY(0.75) translateY(-60%);
             @media screen and (min-width: 1200px) {
-                font-size: 2.5em;
+                font-size: 2em;
             }
         }
     }
@@ -399,7 +408,7 @@ $kv-burning-orange: #ea6120;
             text-align: center;
             transform: translateY(-50%);
             @media screen and (min-width: 1200px) {
-                font-size: 2.4em;
+                font-size: 1.7em;
             }
         }
     }
@@ -426,9 +435,8 @@ $kv-burning-orange: #ea6120;
             line-height: 1;
             transform: scaleX(0.75) translateY(-50%);
             @media screen and (min-width: 1200px) {
-                font-size: 2.5em;
+                font-size: 2em;
             }
         }
     }
 }
-
