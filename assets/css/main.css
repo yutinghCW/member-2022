@@ -7292,6 +7292,11 @@ fieldset:disabled .btn {
           transform: translate(-50%, -50%);
 }
 
+.key-visual-text {
+  display: none;
+  z-index: 1;
+}
+
 .flip-group {
   position: absolute;
   top: 50%;
@@ -7300,6 +7305,7 @@ fieldset:disabled .btn {
   max-width: 920px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .flip-group::before {
@@ -7315,12 +7321,20 @@ fieldset:disabled .btn {
   left: 50%;
   width: 100%;
   height: auto;
+  opacity: 0;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-transition: opacity 1s cubic-bezier(0, 0, 0.1, 1);
+  transition: opacity 1s cubic-bezier(0, 0, 0.1, 1);
 }
 
 .flip-group .flip {
   position: absolute;
+  display: none;
+  -webkit-transition: -webkit-transform 1.7s cubic-bezier(0, 0, 0.1, 1);
+  transition: -webkit-transform 1.7s cubic-bezier(0, 0, 0.1, 1);
+  transition: transform 1.7s cubic-bezier(0, 0, 0.1, 1);
+  transition: transform 1.7s cubic-bezier(0, 0, 0.1, 1), -webkit-transform 1.7s cubic-bezier(0, 0, 0.1, 1);
 }
 
 .flip-group .flip.flip-y-1 {
@@ -7341,8 +7355,16 @@ fieldset:disabled .btn {
 .flip-group .flip span {
   display: block;
   font-weight: 500;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
+}
+
+.flip-group .flip.completed {
+  -webkit-transition: opacity 0.5s cubic-bezier(0, 0, 0.1, 1);
+  transition: opacity 0.5s cubic-bezier(0, 0, 0.1, 1);
+}
+
+.flip-group .flip.completed span {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 .flip-group .flip.scroll span {
@@ -7787,12 +7809,21 @@ html,
 body {
   min-height: 100%;
   height: 100%;
+}
+
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #ebe7de;
+  overflow: hidden;
+}
+
+body.completed {
+  overflow: auto;
 }
 
 header {
+  display: none;
   z-index: 2;
 }
 

@@ -35,6 +35,11 @@ $kv-burning-orange: #ea6120;
     transform: translate(-50%, -50%);
 }
 
+.key-visual-text {
+    display: none;
+    z-index: 1;
+}
+
 .flip-group {
     position: absolute;
     top: 50%;
@@ -42,6 +47,7 @@ $kv-burning-orange: #ea6120;
     width: 100%;
     max-width: 920px;
     transform: translate(-50%, -50%);
+    z-index: 1;
     &::before {
         content: '';
         display: block;
@@ -54,10 +60,14 @@ $kv-burning-orange: #ea6120;
         left: 50%;
         width: 100%;
         height: auto;
+        opacity: 0;
         transform: translate(-50%, -50%);
+        transition: opacity 1s cubic-bezier(0, 0, 0.1, 1);
     }
     .flip {
         position: absolute;
+        display: none;
+        transition: transform 1.7s cubic-bezier(0, 0, 0.1, 1);
         &.flip-y-1 {
             transform: skewY(30deg);
         }
@@ -70,7 +80,12 @@ $kv-burning-orange: #ea6120;
         span {
             display: block;
             font-weight: 500;
-            transition: opacity 0.5s;
+        }
+        &.completed {
+            transition: opacity 0.5s cubic-bezier(0, 0, 0.1, 1);
+            span {
+                transition: opacity 0.3s;
+            }
         }
         &.scroll {
             span {

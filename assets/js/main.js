@@ -8,10 +8,102 @@
     const kvLeft = document.getElementById('kv').getBoundingClientRect().left + (kvWidth / 2);
     const kvTriangle = Math.sqrt((kvWidth * kvWidth / 4) + (kvHeight * kvHeight / 4));
 
-    console.log(Math.sqrt((kvTop * kvTop) + (kvLeft * kvLeft)));
-    console.log(Math.sqrt((kvWidth * kvWidth / 4) + (kvHeight * kvHeight / 4)));
-
     let lastScrollTop = 0;
+
+    $('.flip').each(function() {
+        $(this).children('span').hide();
+        let unit = Number($(this).attr('data-offset')) / 170;
+        let magnification = 1;
+        let newMagnification = magnification * unit;
+        if ( $(this).hasClass('flip-north') ) {
+            if ( $(this).hasClass('flip-x-1') ) {
+                $(this).css({
+                    'transform': `skewY(-30deg) translate3d(-${kvTriangle * newMagnification * 0.875}px, -${kvTriangle * newMagnification}px, 0)`
+                })
+            } else if ( $(this).hasClass('flip-x-2') ) {
+                $(this).css({
+                    'transform': `skew(60deg, -30deg) translate3d(-${kvTriangle * newMagnification * 0.005}px, -${kvTriangle * newMagnification}px, 0)`
+                })
+            } else if ( $(this).hasClass('flip-y-1') ) {
+                $(this).css({
+                    'transform': `skewY(30deg) translate3d(-${kvTriangle * newMagnification}px, 0, 0)`
+                })
+            }
+        } else if ($(this).hasClass('flip-east')) {
+            if ( $(this).hasClass('flip-x-1') ) {
+                $(this).css({
+                    'transform': `skewY(-30deg) translate3d(${kvTriangle * newMagnification}px, 0, 0)`
+                })
+            } else if ( $(this).hasClass('flip-x-2') ) {
+                $(this).css({
+                    'transform': `skew(60deg, -30deg) translate3d(${kvTriangle * newMagnification}px, 0, 0)`
+                })
+            } else if ( $(this).hasClass('flip-y-1') ) {
+                $(this).css({
+                    'transform': `skewY(30deg) translate3d(${kvTriangle * newMagnification * 0.875}px, -${kvTriangle * newMagnification}px, 0)`
+                })
+            }
+        } else if ($(this).hasClass('flip-west')) {
+            if ( $(this).hasClass('flip-x-1') ) {
+                $(this).css({
+                    'transform': `skewY(-30deg) translate3d(-${kvTriangle * newMagnification}px, 0, 0)`
+                })
+            } else if ( $(this).hasClass('flip-x-2') ) {
+                $(this).css({
+                    'transform': `skew(60deg, -30deg) translate3d(-${kvTriangle * newMagnification}px, 0, 0)`
+                })
+            } else if ( $(this).hasClass('flip-y-1') ) {
+                $(this).css({
+                    'transform': `skewY(30deg) translate3d(-${kvTriangle * newMagnification * 0.865}px, ${kvTriangle * newMagnification}px, 0)`
+                })
+            }
+        } else if ($(this).hasClass('flip-south')) {
+            if ( $(this).hasClass('flip-x-1') ) {
+                $(this).css({
+                    'transform': `skewY(-30deg) translate3d(${kvTriangle * 1.25 * newMagnification * 0.875}px, ${kvTriangle * 1.25 * newMagnification}px, 0)`
+                })
+            } else if ( $(this).hasClass('flip-x-2') ) {
+                $(this).css({
+                    'transform': `skew(60deg, -30deg) translate3d(${kvTriangle * 1.25 * newMagnification * 0.005}px, ${kvTriangle * 1.25 * newMagnification}px, 0)`
+                })
+            } else if ( $(this).hasClass('flip-y-1') ) {
+                $(this).css({
+                    'transform': `skewY(30deg) translate3d(${kvTriangle * 1.25 * newMagnification}px, 0, 0)`
+                })
+            }
+        }
+    });
+
+    setTimeout(() => {
+        $('.flip').fadeIn(800);
+        $('.flip-group img').css('opacity', 1);
+    }, 500);
+
+    setTimeout(() => {
+        $('.flip').each(function() {
+            if ( $(this).hasClass('flip-x-1') ) {
+                $(this).css({
+                    'transform': `skewY(-30deg) translate3d(0, 0, 0)`
+                })
+            } else if ( $(this).hasClass('flip-x-2') ) {
+                $(this).css({
+                    'transform': `skew(60deg, -30deg) translate3d(0, 0, 0)`
+                })
+            } else if ( $(this).hasClass('flip-y-1') ) {
+                $(this).css({
+                    'transform': `skewY(30deg) translate3d(0, 0, 0)`
+                })
+            }
+        });
+    }, 1300);
+
+    setTimeout(() => {
+        $('header, .flip span, .key-visual-text').fadeIn();
+    }, 2800);
+
+    setTimeout(() => {
+        $('body, .flip').addClass('completed');
+    }, 3200);
 
     window.addEventListener('scroll', () => {
         let scroll = $(window).scrollTop();
