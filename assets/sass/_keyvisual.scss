@@ -44,10 +44,16 @@ $kv-burning-orange: #ea6120;
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
     max-width: 920px;
-    transform: translate(-50%, -50%);
     z-index: 1;
+    @include media-breakpoint-up(md) {
+        width: 100%;
+        transform: translate(-50%, -50%);
+    }
+    @include media-breakpoint-down(md) {
+        width: 120%;
+        transform: translate(-50%, -50%) rotate(120deg);
+    }
     &::before {
         content: '';
         display: block;
@@ -77,18 +83,29 @@ $kv-burning-orange: #ea6120;
         &.flip-x-2 {
             transform: skew(60deg, -30deg);
         }
-        span {
-            display: block;
+        > span {
             font-weight: 500;
         }
+        span.sentance {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            > span {
+                display: block;
+                @include media-breakpoint-down(md) {
+                    transform: rotate(-90deg);
+                }
+            }
+        }
         &.completed {
-            transition: opacity 0.5s cubic-bezier(0, 0, 0.1, 1);
-            span {
+            transition: transform 0.5s cubic-bezier(0, 0, 0.1, 1);
+            > span {
                 transition: opacity 0.3s;
             }
         }
         &.scroll {
-            span {
+            > span {
                 opacity: 0;
             }
         }
@@ -250,14 +267,14 @@ $kv-burning-orange: #ea6120;
         &.flip-transparent {
             background-color: transparent;
         }
-        span {
+        > span {
             padding-left: 0.3em;
             color: $kv-white;
             font-size: 3.5vw;
             text-align: center;
             letter-spacing: 0.3em;
             transform: scaleY(0.6) translateY(-0.2em);
-            @media screen and (min-width: 1200px) {
+            @include media-breakpoint-up(xl) {
                 font-size: 2.3em;
             }
         }
@@ -271,14 +288,14 @@ $kv-burning-orange: #ea6120;
         &.flip-transparent {
             background-color: transparent;
         }
-        span {
+        > span {
             padding-left: 0.3em;
             color: $kv-white;
             font-size: 3.5vw;
             text-align: center;
             letter-spacing: 0.3em;
             transform: scaleY(0.6) translateY(0.2em);
-            @media screen and (min-width: 1200px) {
+            @include media-breakpoint-up(xl) {
                 font-size: 2.3em;
             }
         }
@@ -295,7 +312,7 @@ $kv-burning-orange: #ea6120;
         left: 21.47%;
         width: $width * 2;
         height: $height * 0.5;
-        span {
+        > span {
             position: absolute;
             top: 50%;
             left: 0;
@@ -306,7 +323,7 @@ $kv-burning-orange: #ea6120;
             letter-spacing: 0.2em;
             transform: scaleY(0.75) translateY(-50%);
             transform-origin: top;
-            @media screen and (min-width: 1200px) {
+            @include media-breakpoint-up(xl) {
                 font-size: 1.2em;
             }
         }
@@ -387,7 +404,7 @@ $kv-burning-orange: #ea6120;
         width: $width * 5;
         height: $height * 2;
         background-color: $kv-abbey;
-        span {
+        > span {
             position: absolute;
             top: 50%;
             left: 0;
@@ -396,7 +413,7 @@ $kv-burning-orange: #ea6120;
             font-size: 2.9vw;
             text-align: center;
             transform: scaleY(0.75) translateY(-60%);
-            @media screen and (min-width: 1200px) {
+            @include media-breakpoint-up(xl) {
                 font-size: 2em;
             }
         }
@@ -414,16 +431,21 @@ $kv-burning-orange: #ea6120;
         width: $width * 3 * 1.005;
         height: $height;
         background-color: $kv-silver-sand;
-        span {
+        > span {
             position: absolute;
             top: 50%;
             left: 0;
             width: 100%;
             font-size: 2.7vw;
             text-align: center;
-            transform: translateY(-50%);
-            @media screen and (min-width: 1200px) {
+            @include media-breakpoint-up(xl) {
                 font-size: 1.7em;
+            }
+            @include media-breakpoint-up(md) {
+                transform: translateY(-50%);
+            }
+            @include media-breakpoint-down(md) {
+                transform: translateY(-50%) rotate(180deg);
             }
         }
     }
@@ -440,7 +462,7 @@ $kv-burning-orange: #ea6120;
         width: $width * 2;
         height: $height * 2;
         background-color: $kv-bison-hide;
-        span {
+        > span {
             position: absolute;
             top: 50%;
             left: 0;
@@ -448,9 +470,14 @@ $kv-burning-orange: #ea6120;
             font-size: 3vw;
             text-align: center;
             line-height: 1;
-            transform: scaleX(0.75) translateY(-50%);
-            @media screen and (min-width: 1200px) {
+            @include media-breakpoint-up(xl) {
                 font-size: 2em;
+            }
+            @include media-breakpoint-up(md) {
+                transform: scaleX(0.75) translateY(-50%);
+            }
+            @include media-breakpoint-down(md) {
+                transform: scaleX(0.75) translateY(-50%) rotate(270deg);
             }
         }
     }

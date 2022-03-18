@@ -10,6 +10,24 @@
 
     let lastScrollTop = 0;
 
+    function flipInt() {
+        $('.flip').each(function() {
+            if ( $(this).hasClass('flip-x-1') ) {
+                $(this).css({
+                    'transform': `skewY(-30deg) translate3d(0, 0, 0)`
+                })
+            } else if ( $(this).hasClass('flip-x-2') ) {
+                $(this).css({
+                    'transform': `skew(60deg, -30deg) translate3d(0, 0, 0)`
+                })
+            } else if ( $(this).hasClass('flip-y-1') ) {
+                $(this).css({
+                    'transform': `skewY(30deg) translate3d(0, 0, 0)`
+                })
+            }
+        });
+    };
+
     $('.flip').each(function() {
         $(this).children('span').hide();
         let unit = Number($(this).attr('data-offset')) / 170;
@@ -80,21 +98,7 @@
     }, 500);
 
     setTimeout(() => {
-        $('.flip').each(function() {
-            if ( $(this).hasClass('flip-x-1') ) {
-                $(this).css({
-                    'transform': `skewY(-30deg) translate3d(0, 0, 0)`
-                })
-            } else if ( $(this).hasClass('flip-x-2') ) {
-                $(this).css({
-                    'transform': `skew(60deg, -30deg) translate3d(0, 0, 0)`
-                })
-            } else if ( $(this).hasClass('flip-y-1') ) {
-                $(this).css({
-                    'transform': `skewY(30deg) translate3d(0, 0, 0)`
-                })
-            }
-        });
+        flipInt();
     }, 1300);
 
     setTimeout(() => {
@@ -106,7 +110,7 @@
     }, 3200);
 
     window.addEventListener('scroll', () => {
-        let scroll = $(window).scrollTop();
+        let scroll = window.pageYOffset || document.documentElement.scrollTop;
         let magnification = Number((scroll/(contentHeight-height)).toFixed(3));
         // console.log(magnification);
         $('.flip').each(function() {
@@ -178,16 +182,15 @@
                 }
             }
         });
-    });
-    window.addEventListener("scroll", () => {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop && scrollTop > (height / 3 * 2) ){
-           // downscroll code
-            $('nav').fadeOut();
-        } else {
-           // upscroll code
-           $('nav').fadeIn();
+
+        if ( width >= 768 ) {
+            if ( scroll > lastScrollTop && scroll > (height / 3 * 2) ){
+                $('nav').fadeOut();
+            } else {
+               $('nav').fadeIn();
+            }
         }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+
+        lastScrollTop = scroll <= 0 ? 0 : scroll;
      }, false);     
 }());
