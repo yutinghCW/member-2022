@@ -28,11 +28,13 @@ $kv-yellow: #ff0;
 $kv-burning-orange: #ea6120;
 
 .key-visual {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
+    .index-page & {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .key-visual-text {
@@ -59,16 +61,6 @@ $kv-burning-orange: #ea6120;
         display: block;
         width: 100%;
         padding-top: 100%;
-    }
-    img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: auto;
-        opacity: 0;
-        transform: translate(-50%, -50%);
-        transition: opacity 1s cubic-bezier(0, 0, 0.1, 1);
     }
     .flip {
         position: absolute;
@@ -481,4 +473,15 @@ $kv-burning-orange: #ea6120;
             }
         }
     }
+}
+
+img#kv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 1s cubic-bezier(0, 0, 0.1, 1);
 }

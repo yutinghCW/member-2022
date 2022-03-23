@@ -1,0 +1,73 @@
+$icomoon-font-family: "cw_icon" !default;
+$icomoon-font-path: "../fonts" !default;
+
+$icon-question-circle: "\e90e";
+$icon-arrow-left: "\e934";
+$icon-cancel: "\e92e";
+$icon-line: "\e91c";
+$icon-play-solid: "\e94d";
+$icon-pause-solid: "\e94f";
+$icon-play: "\e91d";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?qkfntj');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?qkfntj#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?qkfntj') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?qkfntj') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?qkfntj##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-question-circle {
+  &:before {
+    content: $icon-question-circle; 
+  }
+}
+.icon-arrow-left {
+  &:before {
+    content: $icon-arrow-left; 
+  }
+}
+.icon-cancel {
+  &:before {
+    content: $icon-cancel; 
+  }
+}
+.icon-line {
+  &:before {
+    content: $icon-line; 
+  }
+}
+.icon-play-solid {
+  &:before {
+    content: $icon-play-solid; 
+  }
+}
+.icon-pause-solid {
+  &:before {
+    content: $icon-pause-solid; 
+  }
+}
+.icon-play {
+  &:before {
+    content: $icon-play; 
+  }
+}
