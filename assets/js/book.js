@@ -49,9 +49,9 @@ const app = createApp({
             new bootstrap.Modal(document.getElementById('videoModal')).show();
 
             // Api: 先參與遊戲 
-            const learnCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=learn';
+            const bookCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book';
             axios
-                .get(learnCreate)
+                .get(bookCreate)
                 .then((response) => {
                     console.dir(response);
                 })
@@ -59,7 +59,7 @@ const app = createApp({
                     console.dir(error);
                 });
             // Api: Modal 關閉後要送資料 
-            const learnSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=learn&is_finish=1';
+            const bookSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book&is_finish=1';
             $('#videoModal').on('shown.bs.modal', function () {
                 times = 0;
             });
@@ -68,7 +68,7 @@ const app = createApp({
                 that.video = '';
                 if ( times === 1 ) {
                     axios
-                        .get(learnSuccess)
+                        .get(bookSuccess)
                         .then((response) => {
                             console.dir(response);
                             new bootstrap.Modal(document.getElementById('successModal')).show();
