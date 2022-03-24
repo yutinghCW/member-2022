@@ -2415,7 +2415,7 @@ fieldset:disabled .btn {
 }
 
 .modal-backdrop.show {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .modal-header {
@@ -2597,6 +2597,41 @@ fieldset:disabled .btn {
   .modal-fullscreen-xxl-down .modal-body {
     overflow-y: auto;
   }
+}
+
+.ratio {
+  position: relative;
+  width: 100%;
+}
+
+.ratio::before {
+  display: block;
+  padding-top: var(--bs-aspect-ratio);
+  content: "";
+}
+
+.ratio > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ratio-1x1 {
+  --bs-aspect-ratio: 100%;
+}
+
+.ratio-4x3 {
+  --bs-aspect-ratio: calc(3 / 4 * 100%);
+}
+
+.ratio-16x9 {
+  --bs-aspect-ratio: calc(9 / 16 * 100%);
+}
+
+.ratio-21x9 {
+  --bs-aspect-ratio: calc(9 / 21 * 100%);
 }
 
 .align-baseline {
@@ -8284,11 +8319,6 @@ header nav ul {
   list-style: none;
 }
 
-#app {
-  position: relative;
-  z-index: 1;
-}
-
 .inner-page #app {
   padding-top: 100vh;
 }
@@ -8335,8 +8365,12 @@ section#article ~ section {
   max-width: 960px;
 }
 
-.inner-page section .container {
+.webaccess-page section .container {
   max-width: 865px;
+}
+
+.cwlearning-page section .container {
+  max-width: 920px;
 }
 
 section .content {
@@ -8568,6 +8602,12 @@ footer .content {
   max-width: 425px;
 }
 
+.modal.modal-video .modal-content {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (min-width: 768px) {
   .card-section {
     display: -webkit-box;
@@ -8593,8 +8633,54 @@ footer .content {
   font-size: 2rem;
 }
 
-.card-section .card-image {
+.webaccess-page .card-section .card-image {
   max-width: 250px;
+}
+
+.cwlearning-page .card-section .card-image {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .cwlearning-page .card-section .card-image {
+    max-width: 430px;
+  }
+}
+
+.cwlearning-page .card-section .card-image button {
+  display: block;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.cwlearning-page .card-section .card-image .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 3.75rem;
+  height: 3.75rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.cwlearning-page .card-section .card-image .btn i.icon {
+  font-size: 1.5rem;
 }
 
 .inner-page .hero-text {

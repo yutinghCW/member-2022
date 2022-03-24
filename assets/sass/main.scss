@@ -42,8 +42,8 @@ header {
 }
 
 #app {
-    position: relative;
-    z-index: 1;
+    // position: relative;
+    // z-index: 1;
     .inner-page & {
         padding-top: 100vh;
     }
@@ -83,8 +83,11 @@ section {
         .index-page & {
             max-width: 960px;
         }
-        .inner-page & {
+        .webaccess-page & {
             max-width: 865px;
+        }
+        .cwlearning-page & {
+            max-width: 920px;
         }
     }
     .content {
@@ -276,6 +279,13 @@ footer {
             max-width: 425px;
         }
     }
+    &.modal-video {
+        .modal-content {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 }
 
 .card-section {
@@ -292,10 +302,45 @@ footer {
         }
         .name {
             font-size: $h6-font-size*2;
+            @include media-breakpoint-up(md) {
+                // margin-right: -4em;
+            }
         }
     }
     .card-image {
-        max-width: 250px;
+        .webaccess-page & {
+            max-width: 250px;
+        }
+        .cwlearning-page & {
+            width: 100%;
+            @include media-breakpoint-up(md) {
+                max-width: 430px;
+            }
+            button {
+                display: block;
+                padding: 0;
+                border: 0;
+                background-color: transparent;
+                appearance: none;
+            }
+            .btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: $h1-font-size * 2;
+                height: $h1-font-size * 2;
+                color: $white;
+                background-color: rgba($black, 0.8);
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                i.icon {
+                    font-size: $h3-font-size;
+                }
+            }
+        }
     }
 }
 

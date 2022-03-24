@@ -14,7 +14,8 @@ const app = createApp({
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_ding.mp3',
+                        // src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_ding.mp3',
+                        src: 'https://www.w3schools.com/html/horse.ogg',
                     }),
                 },
                 ding: {
@@ -106,8 +107,6 @@ const app = createApp({
                 setTimeout(() => {
                     that.challenge.read = true;
                     that.getEventState();
-                }, 150);
-                setTimeout(() => {
                     $(`.duration`).width(0);
                     clearInterval(update);
                 }, 300);
