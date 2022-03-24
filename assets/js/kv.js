@@ -1,7 +1,12 @@
 (function () {
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    const contentHeight = document.getElementById('app').clientHeight + height;
+    let contentHeight;
+    if ( $('body').hasClass('index-page') ) {
+        document.getElementById('awards').clientHeight + height;
+    } else {
+        document.getElementById('app').clientHeight + height;
+    }
     const kvWidth = document.getElementById('kv').clientWidth;
     const kvHeight = document.getElementById('kv').clientHeight;
     const kvTop = document.getElementById('kv').getBoundingClientRect().top + (kvHeight / 2);

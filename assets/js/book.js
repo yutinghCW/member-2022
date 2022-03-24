@@ -11,19 +11,14 @@ const app = createApp({
                 learn: false,
                 book: false,
             },
-            learn: {
-                lang: {
-                    video: 'https://www.youtube.com/embed/icw2vbxTeSk',
-                    state: false,
-                    finished: false,
-                },
-                tsou: {
-                    video: 'https://www.youtube.com/embed/WU2ak1Ww7E8',
+            book: {
+                sun: {
+                    video: 'https://www.youtube.com/embed/qIvWNo45t4I',
                     state: false,
                     finished: false,
                 },
                 tsai: {
-                    video: 'https://www.youtube.com/embed/n0F3AcDb9CI',
+                    video: 'https://www.youtube.com/embed/4dKh7NvALg4',
                     state: false,
                     finished: false,
                 },
@@ -50,7 +45,7 @@ const app = createApp({
                 });
         },
         clickPlayer(name) {
-            this.video = this.learn[name].video;
+            this.video = this.book[name].video;
             new bootstrap.Modal(document.getElementById('videoModal')).show();
 
             // Api: 先參與遊戲 
@@ -84,7 +79,7 @@ const app = createApp({
                             //     'eventLabel': '3D_L',
                             // });
                             setTimeout(() => {
-                                that.challenge.learn = true;
+                                that.challenge.book = true;
                                 that.getEventState();
                             }, 300);
                         })

@@ -15,7 +15,7 @@
     })(window,document,'script','dataLayer','GTM-TXLD77');</script>
     <!-- End Google Tag Manager -->    
 </head>
-<body class="inner-page webaccess-page">
+<body class="inner-page publishing-page">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXLD77" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->    
@@ -115,26 +115,27 @@
     <div id="app">
         <div class="hero-text container px-md-20 px-30 text-center">
             <div class="px-md-30">
-                <h2 class="mb-0">用天下報導修煉</h2>
-                <h1 class="text-primary mt-5 mb-30">恆毅力</h1>
+                <h2 class="mb-0">用天下出版修煉</h2>
+                <h1 class="text-primary mt-5 mb-30">博學力</h1>
                 <p>
-                    <span class="d-inline-block">知識的銳利與厚度，在於讓自己比前一天更進步，</span><span class="d-inline-block">天下報導將鍛鍊你的恆毅力，提高你的格局與眼界。</span>
+                    你的改變，從博覽群書的博學力修煉開始！
                 </p>
                 <div class="bg-primary mx-auto my-30"></div>
             </div>
-            <div class="bg-white p-30" v-if="!challenge.read">
+            <div class="bg-white p-30" v-if="!challenge.learn">
                 <h4 class="mb-10">任務說明</h4>
                 <p class="mb-0">
-                    <span class="d-inline-block">快來聽聽看恆毅力的實踐者如何保持巔峰。</span><span class="d-inline-block">點擊以下任一音頻，聽完即可完成任務！還可立即領取加碼驚喜禮物！</span>
+                    <span class="d-inline-block">邀您體驗天下雜誌出版的多元面向，</span><span class="d-inline-block">觀看任一書摘、音頻、影片，即可完成任務！</span><span class="d-inline-block">立即獲得天下網路書店 $50 購書優惠</span>
                 </p>
             </div>
             <div class="bg-white p-30" v-else>
                 <h4 class="mb-10">完成挑戰</h4>
                 <p class="mb-20">
-                    <span class="d-inline-block">恭喜您已完成恆毅力修練任務！</span><span class="d-inline-block">請立刻用這個連結加入天下 Line 好友，</span><span class="d-inline-block">領取加碼禮物<span class="text-primary">「天下全閱讀」</span>30 天！</span></span>
+                    <span class="d-block">恭喜您已完成博學力修練任務！</span>
+                    <span class="d-inline-block">立刻到天下網路書店，結帳時輸入 <span class="text-primary">72190</span> 即可折價 50 元！</span>
                 </p>
-                <a href="https://maac.io/1fKm1" class="challenge-btn btn btn-lg btn-primary d-table mx-auto fs-5" target="_blank" rel="noopener noreferrer">
-                    領取加碼禮物
+                <a href="https://shop.cwbook.com.tw/" class="challenge-btn btn btn-lg btn-primary d-table mx-auto fs-5" target="_blank" rel="noopener noreferrer">
+                    前往購書
                     <img src="assets/images/click.png" alt="">
                 </a>
             </div>
@@ -145,37 +146,21 @@
                     <div class="card-section py-60">
                         <div class="card-text">
                             <h3 class="index text-primary">01.</h3>
-                            <h2 class="name">謝馨慧 X 天下晨間新聞</h2>
+                            <h2 class="name">Jim Collins《恆久卓越的修煉》</h2>
                             <p class="fs-7">
-                                天下晨間新聞，天下編輯每天凌晨更新。當你一覺醒來，拿起手機，就可掌握不曾停止運轉的世界大事以及當天台灣最關鍵的新聞。打開天下官網、天下每日報 App，速讀天下晨間新聞，是展開每一個早晨的必要！
+                                《從Ａ到Ａ+》管理大師的重量級新經典！為何有些企業能夠屹立數十年？從新創到永續，厚植經營實力最重要的一張藍圖，依循前進，一步步帶領公司邁向卓越。
                             </p>
                             <button
                                 type="button"
-                                id="hsieh_player"
-                                @click="
-                                    clickPlayer('hsieh');
-                                    webaccess.hsieh.state = !webaccess.hsieh.state;
-                                "
+                                @click="clickPlayer('jim')"
                                 class="challenge-btn btn btn-lg text-white bg-primary fs-5"
                             >
-                                <span class="duration hsieh_player-duration"></span>
-                                <span class="text" v-if="!webaccess.hsieh.state">
-                                    我要聽音頻
-                                </span>
-                                <span class="text" v-else>
-                                    <i class="icon icon-pause-solid me-10"></i> 播放中
-                                </span>
-                                <img src="assets/images/click.png" alt="" v-if="!webaccess.hsieh.state">
+                                我要看書摘
+                                <img src="assets/images/click.png" alt="">
                             </button>
                         </div>
-                        <div class="card-image mt-30 mx-md-0 mx-auto">
-                            <div class="img">
-                                <img src="assets/images/webaccess/hsieh.jpg" class="img-fluid" alt="謝馨慧">
-                            </div>
-                            <small class="d-block text-center mt-10">
-                                奧美集團董事總經理<br/>
-                                台灣奧美集團裡第一位從實習生做起的董事總經理
-                            </small>
+                        <div class="card-image card-cover mt-30 mx-md-0 mx-auto">
+                            <img src="assets/images/publishing/book-1.jpg" class="img-fluid" alt="Jim Collins《恆久卓越的修煉》">
                         </div>
                     </div>
                 </div>
@@ -183,37 +168,24 @@
                     <div class="card-section py-60">
                         <div class="card-text">
                             <h3 class="index text-success">02.</h3>
-                            <h2 class="name">丁學文 X 經濟學人@天下</h2>
+                            <h2 class="name">
+                                今年要有高績效，先從這裡開始
+                            </h2>
                             <p class="fs-7">
-                                英國《經濟學人》，在台與天下雜誌獨家授權合作。天下編輯每日精選最有力道的分析與評論。丁學文在「聽天下」podcast 節目中，導讀最新封面故事及重要趨勢。無論是看或聽，都是你快速進入全球決策者思維的捷徑。
+                                微軟前大中華區副總裁蔡恩全在新書《高效經理人的管理備忘錄》裡分享，想讓老闆在短時間內看見自己的專業、績效？你必須隨時準備好「三種互動對話」。
                             </p>
                             <button
                                 type="button"
-                                id="ding_player"
-                                @click="
-                                    clickPlayer('ding');
-                                    webaccess.ding.state = !webaccess.ding.state;
-                                "
+                                id="tsou_player"
+                                @click="clickPlayer('tsou')"
                                 class="challenge-btn btn btn-lg text-white bg-success fs-5"
                             >
-                                <span class="duration ding_player-duration"></span>
-                                <span class="text" v-if="!webaccess.ding.state">
-                                    我要聽音頻
-                                </span>
-                                <span class="text" v-else>
-                                    <i class="icon icon-pause-solid me-10"></i> 播放中
-                                </span>
-                                <img src="assets/images/click.png" alt="" v-if="!webaccess.ding.state">
+                                我要看書摘
+                                <img src="assets/images/click.png" alt="">
                             </button>
                         </div>
-                        <div class="card-image mt-30 mx-md-0 mx-auto">
-                            <div class="img">
-                                <img src="assets/images/webaccess/ding.jpg" class="img-fluid" alt="丁學文">
-                            </div>
-                            <small class="d-block text-center mt-10">
-                                金庫資本管理合夥人兼總經理<br/>
-                                投資區域涵蓋台灣、印度、東南亞地區
-                            </small>
+                        <div class="card-image card-cover mt-30 mx-md-0 mx-auto">
+                            <img src="assets/images/publishing/book-2.jpg" class="img-fluid" alt="今年要有高績效，先從這裡開始">
                         </div>
                     </div>
                 </div>
@@ -221,37 +193,30 @@
                     <div class="card-section py-60">
                         <div class="card-text">
                             <h3 class="index text-info">03.</h3>
-                            <h2 class="name">孫明德 X 天下產業報導</h2>
+                            <h2 class="name">如何打開身體糾結，吃好、睡好、不生病？</h2>
                             <p class="fs-7">
-                                哪家公司成長最快？獲利最高？未來商業先機為何？ 天下記者深度分析產業動態、企業案例，編纂「天下兩千大資料庫」持續不輟近 20 年。天下產業報導，不僅有新聞速度，更有歷史縱深，讓你的投資與商業判斷更精準。
+                                糾結的盡頭便是腫瘤！蔡璧名《鬆開的技道心：穴道導引應用錦囊》，帶你啟動自身體內「鬆開」的魔術方塊，重返鬆柔的自我
                             </p>
                             <button
                                 type="button"
-                                id="sun_player"
-                                @click="
-                                    clickPlayer('sun');
-                                    webaccess.sun.state = !webaccess.sun.state;
-                                "
+                                id="tsai_player"
+                                @click="clickPlayer('tsai')"
                                 class="challenge-btn btn btn-lg text-white bg-info fs-5"
                             >
-                                <span class="duration sun_player-duration"></span>
-                                <span class="text" v-if="!webaccess.sun.state">
-                                    我要聽音頻
-                                </span>
-                                <span class="text" v-else>
-                                    <i class="icon icon-pause-solid me-10"></i> 播放中
-                                </span>
-                                <img src="assets/images/click.png" alt="" v-if="!webaccess.sun.state">
+                                我要看影片
+                                <img src="assets/images/click.png" alt="">
                             </button>
                         </div>
-                        <div class="card-image mt-30 mx-md-0 mx-auto">
-                            <div class="img">
-                                <img src="assets/images/webaccess/sun.jpg" class="img-fluid" alt="孫明德">
-                            </div>
-                            <small class="d-block text-center mt-10">
-                                台灣經濟研究院景氣預測中心主任<br/>
-                                善於長期分析全球及台灣景氣變化
-                            </small>
+                        <div class="card-image card-video mt-30 mx-md-0 mx-auto">
+                            <button
+                                type="button"
+                                id="tsou_player"
+                                @click="clickPlayer('tsai')"
+                                class="img ratio ratio-16x9"
+                            >
+                                <img src="assets/images/publishing/video-1.jpg" class="img-fluid" alt="蔡璧名">
+                                <div class="btn"><i class="icon icon-play-solid"></i></div>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -259,113 +224,78 @@
                     <div class="card-section py-60">
                         <div class="card-text">
                             <h3 class="index text-warning">04.</h3>
-                            <h2 class="name">花敬群 X 天下調查報導</h2>
+                            <h2 class="name">景氣預測權威，帶你培養解讀趨勢的內功</h2>
                             <p class="fs-7">
-                                天下調查報導，從土地正義、稅制公平、教育改革、公司治理、政治清明各面向，為中產階級發聲，從本質面釐清事實，提出見解；不只是批判問題，並積極提出解決方案。幫助你在這個真相難辨的時代，找到思考的脈絡與方向。
-                            </p>
-                            <button
-                                type="button"
-                                id="hua_player"
-                                @click="
-                                    clickPlayer('hua');
-                                    webaccess.hua.state = !webaccess.hua.state;
-                                "
-                                class="challenge-btn btn btn-lg text-white bg-warning fs-5"
-                            >
-                                <span class="duration hua_player-duration"></span>
-                                <span class="text" v-if="!webaccess.hua.state">
-                                    我要聽音頻
-                                </span>
-                                <span class="text" v-else>
-                                    <i class="icon icon-pause-solid me-10"></i> 播放中
-                                </span>
-                                <img src="assets/images/click.png" alt="" v-if="!webaccess.hua.state">
-                            </button>
-                        </div>
-                        <div class="card-image mt-30 mx-md-0 mx-auto">
-                            <div class="img">
-                                <img src="assets/images/webaccess/hua.jpg" class="img-fluid" alt="花敬群">
-                            </div>
-                            <small class="d-block text-center mt-10">
-                                內政部政務次長<br/>
-                                從學者轉任政務官，勇於承擔政策導向
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="py-60">
-                    <div class="card-section py-60">
-                        <div class="card-text">
-                            <h3 class="index text-primary">05.</h3>
-                            <h2 class="name">劉鴻徵 X 服務一點訣</h2>
-                            <p class="fs-7">
-                                鼎泰豐為何不喊歡迎光臨？摩斯為何是被漢堡耽誤的紅茶店？不談抽象概念，只講關鍵案例，服務一點訣專欄，每週四專文報導、聽天下節目深度訪談，不論你是哪一行，都不容錯過的國內外服務心法與經營要訣！
-                            </p>
-                            <button
-                                type="button"
-                                id="liu_player"
-                                @click="
-                                    clickPlayer('liu');
-                                    webaccess.liu.state = !webaccess.liu.state;
-                                "
-                                class="challenge-btn btn btn-lg text-white bg-primary fs-5"
-                            >
-                                <span class="duration liu_player-duration"></span>
-                                <span class="text" v-if="!webaccess.liu.state">
-                                    我要聽音頻
-                                </span>
-                                <span class="text" v-else>
-                                    <i class="icon icon-pause-solid me-10"></i> 播放中
-                                </span>
-                                <img src="assets/images/click.png" alt="" v-if="!webaccess.liu.state">
-                            </button>
-                        </div>
-                        <div class="card-image mt-30 mx-md-0 mx-auto">
-                            <div class="img">
-                                <img src="assets/images/webaccess/liu.jpg" class="img-fluid" alt="劉鴻徵">
-                            </div>
-                            <small class="d-block text-center mt-10">
-                                全聯行銷長<br/>
-                                擅創造社群話題，行銷界譽為「鬼才」
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="py-60">
-                    <div class="card-section py-60">
-                        <div class="card-text">
-                            <h3 class="index text-success">06.</h3>
-                            <h2 class="name">蔡政宏 X 聽天下 Podcast</h2>
-                            <p class="fs-7">
-                                精闢觀點、深度解析，不只用看的也可以用聽的！ 提供聚焦財經、國際、趨勢的優質新聞、訪談與評論，用最短時間吸收最豐沛的資訊。
+                                各種經濟指標、專業詞彙總是讓人難以理解？《孫主任的經濟筆記》以關鍵時事切入、系統化分析，讓讀者更容易理解當今的局勢變化。
                             </p>
                             <button
                                 type="button"
                                 id="tsai_player"
-                                @click="
-                                    clickPlayer('tsai');
-                                    webaccess.tsai.state = !webaccess.tsai.state;
-                                "
-                                class="challenge-btn btn btn-lg text-white bg-success fs-5"
+                                @click="clickPlayer('sun')"
+                                class="challenge-btn btn btn-lg text-white bg-warning fs-5"
                             >
-                                <span class="duration tsai_player-duration"></span>
-                                <span class="text" v-if="!webaccess.tsai.state">
-                                    我要聽音頻
-                                </span>
-                                <span class="text" v-else>
-                                    <i class="icon icon-pause-solid me-10"></i> 播放中
-                                </span>
-                                <img src="assets/images/click.png" alt="" v-if="!webaccess.tsai.state">
+                                我要看影片
+                                <img src="assets/images/click.png" alt="">
                             </button>
                         </div>
-                        <div class="card-image mt-30 mx-md-0 mx-auto">
+                        <div class="card-image card-video mt-30 mx-md-0 mx-auto">
+                            <button
+                                type="button"
+                                id="tsou_player"
+                                @click="clickPlayer('sun')"
+                                class="img ratio ratio-16x9"
+                            >
+                                <img src="assets/images/publishing/video-2.jpg" class="img-fluid" alt="孫明德">
+                                <div class="btn"><i class="icon icon-play-solid"></i></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-60">
+                    <div class="card-section py-60">
+                        <div class="card-text">
+                            <h3 class="index text-success">05.</h3>
+                            <h2 class="name">《後臉書時代》精彩書摘</h2>
+                            <p class="fs-7">
+                                《金融時報》年度最佳科技新書！最高採訪權限，九次親訪祖克柏，領先分析祖克柏邁向元宇宙的趨力與企圖。
+                            </p>
+                            <button
+                                type="button"
+                                @click="clickPlayer('jim')"
+                                class="challenge-btn btn btn-lg text-white bg-success fs-5"
+                            >
+                                我要看書摘
+                                <img src="assets/images/click.png" alt="">
+                            </button>
+                        </div>
+                        <div class="card-image card-cover mt-30 mx-md-0 mx-auto">
                             <div class="img">
-                                <img src="assets/images/webaccess/tsai.jpg" class="img-fluid" alt="蔡政宏">
+                                <img src="assets/images/publishing/book-3.jpg" class="img-fluid" alt="後臉書時代">
                             </div>
-                            <small class="d-block text-center mt-10">
-                                in89 豪華影城執行長<br/>
-                                熬過 SARS 風暴、走過虧損低潮，一步步以創新思維翻新
-                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-60">
+                    <div class="card-section py-60">
+                        <div class="card-text">
+                            <h3 class="index text-info">06.</h3>
+                            <h2 class="name">放下過度的自我期許，才能夠接近真實的自己</h2>
+                            <p class="fs-7">
+                                豐盈的人生比起拚命囤積，更需要好好整理。《我要的新人生》用五個步驟，幫你刪除人生多餘的負擔，徹底清理環境、情緒到人際關係，找回令人怦然心動的自己。
+                            </p>
+                            <button
+                                type="button"
+                                @click="clickPlayer('jim')"
+                                class="challenge-btn btn btn-lg text-white bg-info fs-5"
+                            >
+                                我要看書摘
+                                <img src="assets/images/click.png" alt="">
+                            </button>
+                        </div>
+                        <div class="card-image card-cover mt-30 mx-md-0 mx-auto">
+                            <div class="img">
+                                <img src="assets/images/publishing/book-4.jpg" class="img-fluid" alt="我要的新人生">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -396,13 +326,13 @@
                                     class="webaccess"
                                     src="assets/images/puzzle/webaccess-grayscale.png" alt="">
                                 <img
-                                    class="webaccess" :class="{'success': challenge.read}"
+                                    class="webaccess" :class="{'active': challenge.read}"
                                     src="assets/images/puzzle/webaccess.png" alt="">
                                 <img
                                     class="cwlearning"
                                     src="assets/images/puzzle/cwlearning-grayscale.png" alt="">
                                 <img
-                                    class="cwlearning" :class="{'active': challenge.learn}"
+                                    class="cwlearning" :class="{'success': challenge.learn}"
                                     src="assets/images/puzzle/cwlearning.png" alt="">
                                 <img
                                     class="publishing"
@@ -413,14 +343,26 @@
                             </div>
                             <h3 class="fs-1 mb-10">完成挑戰</h3>
                             <p class="fs-6 mb-20">
-                                恭喜您已完成恆毅力修練任務！<br/>
-                                請立刻用這個連結加入天下 Line 好友，領取加碼禮物<span class="text-primary">「天下全閱讀」</span>30 天！
+                                <span class="d-block">恭喜您已完成博學力修練任務！</span>
+                                <span class="d-inline-block">立刻到天下網路書店，結帳時輸入 <span class="text-primary">72190</span> 即可折價 50 元！</span>
                             </p>
-                            <a href="https://maac.io/1fKm1" class="challenge-btn btn btn-lg btn-primary d-table mx-auto fs-5" target="_blank" rel="noopener noreferrer">
-                                領取加碼禮物
+                            <a href="https://shop.cwbook.com.tw/" class="challenge-btn btn btn-lg btn-primary d-table mx-auto fs-5" target="_blank" rel="noopener noreferrer">
+                                前往購書
                                 <img src="assets/images/click.png" alt="">
                             </a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content bg-transparent border-0 py-50">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="icon icon-cancel"></i>
+                    </button>
+                    <div class="ratio ratio-16x9">
+                        <iframe width="560" height="315" :src="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -432,7 +374,7 @@
     <script src="https://cdn.jsdelivr.net/npm/howler@2.2.3/dist/howler.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="assets/js/kv.js"></script>
-    <script src="assets/js/webaccess.js" type="module"></script>
+    <script src="assets/js/book.js" type="module"></script>
     <script>
     </script>
 </body>

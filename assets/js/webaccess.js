@@ -14,8 +14,8 @@ const app = createApp({
                     state: false,
                     finished: false,
                     player: new Howl({
-                        // src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_ding.mp3',
-                        src: 'https://www.w3schools.com/html/horse.ogg',
+                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_ding.mp3',
+                        // src: 'https://www.w3schools.com/html/horse.ogg',
                     }),
                 },
                 ding: {

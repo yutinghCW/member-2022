@@ -118,7 +118,7 @@
                 <h2 class="mb-0">用天下學習修煉</h2>
                 <h1 class="text-primary mt-5 mb-30">思辨力</h1>
                 <p>
-                    你的改變，從博覽群書的博學力修煉開始！
+                    <span class="d-inline-block">想成功跑在職場賽道，你掌握到領先的要訣？</span><span class="d-inline-block">天下學習匯聚各領域頂尖大師實戰歷練，提供線上課程，</span><span class="d-inline-block">向最厲害的人學他最擅長的事，大師視野，助你站在巨人肩膀上　</span><span class="d-inline-block">你的改變，從博學審問的思辨力修煉開始！</span>
                 </p>
                 <div class="bg-primary mx-auto my-30"></div>
             </div>
@@ -131,113 +131,119 @@
             <div class="bg-white p-30" v-else>
                 <h4 class="mb-10">完成挑戰</h4>
                 <p class="mb-20">
-                    <span class="d-block">恭喜您已完成博學力修練任務！</span>
-                    <span class="d-inline-block">立刻到天下網路書店，結帳時輸入 <span class="text-primary">72190</span> 即可折價 50 元！</span>
+                    <span class="d-block">恭喜您已完成思辨力修練任務！</span>
+                    <span class="d-inline-block">利用兌換碼 <span class="text-primary">cwmember2022</span> 領取專屬線上課程</span>
                 </p>
-                <a href="https://shop.cwbook.com.tw/" class="challenge-btn btn btn-lg btn-primary d-table mx-auto fs-5" target="_blank" rel="noopener noreferrer">
-                    前往購書
+                <a href="https://www.cwlearning.com.tw/" class="challenge-btn btn btn-lg btn-primary d-table mx-auto fs-5" target="_blank" rel="noopener noreferrer">
+                    兌換線上課程
                     <img src="assets/images/click.png" alt="">
                 </a>
             </div>
         </div>
         <section id="article" class="px-md-20 pb-md-0 pb-50">
             <div class="container px-30">
-                <div class="card-section py-60">
-                    <div class="card-text">
-                        <h3 class="index text-primary">01.</h3>
-                        <h2 class="name">80% 的人輸在不會表達</h2>
-                        <p class="fs-7">
-                            準備好要上台了嗎？每一次上台都是「被定義」的決戰場。金馬獎評審郎祖筠將表演技巧濃縮成淺顯易學的重點，並親自示範，助你一上台就 Hold 住全場。
-                        </p>
-                        <button
-                            type="button"
-                            id="lang_player"
-                            @click="clickPlayer('lang')"
-                            class="challenge-btn btn btn-lg text-white bg-primary fs-5"
-                        >
-                            我要看影片
-                            <img src="assets/images/click.png" alt="">
-                        </button>
-                    </div>
-                    <div class="card-image mt-30 mx-md-0 mx-auto">
-                        <button
-                            type="button"
-                            id="tsou_player"
-                            @click="clickPlayer('lang')"
-                            class="img ratio ratio-16x9"
-                        >
-                            <img src="assets/images/cwlearning/lang.jpg" class="img-fluid" alt="郎祖筠">
-                            <div class="btn"><i class="icon icon-play-solid"></i></div>
-                        </button>
-                        <small class="d-block mt-10">
-                            【MasterCheers】金馬獎評審郎祖筠來教你｜上台第一句：吸睛的開場、自我介紹
-                        </small>
-                    </div>
-                </div>
-                <div class="card-section py-60">
-                    <div class="card-text">
-                        <h3 class="index text-success">02.</h3>
-                        <h2 class="name">
-                            頂尖 1% 跟 99% Leader 的差別，你屬於哪一種？
-                        </h2>
-                        <p class="fs-7">
-                            你是否有過，曾經試過不行、被拒決過的經驗？別把過去的 no 當做是答案。前 Verizon Media 國際事業董事總經理鄒開蓮，將職場上遇到的痛點拆解分享，幫助你的職涯彎道超車。
-                        </p>
-                        <button
-                            type="button"
-                            id="tsou_player"
-                            @click="clickPlayer('tsou')"
-                            class="challenge-btn btn btn-lg text-white bg-success fs-5"
-                        >
-                            我要看影片
-                            <img src="assets/images/click.png" alt="">
-                        </button>
-                    </div>
-                    <div class="card-image mt-30 mx-md-0 mx-auto">
-                        <button
-                            type="button"
-                            id="tsou_player"
-                            @click="clickPlayer('tsou')"
-                            class="img ratio ratio-16x9"
-                        >
-                            <img src="assets/images/cwlearning/tsou.jpg" class="img-fluid" alt="鄒開蓮">
-                            <div class="btn"><i class="icon icon-play-solid"></i></div>
-                        </button>
-                        <small class="d-block mt-10">
-                            【MasterCheers】鄒開蓮｜成為頂尖經理人，從自我成長到跨國管理 15 堂課
-                        </small>
+                <div class="py-60">
+                    <div class="card-section py-60">
+                        <div class="card-text">
+                            <h3 class="index text-primary">01.</h3>
+                            <h2 class="name">80% 的人輸在不會表達</h2>
+                            <p class="fs-7">
+                                準備好要上台了嗎？每一次上台都是「被定義」的決戰場。金馬獎評審郎祖筠將表演技巧濃縮成淺顯易學的重點，並親自示範，助你一上台就 Hold 住全場。
+                            </p>
+                            <button
+                                type="button"
+                                id="lang_player"
+                                @click="clickPlayer('lang')"
+                                class="challenge-btn btn btn-lg text-white bg-primary fs-5"
+                            >
+                                我要看影片
+                                <img src="assets/images/click.png" alt="">
+                            </button>
+                        </div>
+                        <div class="card-image mt-30 mx-md-0 mx-auto">
+                            <button
+                                type="button"
+                                id="tsou_player"
+                                @click="clickPlayer('lang')"
+                                class="img ratio ratio-16x9"
+                            >
+                                <img src="assets/images/cwlearning/lang.jpg" class="img-fluid" alt="郎祖筠">
+                                <div class="btn"><i class="icon icon-play-solid"></i></div>
+                            </button>
+                            <small class="d-block mt-10">
+                                【MasterCheers】金馬獎評審郎祖筠來教你｜上台第一句：吸睛的開場、自我介紹
+                            </small>
+                        </div>
                     </div>
                 </div>
-                <div class="card-section py-60">
-                    <div class="card-text">
-                        <h3 class="index text-info">03.</h3>
-                        <h2 class="name">在升遷的路上總是拿不到門票？</h2>
-                        <p class="fs-7">
-                            過去幾年，你的位子是持續攀升？還是一個位子萬年不動，職場如戰場，提前鍛鍊管理體質，刻意管理，才能完美出擊。微軟前大中華區副總裁蔡恩全的 CEO 實戰智慧，帶你趁早，成為更好的自已！
-                        </p>
-                        <button
-                            type="button"
-                            id="tsai_player"
-                            @click="clickPlayer('tsai')"
-                            class="challenge-btn btn btn-lg text-white bg-info fs-5"
-                        >
-                            我要看影片
-                            <img src="assets/images/click.png" alt="">
-                        </button>
+                <div class="py-60">
+                    <div class="card-section py-60">
+                        <div class="card-text">
+                            <h3 class="index text-success">02.</h3>
+                            <h2 class="name">
+                                頂尖 1% 跟 99% Leader 的差別，你屬於哪一種？
+                            </h2>
+                            <p class="fs-7">
+                                你是否有過，曾經試過不行、被拒決過的經驗？別把過去的 no 當做是答案。前 Verizon Media 國際事業董事總經理鄒開蓮，將職場上遇到的痛點拆解分享，幫助你的職涯彎道超車。
+                            </p>
+                            <button
+                                type="button"
+                                id="tsou_player"
+                                @click="clickPlayer('tsou')"
+                                class="challenge-btn btn btn-lg text-white bg-success fs-5"
+                            >
+                                我要看影片
+                                <img src="assets/images/click.png" alt="">
+                            </button>
+                        </div>
+                        <div class="card-image mt-30 mx-md-0 mx-auto">
+                            <button
+                                type="button"
+                                id="tsou_player"
+                                @click="clickPlayer('tsou')"
+                                class="img ratio ratio-16x9"
+                            >
+                                <img src="assets/images/cwlearning/tsou.jpg" class="img-fluid" alt="鄒開蓮">
+                                <div class="btn"><i class="icon icon-play-solid"></i></div>
+                            </button>
+                            <small class="d-block mt-10">
+                                【MasterCheers】鄒開蓮｜成為頂尖經理人，從自我成長到跨國管理 15 堂課
+                            </small>
+                        </div>
                     </div>
-                    <div class="card-image mt-30 mx-md-0 mx-auto">
-                        <button
-                            type="button"
-                            id="tsou_player"
-                            @click="clickPlayer('tsai')"
-                            class="img ratio ratio-16x9"
-                        >
-                            <img src="assets/images/cwlearning/tsai.jpg" class="img-fluid" alt="蔡恩全">
-                            <div class="btn"><i class="icon icon-play-solid"></i></div>
-                        </button>
-                        <small class="d-block mt-10">
-                            【MasterCheers】微軟前大中華區副總裁蔡恩全｜刷新個人形象：刻意管理，才能完美出擊
-                        </small>
+                </div>
+                <div class="py-60">
+                    <div class="card-section py-60">
+                        <div class="card-text">
+                            <h3 class="index text-info">03.</h3>
+                            <h2 class="name">在升遷的路上總是拿不到門票？</h2>
+                            <p class="fs-7">
+                                過去幾年，你的位子是持續攀升？還是一個位子萬年不動，職場如戰場，提前鍛鍊管理體質，刻意管理，才能完美出擊。微軟前大中華區副總裁蔡恩全的 CEO 實戰智慧，帶你趁早，成為更好的自已！
+                            </p>
+                            <button
+                                type="button"
+                                id="tsai_player"
+                                @click="clickPlayer('tsai')"
+                                class="challenge-btn btn btn-lg text-white bg-info fs-5"
+                            >
+                                我要看影片
+                                <img src="assets/images/click.png" alt="">
+                            </button>
+                        </div>
+                        <div class="card-image mt-30 mx-md-0 mx-auto">
+                            <button
+                                type="button"
+                                id="tsou_player"
+                                @click="clickPlayer('tsai')"
+                                class="img ratio ratio-16x9"
+                            >
+                                <img src="assets/images/cwlearning/tsai.jpg" class="img-fluid" alt="蔡恩全">
+                                <div class="btn"><i class="icon icon-play-solid"></i></div>
+                            </button>
+                            <small class="d-block mt-10">
+                                【MasterCheers】微軟前大中華區副總裁蔡恩全｜刷新個人形象：刻意管理，才能完美出擊
+                            </small>
+                        </div>
                     </div>
                 </div>
                 <a href="index.html" class="challenge-btn btn btn-lg btn-primary fs-5 d-table mx-auto">參加其他挑戰</a>
@@ -267,13 +273,13 @@
                                     class="webaccess"
                                     src="assets/images/puzzle/webaccess-grayscale.png" alt="">
                                 <img
-                                    class="webaccess" :class="{'success': challenge.read}"
+                                    class="webaccess" :class="{'active': challenge.read}"
                                     src="assets/images/puzzle/webaccess.png" alt="">
                                 <img
                                     class="cwlearning"
                                     src="assets/images/puzzle/cwlearning-grayscale.png" alt="">
                                 <img
-                                    class="cwlearning" :class="{'active': challenge.learn}"
+                                    class="cwlearning" :class="{'success': challenge.learn}"
                                     src="assets/images/puzzle/cwlearning.png" alt="">
                                 <img
                                     class="publishing"
@@ -284,11 +290,11 @@
                             </div>
                             <h3 class="fs-1 mb-10">完成挑戰</h3>
                             <p class="fs-6 mb-20">
-                                恭喜您已完成博學力修練任務！<br/>
-                                立刻到天下網路書店，結帳時輸入 <span class="text-primary">72190</span> 即可折價 50 元！
+                                <span class="d-block">恭喜您已完成思辨力修練任務！</span>
+                                <span class="d-inline-block">利用兌換碼 <span class="text-primary">cwmember2022</span> 領取專屬線上課程</span>
                             </p>
-                            <a href="https://shop.cwbook.com.tw/" class="challenge-btn btn btn-lg btn-primary d-table mx-auto fs-5" target="_blank" rel="noopener noreferrer">
-                                前往購書
+                            <a href="https://www.cwlearning.com.tw/" class="challenge-btn btn btn-lg btn-primary d-table mx-auto fs-5" target="_blank" rel="noopener noreferrer">
+                                兌換線上課程
                                 <img src="assets/images/click.png" alt="">
                             </a>
                         </div>
@@ -296,38 +302,14 @@
                 </div>
             </div>
         </div>
-        <div class="modal modal-video fade" id="langModal" tabindex="-1" aria-labelledby="langModalLabel" aria-hidden="true">
+        <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content bg-transparent border-0 py-50">
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         <i class="icon icon-cancel"></i>
                     </button>
                     <div class="ratio ratio-16x9">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/icw2vbxTeSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal modal-video fade" id="tsouModal" tabindex="-1" aria-labelledby="tsouModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content bg-transparent border-0 py-50">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="icon icon-cancel"></i>
-                    </button>
-                    <div class="ratio ratio-16x9">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/WU2ak1Ww7E8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal modal-video fade" id="tsaiModal" tabindex="-1" aria-labelledby="tsaiModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content bg-transparent border-0 py-50">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="icon icon-cancel"></i>
-                    </button>
-                    <div class="ratio ratio-16x9">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/n0F3AcDb9CI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" :src="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
