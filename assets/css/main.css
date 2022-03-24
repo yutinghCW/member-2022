@@ -8243,8 +8243,10 @@ fieldset:disabled .btn {
   }
 }
 
-.inner-page .flip-group .flip-south, .inner-page .flip-group .flip-west {
-  display: none !important;
+@media (min-width: 768px) {
+  .inner-page .flip-group .flip-south, .inner-page .flip-group .flip-west {
+    display: none !important;
+  }
 }
 
 img#kv {

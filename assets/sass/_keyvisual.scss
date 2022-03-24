@@ -475,7 +475,9 @@ $kv-burning-orange: #ea6120;
     }
     .inner-page & {
         .flip-south, .flip-west {
-            display: none !important;
+            @include media-breakpoint-up(md) {
+                display: none !important;
+            }
         }
     }
 }
