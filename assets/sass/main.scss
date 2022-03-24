@@ -41,12 +41,18 @@ header {
     }
 }
 
-main {
-    min-height: 100%;
-    height: 100%;
+#app {
+    position: relative;
+    z-index: 1;
     .inner-page & {
-        width: 100%;
-        overflow: hidden;
+        padding-top: 100vh;
+    }
+}
+
+main {
+    .index-page & {
+        min-height: 100%;
+        height: 100%;
     }
 }
 
@@ -62,7 +68,7 @@ section {
             justify-content: center;
         }
     }
-    &#app {
+    &#article {
         position: relative;
         z-index: 1;
         @include media-breakpoint-up(md) {
@@ -102,12 +108,17 @@ footer {
 }
 
 .icon-mouse {
-    position: fixed;
     left: 50%;
     bottom: 100px;
     display: none;
     width: 35px;
     transform: translateX(-50%);
+    .index-page & {
+        position: fixed;
+    }
+    .inner-page & {
+        position: absolute;
+    }
     @include media-breakpoint-down(md) {
         display: none !important;
     }
@@ -210,6 +221,7 @@ footer {
 
 .challenge-btn {
     position: relative;
+    min-width: 200px;
     img {
         display: block;
         position: absolute;
@@ -231,7 +243,6 @@ footer {
         }
         &.text {
             position: relative;
-            width: 5em;
             z-index: 1;
         }
     }
@@ -260,6 +271,11 @@ footer {
             display: block;
         }
     }
+    &.modal-success {
+        .modal-content {
+            max-width: 425px;
+        }
+    }
 }
 
 .card-section {
@@ -286,7 +302,8 @@ footer {
 .inner-page {
     .hero-text {
         position: absolute;
-        top: 50%;
+        display: none;
+        top: 50vh;
         left: 50%;
         max-width: 700px;
         transform: translate(-50%, -50%);
@@ -313,5 +330,43 @@ footer {
             width: 60px;
             height: 3px;
         }
+    }
+}
+
+.puzzle-group {
+    position: relative;
+    width: 282px;
+    &::before {
+        content: '';
+        display: block;
+        padding-top: 82.269503546099291%;
+    }
+    img {
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.5s;
+        &[src*='grayscale'], &.active {
+            opacity: 1;
+        }
+        &.success {
+            opacity: 1;
+        }
+    }
+    .webaccess {
+        bottom: 9%;
+        left: 0;
+        width: 58.51063829787234%;
+        z-index: 1;
+    }
+    .cwlearning {
+        bottom: 0;
+        right: 0.1%;
+        width: 41.48936170212766%;
+        z-index: 1;
+    }
+    .publishing {
+        top: -1.8%;
+        left: 28%;
+        width: 51.418439716312057%;
     }
 }

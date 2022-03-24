@@ -2303,7 +2303,7 @@ fieldset:disabled .btn {
 }
 
 .btn-lg {
-  padding: 0.969rem 3.375rem;
+  padding: 0.969rem 1rem;
   font-size: 1.25rem;
   border-radius: 0;
 }
@@ -7636,7 +7636,7 @@ fieldset:disabled .btn {
   content: "";
 }
 
-.index-page .key-visual {
+.key-visual {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -8208,6 +8208,10 @@ fieldset:disabled .btn {
   }
 }
 
+.inner-page .flip-group .flip-south, .inner-page .flip-group .flip-west {
+  display: none !important;
+}
+
 img#kv {
   position: absolute;
   top: 50%;
@@ -8219,6 +8223,21 @@ img#kv {
           transform: translate(-50%, -50%);
   -webkit-transition: opacity 1s cubic-bezier(0, 0, 0.1, 1);
   transition: opacity 1s cubic-bezier(0, 0, 0.1, 1);
+}
+
+@media (min-width: 768px) {
+  .inner-page img#kv {
+    width: 920px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .inner-page img#kv {
+    width: 120%;
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) rotate(120deg);
+            transform: translate(-50%, -50%) rotate(120deg);
+  }
 }
 
 html,
@@ -8265,14 +8284,18 @@ header nav ul {
   list-style: none;
 }
 
-main {
-  min-height: 100%;
-  height: 100%;
+#app {
+  position: relative;
+  z-index: 1;
 }
 
-.inner-page main {
-  width: 100%;
-  overflow: hidden;
+.inner-page #app {
+  padding-top: 100vh;
+}
+
+.index-page main {
+  min-height: 100%;
+  height: 100%;
 }
 
 section.key-visual + section {
@@ -8292,18 +8315,18 @@ section.key-visual + section {
           justify-content: center;
 }
 
-section#app {
+section#article {
   position: relative;
   z-index: 1;
 }
 
 @media (min-width: 768px) {
-  section#app {
+  section#article {
     padding-top: 140px;
   }
 }
 
-section#app ~ section {
+section#article ~ section {
   position: relative;
   z-index: 1;
 }
@@ -8338,13 +8361,20 @@ footer .content {
 }
 
 .icon-mouse {
-  position: fixed;
   left: 50%;
   bottom: 100px;
   display: none;
   width: 35px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+.index-page .icon-mouse {
+  position: fixed;
+}
+
+.inner-page .icon-mouse {
+  position: absolute;
 }
 
 @media (max-width: 767.98px) {
@@ -8475,6 +8505,7 @@ footer .content {
 
 .challenge-btn {
   position: relative;
+  min-width: 200px;
 }
 
 .challenge-btn img {
@@ -8508,7 +8539,6 @@ footer .content {
 
 .challenge-btn span.text {
   position: relative;
-  width: 5em;
   z-index: 1;
 }
 
@@ -8532,6 +8562,10 @@ footer .content {
 
 .modal .btn-close i.icon {
   display: block;
+}
+
+.modal.modal-success .modal-content {
+  max-width: 425px;
 }
 
 @media (min-width: 768px) {
@@ -8565,7 +8599,8 @@ footer .content {
 
 .inner-page .hero-text {
   position: absolute;
-  top: 50%;
+  display: none;
+  top: 50vh;
   left: 50%;
   max-width: 700px;
   -webkit-transform: translate(-50%, -50%);
@@ -8606,5 +8641,51 @@ footer .content {
 .inner-page .hero-text .bg-primary {
   width: 60px;
   height: 3px;
+}
+
+.puzzle-group {
+  position: relative;
+  width: 282px;
+}
+
+.puzzle-group::before {
+  content: '';
+  display: block;
+  padding-top: 82.269503546099291%;
+}
+
+.puzzle-group img {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.puzzle-group img[src*='grayscale'], .puzzle-group img.active {
+  opacity: 1;
+}
+
+.puzzle-group img.success {
+  opacity: 1;
+}
+
+.puzzle-group .webaccess {
+  bottom: 9%;
+  left: 0;
+  width: 58.51063829787234%;
+  z-index: 1;
+}
+
+.puzzle-group .cwlearning {
+  bottom: 0;
+  right: 0.1%;
+  width: 41.48936170212766%;
+  z-index: 1;
+}
+
+.puzzle-group .publishing {
+  top: -1.8%;
+  left: 28%;
+  width: 51.418439716312057%;
 }
 /*# sourceMappingURL=main.css.map */

@@ -6,24 +6,29 @@ const app = createApp({
                 webaccess: {
                     url: '',
                     text: '',
+                    number: 0,
                 },
                 cwlearing: {
                     url: '',
                     text: '',
+                    number: 0,
                 },
                 publishing: {
                     url: '',
                     text: '',
+                    number: 0,
                 },
             },
+            challenger: false,
         }
     },
     mounted () {
         this.checkLogin();
+        this.getChallenger();
     },
     methods: {
         checkLogin() {
-            const userMe = 'https://www.cw.com.tw/api/v1.0/user/me?fields=name,email,uid';
+            const userMe = 'https://dev-www.cw.com.tw/api/v1.0/user/me?fields=name,email,uid';
             axios
                 .get(userMe)
                 .then((response) => {
@@ -39,7 +44,28 @@ const app = createApp({
                     }
                 })
                 .catch((error) => {
-					console.dir(error);
+                    console.dir(error);
+                });
+        },
+        getChallenger() {
+            const activityInfo = 'https://dev-www.cw.com.tw/api/v1.0/activity/info';
+            axios
+                .get(activityInfo)
+                .then((response) => {
+                    console.log(response.data);
+                    this.challenge.webaccess.number = response.data.items.read;
+                    this.challenge.cwlearing.number = response.data.items.learn;
+                    this.challenge.publishing.number = response.data.items.book;
+                    if (
+                        this.challenge.webaccess.number >= 1000 &&
+                        this.challenge.cwlearing.number >= 1000 &&
+                        this.challenge.publishing.number >= 1000
+                    ) {
+                        this.challenger = true
+                    }
+                })
+                .catch((error) => {
+                    console.dir(error);
                 });
         },
     }

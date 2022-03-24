@@ -94,7 +94,7 @@
 
     setTimeout(() => {
         $('.flip').fadeIn(800);
-        $('.flip-group img').css('opacity', 1);
+        $('img#kv').css('opacity', 1);
     }, 500);
 
     if ( $('body').hasClass('index-page') ) {
@@ -111,12 +111,15 @@
         setTimeout(() => {
             $('body, .flip').addClass('completed');
         });
+        setTimeout(() => {
+            $('.icon-mouse, .hero-text').fadeIn();
+        }, 500);
     }
 
 
-    if ( $('body').hasClass('index-page') ) {
-        window.addEventListener('scroll', () => {
-            let scroll = window.pageYOffset || document.documentElement.scrollTop;
+    window.addEventListener('scroll', () => {
+        let scroll = window.pageYOffset || document.documentElement.scrollTop;
+        if ( $('body').hasClass('index-page') ) {
             let magnification = Number((scroll/(contentHeight-height)).toFixed(3));
             $('.flip').each(function() {
                 // $(this).text($(this).attr('class'));
@@ -200,6 +203,8 @@
             }
 
             lastScrollTop = scroll <= 0 ? 0 : scroll;
-        }, false);
-    }
+        } else if ( $('body').hasClass('inner-page') ) {
+            $('.flip-group').css({top: -scroll});
+        }
+    }, false);
 }());
