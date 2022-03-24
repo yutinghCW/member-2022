@@ -34,9 +34,9 @@ const app = createApp({
                 .then((response) => {
                     console.log(response.data);
                     if ( response.data.code === '0001' ) {
-                        this.challenge.webaccess.url = 'https://web.cw.com.tw/activity/redirect/4fe60c92-b821-492d-ad7b-9d23ed0454d0';
-                        this.challenge.cwlearing.url = 'https://web.cw.com.tw/activity/redirect/aaf81527-be0a-40d6-a4fb-aadc4d2d1323';
-                        this.challenge.publishing.url = 'https://web.cw.com.tw/activity/redirect/2f339511-d042-445f-8ccb-d36f75cb592c';
+                        this.challenge.webaccess.url = 'https://beta-web.cw.com.tw/activity/redirect/f46ef0b8-4591-40e8-a399-fea691fe1278';
+                        this.challenge.cwlearing.url = 'https://beta-web.cw.com.tw/activity/redirect/5497f2b9-9014-4e19-8057-085afd87e860';
+                        this.challenge.publishing.url = 'https://beta-web.cw.com.tw/activity/redirect/db77d414-114f-47f0-a110-f4d59d63decb';
                     } else if ( response.data.code === '0000' ) {
                         this.challenge.webaccess.url = 'webaccess.html';
                         this.challenge.cwlearing.url = 'cwlearing.html';
