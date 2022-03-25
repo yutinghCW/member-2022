@@ -12,15 +12,45 @@ const app = createApp({
                 book: false,
             },
             book: {
-                sun: {
-                    video: 'https://www.youtube.com/embed/qIvWNo45t4I',
-                    state: false,
-                    finished: false,
+                pdf : {
+                    jim: {
+                        url: 'https://www.cw.com.tw/member/pdf/0199',
+                        state: false,
+                        finished: false,
+                    },
+                    facebook: {
+                        url: 'https://www.cw.com.tw/member/pdf/0186',
+                        state: false,
+                        finished: false,
+                    },
                 },
-                tsai: {
-                    video: 'https://www.youtube.com/embed/4dKh7NvALg4',
-                    state: false,
-                    finished: false,
+                video : {
+                    sun: {
+                        video: 'https://www.youtube.com/embed/qIvWNo45t4I',
+                        state: false,
+                        finished: false,
+                    },
+                    biming: {
+                        video: 'https://www.youtube.com/embed/4dKh7NvALg4',
+                        state: false,
+                        finished: false,
+                    },
+                },
+                audio : {
+                    tsai: {
+                        state: false,
+                        finished: false,
+                        player: new Howl({
+                            src: 'https://www.w3schools.com/html/horse.mp3',
+                        }),
+                    },
+                    clean: {
+                        state: false,
+                        finished: false,
+                        player: new Howl({
+                            src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_ding.mp3',
+                        }),
+                    },
                 },
             },
         }
@@ -44,12 +74,10 @@ const app = createApp({
                     console.dir(error);
                 });
         },
-        clickPlayer(name) {
-            this.video = this.book[name].video;
-            new bootstrap.Modal(document.getElementById('videoModal')).show();
-
+        clickPlayer(type, name) {
             // Api: 先參與遊戲 
             const bookCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book';
+            const bookSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=read&is_finish=1';
             axios
                 .get(bookCreate)
                 .then((response) => {
@@ -58,35 +86,102 @@ const app = createApp({
                 .catch((error) => {
                     console.dir(error);
                 });
-            // Api: Modal 關閉後要送資料 
-            const bookSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book&is_finish=1';
-            $('#videoModal').on('shown.bs.modal', function () {
-                times = 0;
-            });
-            $('#videoModal').on('hidden.bs.modal', function () {
-                times ++;
-                that.video = '';
-                if ( times === 1 ) {
+
+            if ( type === 'audio' ) {
+                this.stopAudio();
+                this.book.audio[name].player.playing() ? this.book.audio[name].player.pause() : this.book.audio[name].player.play();
+                this.book.audio[name].player.on('end', function() {
+                    console.log('Finished!');
                     axios
                         .get(bookSuccess)
                         .then((response) => {
                             console.dir(response);
-                            new bootstrap.Modal(document.getElementById('successModal')).show();
-                            // dataLayer.push({
-                            //     'event': 'GAEventTrigger',
-                            //     'eventCategory': 'member-2022',
-                            //     'eventAction': 'finish',
-                            //     'eventLabel': '3D_L',
-                            // });
-                            setTimeout(() => {
-                                that.challenge.book = true;
-                                that.getEventState();
-                            }, 300);
                         })
                         .catch((error) => {
                             console.dir(error);
                         });
+                    setTimeout(() => {
+                        that.challenge.book = true;
+                        that.getEventState();
+                        $(`.duration`).width(0);
+                        clearInterval(update);
+                    }, 300);
+                    dataLayer.push({
+                        'event': 'GAEventTrigger',
+                        'eventCategory': 'member-2022',
+                        'eventAction': 'finish',
+                        'eventLabel': '3D_B',
+                    });
+                    if ( !that.challenge.book ) {
+                        new bootstrap.Modal(document.getElementById('successModal')).show();
+                    }
+                    return;
+                });
+                let update = setInterval(() => {
+                    this.updateWidth(this.book.audio[name].player, name); 
+                }, 300);    
+            } else if ( type === 'video' ) {
+                this.stopAudio();
+                this.video = this.book.video[name].video;
+                new bootstrap.Modal(document.getElementById('videoModal')).show();
+                $('#videoModal').on('shown.bs.modal', function () {
+                    times = 0;
+                });
+                $('#videoModal').on('hidden.bs.modal', function () {
+                    times ++;
+                    that.video = '';
+                    if ( times === 1 ) {
+                        axios
+                            .get(bookSuccess)
+                            .then((response) => {
+                                console.dir(response);
+                                if ( !that.challenge.book ) {
+                                    new bootstrap.Modal(document.getElementById('successModal')).show();
+                                }
+                                dataLayer.push({
+                                    'event': 'GAEventTrigger',
+                                    'eventCategory': 'member-2022',
+                                    'eventAction': 'finish',
+                                    'eventLabel': '3D_B',
+                                });
+                                setTimeout(() => {
+                                    that.challenge.book = true;
+                                    that.getEventState();
+                                }, 300);
+                            })
+                            .catch((error) => {
+                                console.dir(error);
+                            });
+                    }
+                });
+            } else if ( type === 'pdf' ) {
+                window.open(this.book.pdf[name].url);
+                if ( !that.challenge.book ) {
+                    new bootstrap.Modal(document.getElementById('successModal')).show();
                 }
+                setTimeout(() => {
+                    that.challenge.book = true;
+                    that.getEventState();
+                }, 300);
+            }
+        },
+        updateWidth(player, name) {
+            if (player.playing()) {
+                let width = (( Number(player.seek().toFixed(1)) / Number(player.duration().toFixed(1)) ) * 100) + '%';
+                $(`.${name}_player-duration`).width(width);
+                this.book.audio[name].state = true;
+            } else {
+                if ( this.book.audio[name].state === true ) {
+                    this.book.audio[name].state = false;
+                }
+            }
+        },
+        stopAudio() {
+            const array = Object.keys(this.book.audio).filter((item) => {
+                return item !== name;
+            });
+            array.forEach(item => {
+                this.book.audio[item].player.pause();
             });
         },
         getEventState() {
@@ -95,7 +190,7 @@ const app = createApp({
                 .get(activityCreate)
                 .then((response) => {
                     eventLabel += '3D';
-                    let arry = response.data.item;
+                    let arry = response.data.items;
                     if ( typeof arry === 'undefined' ) {
                         return;
                     }

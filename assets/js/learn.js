@@ -100,7 +100,7 @@ const app = createApp({
                 .get(activityCreate)
                 .then((response) => {
                     eventLabel += '3D';
-                    let arry = response.data.item;
+                    let arry = response.data.items;
                     if ( typeof arry === 'undefined' ) {
                         return;
                     }

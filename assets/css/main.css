@@ -7643,7 +7643,7 @@ fieldset:disabled .btn {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-question-circle:before {
+.icon-question:before {
   content: "";
 }
 
@@ -8371,7 +8371,8 @@ section#article ~ section {
   max-width: 865px;
 }
 
-.cwlearning-page section .container {
+.cwlearning-page section .container,
+.publishing-page section .container {
   max-width: 920px;
 }
 
@@ -8529,6 +8530,15 @@ footer .content {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.challenge-group .challenge-item i.icon-question {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .challenge-group + .text-gray a {

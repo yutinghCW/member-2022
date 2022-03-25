@@ -1,11 +1,13 @@
+$(window).scrollTop(0);
+
 (function () {
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     let contentHeight;
     if ( $('body').hasClass('index-page') ) {
-        document.getElementById('awards').clientHeight + height;
+        contentHeight = document.getElementById('awards').clientHeight + height;
     } else {
-        document.getElementById('app').clientHeight + height;
+        contentHeight = document.getElementById('app').clientHeight + height;
     }
     const kvWidth = document.getElementById('kv').clientWidth;
     const kvHeight = document.getElementById('kv').clientHeight;
@@ -97,21 +99,34 @@
         }
     });
 
+
     setTimeout(() => {
         $('.flip').fadeIn(800);
         $('img#kv').css('opacity', 1);
     }, 500);
 
+    if ( window.location.hash ) {
+        let hash = window.location.hash.split('#')[1];
+        let hashTop = $(`#${hash}`).offset().top;
+        $(window).scrollTop(hashTop - 50);
+    }
+
     if ( $('body').hasClass('index-page') ) {
-        setTimeout(() => {
-            flipInt();
-        }, 1300);
+        if ( !window.location.hash ) {
+            setTimeout(() => {
+                flipInt();
+            }, 1300);
+            setTimeout(() => {
+                $('body, .flip').addClass('completed');
+            }, 3200);
+        } else {
+            setTimeout(() => {
+                $('body, .flip').addClass('completed');
+            });
+        }
         setTimeout(() => {
             $('header, .flip span, .key-visual-text, .btn-line, .icon-mouse').fadeIn();
         }, 2800);
-        setTimeout(() => {
-            $('body, .flip').addClass('completed');
-        }, 3200);
     } else {
         setTimeout(() => {
             $('body, .flip').addClass('completed');
@@ -120,7 +135,6 @@
             $('.icon-mouse, .hero-text').fadeIn();
         }, 500);
     }
-
 
     window.addEventListener('scroll', () => {
         let scroll = window.pageYOffset || document.documentElement.scrollTop;

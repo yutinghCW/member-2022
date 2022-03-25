@@ -152,7 +152,7 @@
                             </p>
                             <button
                                 type="button"
-                                @click="clickPlayer('jim')"
+                                @click="clickPlayer('pdf', 'jim')"
                                 class="challenge-btn btn btn-lg text-white bg-primary fs-5"
                             >
                                 我要看書摘
@@ -176,12 +176,21 @@
                             </p>
                             <button
                                 type="button"
-                                id="tsou_player"
-                                @click="clickPlayer('tsou')"
+                                id="tsai_player"
+                                @click="
+                                    clickPlayer('audio', 'tsai');
+                                    book.audio.tsai.state = !book.audio.tsai.state;
+                                "
                                 class="challenge-btn btn btn-lg text-white bg-success fs-5"
                             >
-                                我要看書摘
-                                <img src="assets/images/click.png" alt="">
+                                <span class="duration tsai_player-duration"></span>
+                                <span class="text" v-if="!book.audio.tsai.state">
+                                    我要聽音頻
+                                </span>
+                                <span class="text" v-else>
+                                    <i class="icon icon-pause-solid me-10"></i> 播放中
+                                </span>
+                                <img src="assets/images/click.png" alt="" v-if="!book.audio.tsai.state">
                             </button>
                         </div>
                         <div class="card-image card-cover mt-30 mx-md-0 mx-auto">
@@ -200,7 +209,7 @@
                             <button
                                 type="button"
                                 id="tsai_player"
-                                @click="clickPlayer('tsai')"
+                                @click="clickPlayer('video', 'biming')"
                                 class="challenge-btn btn btn-lg text-white bg-info fs-5"
                             >
                                 我要看影片
@@ -211,7 +220,7 @@
                             <button
                                 type="button"
                                 id="tsou_player"
-                                @click="clickPlayer('tsai')"
+                                @click="clickPlayer('video', 'biming')"
                                 class="img ratio ratio-16x9"
                             >
                                 <img src="assets/images/publishing/video-1.jpg" class="img-fluid" alt="蔡璧名">
@@ -231,7 +240,7 @@
                             <button
                                 type="button"
                                 id="tsai_player"
-                                @click="clickPlayer('sun')"
+                                @click="clickPlayer('video', 'sun')"
                                 class="challenge-btn btn btn-lg text-white bg-warning fs-5"
                             >
                                 我要看影片
@@ -242,7 +251,7 @@
                             <button
                                 type="button"
                                 id="tsou_player"
-                                @click="clickPlayer('sun')"
+                                @click="clickPlayer('video', 'sun')"
                                 class="img ratio ratio-16x9"
                             >
                                 <img src="assets/images/publishing/video-2.jpg" class="img-fluid" alt="孫明德">
@@ -261,7 +270,7 @@
                             </p>
                             <button
                                 type="button"
-                                @click="clickPlayer('jim')"
+                                @click="clickPlayer('pdf', 'facebook')"
                                 class="challenge-btn btn btn-lg text-white bg-success fs-5"
                             >
                                 我要看書摘
@@ -285,11 +294,21 @@
                             </p>
                             <button
                                 type="button"
-                                @click="clickPlayer('jim')"
+                                id="clean_player"
+                                @click="
+                                    clickPlayer('audio', 'clean');
+                                    book.audio.clean.state = !book.audio.clean.state;
+                                "
                                 class="challenge-btn btn btn-lg text-white bg-info fs-5"
                             >
-                                我要看書摘
-                                <img src="assets/images/click.png" alt="">
+                                <span class="duration clean_player-duration"></span>
+                                <span class="text" v-if="!book.audio.clean.state">
+                                    我要聽音頻
+                                </span>
+                                <span class="text" v-else>
+                                    <i class="icon icon-pause-solid me-10"></i> 播放中
+                                </span>
+                                <img src="assets/images/click.png" alt="" v-if="!book.audio.clean.state">
                             </button>
                         </div>
                         <div class="card-image card-cover mt-30 mx-md-0 mx-auto">
@@ -299,7 +318,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="index.html" class="challenge-btn btn btn-lg btn-primary fs-5 d-table mx-auto">參加其他挑戰</a>
+                <a href="index.html#challenge" class="challenge-btn btn btn-lg btn-primary fs-5 d-table mx-auto">參加其他挑戰</a>
             </div>
         </section>
         <footer class="fs-8 text-white bg-warning mt-60">

@@ -125,7 +125,7 @@
     </a>
     <div class="key-visual-text position-fixed bottom-0 p-md-40 ps-20 pb-30">
         <h5>2022 <span class="fs-2">3/29 ~ 4/28</span></h5>
-        <h5>加入天下會員→完成挑戰、立即抽大獎</h5>
+        <h5>加入天下會員→完成挑戰→立即抽大獎</h5>
     </div>
     <div id="app">
         <section id="article" class="px-md-20 px-40 pb-md-0 pb-50">
@@ -155,42 +155,63 @@
                     </div>
                     <hr class="mt-md-60 mt-30 mb-0">
                 </div>
-                <div class="content pt-md-60 pt-30 text-center">
+                <div id="challenge" class="content pt-md-60 pt-30 text-center">
                     <h2 class="fs-1 mb-20 text-center"><span class="d-inline-block">&nbsp;立刻點擊一個挑戰&nbsp;</span><span class="d-inline-block">&nbsp;完成任務&nbsp;&nbsp;抽大獎</span></h2>
                     <p>
                         於活動期間（2022/3/29~4/28）可選擇從恆毅力、博學力或思辨力任一挑戰開始，七天內完成三項 3D 知識力挑戰不僅可參加抽大獎，還可以分別獲得神秘小禮物共三份。
                     </p>
                     <div class="challenge-group row justify-content-center justify-content-md-between">
                         <div class="challenge-item col-md-2 mt-md-20 mt-50 text-center">
-                            <div class="img mb-20"><img src="assets/images/puzzle/webaccess.png" alt="天下報導"></div>
+                            <div class="img mb-20">
+                                <img
+                                    src="assets/images/puzzle/webaccess.png"
+                                    alt="天下報導"
+                                    :class="{'opacity-50': !challenge.read.state}"
+                                >
+                                <i class="icon icon-question fs-4 p-5 text-white bg-black bg-opacity-75" v-if="!challenge.read.state"></i>
+                            </div>
                             <h5 class="fs-3 mb-20">恆毅力｜天下報導</h5>
-                            <a :href="challenge.webaccess.url" class="challenge-btn btn btn-lg btn-primary fs-6 w-100">
-                                挑戰抽大獎
-                                <img src="assets/images/click.png" alt="">
+                            <a :href="challenge.read.url" class="challenge-btn btn btn-lg btn-primary fs-6 w-100">
+                                {{ challenge.read.text }}
+                                <img src="assets/images/click.png" alt="" v-if="!challenge.read.state">
                             </a>
                             <small class="d-block fs-7 opacity-50 mt-10" v-if="challenger">已有 6,263 人完成挑戰</small>
                         </div>
                         <div class="challenge-item col-md-2 mt-md-20 mt-50 text-center">
-                            <div class="img mb-20"><img src="assets/images/puzzle/publishing.png" alt="天下出版"></div>
+                            <div class="img mb-20">
+                                <img
+                                    src="assets/images/puzzle/publishing.png"
+                                    alt="天下出版"
+                                    :class="{'opacity-50': !challenge.book.state}"
+                                >
+                                <i class="icon icon-question fs-4 p-5 text-white bg-black bg-opacity-75" v-if="!challenge.book.state"></i>
+                            </div>
                             <h5 class="fs-3 mb-20">博學力｜天下出版</h5>
-                            <a :href="challenge.cwlearing.url" class="challenge-btn btn btn-lg btn-primary fs-6 w-100">
-                                挑戰抽大獎
-                                <img src="assets/images/click.png" alt="">
+                            <a :href="challenge.learn.url" class="challenge-btn btn btn-lg btn-primary fs-6 w-100">
+                                {{ challenge.book.text }}
+                                <img src="assets/images/click.png" alt="" v-if="!challenge.book.state">
                             </a>
                             <small class="d-block fs-7 opacity-50 mt-10" v-if="challenger">已有 6,263 人完成挑戰</small>
                         </div>
                         <div class="challenge-item col-md-2 mt-md-20 mt-50 text-center">
-                            <div class="img mb-20"><img src="assets/images/puzzle/cwlearning.png" alt="天下學習"></div>
+                            <div class="img mb-20">
+                                <img
+                                    src="assets/images/puzzle/cwlearning.png"
+                                    alt="天下學習"
+                                    :class="{'opacity-50': !challenge.learn.state}"
+                                >
+                                <i class="icon icon-question fs-4 p-5 text-white bg-black bg-opacity-75" v-if="!challenge.learn.state"></i>
+                            </div>
                             <h5 class="fs-3 mb-20">思辨力｜天下學習</h5>
-                            <a :href="challenge.publishing.url" class="challenge-btn btn btn-lg btn-primary fs-6 w-100">
-                                挑戰抽大獎
-                                <img src="assets/images/click.png" alt="">
+                            <a :href="challenge.book.url" class="challenge-btn btn btn-lg btn-primary fs-6 w-100">
+                                {{ challenge.learn.text }}
+                                <img src="assets/images/click.png" alt="" v-if="!challenge.learn.state">
                             </a>
                             <small class="d-block fs-7 opacity-50 mt-10" v-if="challenger">已有 6,263 人完成挑戰</small>
                         </div>
                     </div>
                     <p class="fs-7 text-gray pt-60 pb-20 mt-md-0 mt-20 mb-0">
-                        參與本活動需先登入天下集團會員並同意<a href="#!" target="_blank" rel="noopener noreferrer">會員條款</a>與<a href="#!" target="_blank" rel="noopener noreferrer">個資聲明</a>
+                        參與本活動需先登入天下集團會員並同意<a href="https://member.cwg.tw/register-rule" target="_blank" rel="noopener noreferrer">會員條款</a>與<a href="https://member.cwg.tw/privacy-policy" target="_blank" rel="noopener noreferrer">個資聲明</a>
                     </p>
                 </div>
             </div>
@@ -245,6 +266,7 @@
                         <li>主辦單位將於 2022 年 5 月 10 日隨機抽出，中獎名單預計於 2022 年 5 月 17 日於主辦單位官網公告，並於名單公告後 7 天內透過電子郵件或電話通知中獎者。</li>
                         <li>領獎方式：中獎者收到通知後，確認是否接受獎品，主辦單位將直接寄送相關獎品至中獎人通訊地址。</li>
                         <li>對於本活動有任何問題與疑問，請洽天下雜誌客服單位 bill@cw.com.tw</li>
+                        <li>加碼禮：挑戰者於 21 天內領取三項神秘小禮物且使用成功，前 300 名天下加碼送全家咖啡即享券一張。</li>
                     </ol>
                     <h4 class="mt-40 mb-10">抽獎及通知相關細節</h4>
                     <ol class="fs-7 my-0">
