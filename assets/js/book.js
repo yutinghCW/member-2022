@@ -41,14 +41,14 @@ const app = createApp({
                         state: false,
                         finished: false,
                         player: new Howl({
-                            src: 'https://www.w3schools.com/html/horse.mp3',
+                            src: 'https://storage.googleapis.com/www-cw-com-tw/voice/202202/voice-6209d497a3b63.mp3',
                         }),
                     },
                     clean: {
                         state: false,
                         finished: false,
                         player: new Howl({
-                            src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_ding.mp3',
+                            src: 'https://storage.googleapis.com/www-cw-com-tw/voice/202111/voice-619b5a4cc5f11.mp3',
                         }),
                     },
                 },
@@ -159,6 +159,27 @@ const app = createApp({
                 if ( !that.challenge.book ) {
                     new bootstrap.Modal(document.getElementById('successModal')).show();
                 }
+                axios
+                    .get(bookSuccess)
+                    .then((response) => {
+                        console.dir(response);
+                        if ( !that.challenge.book ) {
+                            new bootstrap.Modal(document.getElementById('successModal')).show();
+                        }
+                        dataLayer.push({
+                            'event': 'GAEventTrigger',
+                            'eventCategory': 'member-2022',
+                            'eventAction': 'finish',
+                            'eventLabel': '3D_B',
+                        });
+                        setTimeout(() => {
+                            that.challenge.book = true;
+                            that.getEventState();
+                        }, 300);
+                    })
+                    .catch((error) => {
+                        console.dir(error);
+                    });
                 setTimeout(() => {
                     that.challenge.book = true;
                     that.getEventState();

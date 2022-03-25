@@ -5,7 +5,7 @@ $icon-question: "\e90e";
 $icon-line: "\e91c";
 $icon-play: "\e91d";
 $icon-cancel: "\e92e";
-$icon-arrow-left: "\e934";
+$icon-arrow-top: "\e934";
 $icon-play-solid: "\e94d";
 $icon-pause-solid: "\e94f";
 
@@ -41,9 +41,9 @@ $icon-pause-solid: "\e94f";
     content: $icon-question; 
   }
 }
-.icon-arrow-left {
+.icon-arrow-top {
   &:before {
-    content: $icon-arrow-left; 
+    content: $icon-arrow-top; 
   }
 }
 .icon-cancel {

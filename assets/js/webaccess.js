@@ -14,7 +14,7 @@ const app = createApp({
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_ding.mp3',
+                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_hsieh.mp3',
                         // src: 'https://www.w3schools.com/html/horse.ogg',
                     }),
                 },
@@ -29,21 +29,21 @@ const app = createApp({
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_ding.mp3',
+                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_sun.mp3',
                     }),
                 },
                 hua: {
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_ding.mp3',
+                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_hua.mp3',
                     }),
                 },
                 liu: {
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_ding.mp3',
+                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_liu.mp3',
                     }),
                 },
                 tsai: {

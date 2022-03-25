@@ -43,7 +43,7 @@ const app = createApp({
                         this.challenge.book.url = 'https://beta-web.cw.com.tw/activity/redirect/db77d414-114f-47f0-a110-f4d59d63decb';
                     } else if ( response.data.code === '0000' ) {
                         this.challenge.read.url = 'webaccess.html';
-                        this.challenge.learn.url = 'cwlearing.html';
+                        this.challenge.learn.url = 'cwlearning.html';
                         this.challenge.book.url = 'publishing.html';
                     }
                 })
@@ -59,7 +59,7 @@ const app = createApp({
                     let arry = response.data.items;
                     console.log(arry);
                     arry.forEach(element => {
-                        if (this[element.event_name].is_finish === 1) {
+                        if (element[element.event_name].is_finish === 1) {
                             this.challenge[element.event_name].state = true;
                             this.challenge[element.event_name].text = '挑戰成功';
                         } else {

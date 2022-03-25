@@ -1,5 +1,9 @@
 $(window).scrollTop(0);
 
+function gotop() {
+    $(window).scrollTop(0);
+};
+
 (function () {
     const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -224,6 +228,11 @@ $(window).scrollTop(0);
             lastScrollTop = scroll <= 0 ? 0 : scroll;
         } else if ( $('body').hasClass('inner-page') ) {
             $('.flip-group').css({top: -scroll});
+        }
+        if ( scroll > (height / 3 * 2) ) {
+            $('#goTop').fadeIn();
+        } else {
+            $('#goTop').fadeOut();
         }
     }, false);
 }());
