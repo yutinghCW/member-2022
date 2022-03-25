@@ -8460,6 +8460,8 @@ footer .content {
   text-decoration: none;
   background-color: #00C200;
   border-radius: 50%;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
   z-index: 2;
 }
 
@@ -8605,6 +8607,19 @@ footer .content {
 .challenge-btn span.text {
   position: relative;
   z-index: 1;
+}
+
+#awards {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  #awards {
+    background-image: url("../images/visual-grid-white.svg");
+    background-size: 920px;
+    background-attachment: fixed;
+  }
 }
 
 @media (min-width: 768px) {

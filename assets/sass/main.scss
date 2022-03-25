@@ -159,6 +159,7 @@ footer {
     text-decoration: none;
     background-color: #00C200;
     border-radius: 50%;
+    transition: background 0.3s;
     z-index: 2;
     @include media-breakpoint-up(md) {
         bottom: 40px;
@@ -272,6 +273,16 @@ footer {
             position: relative;
             z-index: 1;
         }
+    }
+}
+
+#awards {
+    background-position: center;
+    background-repeat: no-repeat;
+    @include media-breakpoint-up(md) {
+        background-image: url('../images/visual-grid-white.svg');
+        background-size: 920px;
+        background-attachment: fixed;
     }
 }
 
