@@ -58,8 +58,9 @@ const app = createApp({
                 .then((response) => {
                     let arry = response.data.items;
                     console.log(arry);
-                    arry.forEach(element => {
-                        if (element[element.event_name].is_finish === 1) {
+                    arry.forEach((element, index) => {
+                        console.log(element.event_name, index);
+                        if ( element.is_finish === 1 ) {
                             this.challenge[element.event_name].state = true;
                             this.challenge[element.event_name].text = '挑戰成功';
                         } else {
