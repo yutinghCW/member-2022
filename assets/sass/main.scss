@@ -109,19 +109,27 @@ footer {
         margin-left: auto;
         margin-right: auto;
     }
+    a {
+        color: $white;
+    }
 }
 
 #goTop {
     display: none;
     position: fixed;
     bottom: 130px;
-    right: 60px;
+    right: 20px;
     padding: 0;
-    font-size: $h3-font-size * 2;
+    font-size: $h1-font-size;
     border: 0;
+    color: $black;
     background-color: transparent;
     appearance: none;
     z-index: 3;
+    @include media-breakpoint-up(md) {
+        right: 60px;
+        font-size: $h3-font-size * 2;
+    }
     i.icon {
         display: block;
     }

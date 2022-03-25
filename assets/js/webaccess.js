@@ -54,6 +54,7 @@ const app = createApp({
                     }),
                 },
             },
+            eventLabel: '',
         }
     },
     mounted () {
@@ -67,9 +68,21 @@ const app = createApp({
             axios
                 .get(userMe)
                 .then((response) => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     if ( response.data.code === '0001' ) {
-                        // window.location.href = 'index.html'
+                        window.location.href = 'index.html'
+                        if ( window.location.search.indexOf('from=login') ) {
+                            if ( !this.getCookie('member-2022') ) {
+                                this.setCookie('member-2022', 'set-cookie-for-member-2022', 90);
+                            } else {
+                                dataLayer.push({
+                                    'event': 'GAEventTrigger',
+                                    'eventCategory': 'member-2022',
+                                    'eventAction': 'start',
+                                    'eventLabel': '',
+                                });
+                            }
+                        }
                     }
                 })
                 .catch((error) => {
@@ -95,7 +108,7 @@ const app = createApp({
             });
             this.webaccess[name].player.playing() ? this.webaccess[name].player.pause() : this.webaccess[name].player.play();
             this.webaccess[name].player.on('end', function() {
-                console.log('Finished!');
+                // console.log('Finished!');
                 axios
                     .get(readSuccess)
                     .then((response) => {
@@ -110,13 +123,15 @@ const app = createApp({
                     $(`.duration`).width(0);
                     clearInterval(update);
                 }, 300);
-                // dataLayer.push({
-                //     'event': 'GAEventTrigger',
-                //     'eventCategory': 'member-2022',
-                //     'eventAction': 'finish',
-                //     'eventLabel': '3D_K',
-                // });
-                new bootstrap.Modal(document.getElementById('successModal')).show();
+                if ( !that.challenge.read ) {
+                    dataLayer.push({
+                        'event': 'GAEventTrigger',
+                        'eventCategory': 'member-2022',
+                        'eventAction': 'finish',
+                        'eventLabel': '3D_K',
+                    });
+                    new bootstrap.Modal(document.getElementById('successModal')).show();
+                }
                 return;
             });
             let update = setInterval(() => {
@@ -141,7 +156,7 @@ const app = createApp({
                 .then((response) => {
                     eventLabel += '3D';
                     let arry = response.data.items;
-                    console.log(arry);
+                    // console.log(arry);
                     if ( typeof arry === 'undefined' ) {
                         return;
                     }
@@ -165,6 +180,16 @@ const app = createApp({
                 .catch((error) => {
                     console.dir(error);
                 });
+        },
+        setCookie(name, value, day) {
+            var expires = new Date();
+            expires.setTime(expires.getTime() + (day*24*60*60*1000));
+            document.cookie = name + "=" + escape(value) + ";SameSite=Strict;expires=" + expires.toGMTString()
+        },
+        getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
         },
     }
 })

@@ -2330,7 +2330,7 @@ fieldset:disabled .btn {
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: 0.5rem;
+  margin: 1.875rem;
   pointer-events: none;
 }
 
@@ -2361,7 +2361,7 @@ fieldset:disabled .btn {
 }
 
 .modal-dialog-scrollable {
-  height: calc(100% - 1rem);
+  height: calc(100% - 3.75rem);
 }
 
 .modal-dialog-scrollable .modal-content {
@@ -2380,7 +2380,7 @@ fieldset:disabled .btn {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: calc(100% - 1rem);
+  min-height: calc(100% - 3.75rem);
 }
 
 .modal-content {
@@ -8397,19 +8397,31 @@ footer .content {
   margin-right: auto;
 }
 
+footer a {
+  color: #fff;
+}
+
 #goTop {
   display: none;
   position: fixed;
   bottom: 130px;
-  right: 60px;
+  right: 20px;
   padding: 0;
-  font-size: 3rem;
+  font-size: 1.875rem;
   border: 0;
+  color: #000;
   background-color: transparent;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   z-index: 3;
+}
+
+@media (min-width: 768px) {
+  #goTop {
+    right: 60px;
+    font-size: 3rem;
+  }
 }
 
 #goTop i.icon {

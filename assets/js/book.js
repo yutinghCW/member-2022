@@ -53,6 +53,7 @@ const app = createApp({
                     },
                 },
             },
+            eventLabel: '',
         }
     },
     mounted () {
@@ -67,7 +68,7 @@ const app = createApp({
                 .get(userMe)
                 .then((response) => {
                     if ( response.data.code === '0001' ) {
-                        // window.location.href = 'index.html'
+                        window.location.href = 'index.html'
                     }
                 })
                 .catch((error) => {
@@ -77,7 +78,7 @@ const app = createApp({
         clickPlayer(type, name) {
             // Api: 先參與遊戲 
             const bookCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book';
-            const bookSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=read&is_finish=1';
+            const bookSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book&is_finish=1';
             axios
                 .get(bookCreate)
                 .then((response) => {
@@ -106,14 +107,14 @@ const app = createApp({
                         $(`.duration`).width(0);
                         clearInterval(update);
                     }, 300);
-                    dataLayer.push({
-                        'event': 'GAEventTrigger',
-                        'eventCategory': 'member-2022',
-                        'eventAction': 'finish',
-                        'eventLabel': '3D_B',
-                    });
                     if ( !that.challenge.book ) {
                         new bootstrap.Modal(document.getElementById('successModal')).show();
+                        dataLayer.push({
+                            'event': 'GAEventTrigger',
+                            'eventCategory': 'member-2022',
+                            'eventAction': 'finish',
+                            'eventLabel': '3D_B',
+                        });
                     }
                     return;
                 });
@@ -137,13 +138,13 @@ const app = createApp({
                                 console.dir(response);
                                 if ( !that.challenge.book ) {
                                     new bootstrap.Modal(document.getElementById('successModal')).show();
+                                    dataLayer.push({
+                                        'event': 'GAEventTrigger',
+                                        'eventCategory': 'member-2022',
+                                        'eventAction': 'finish',
+                                        'eventLabel': '3D_B',
+                                    });
                                 }
-                                dataLayer.push({
-                                    'event': 'GAEventTrigger',
-                                    'eventCategory': 'member-2022',
-                                    'eventAction': 'finish',
-                                    'eventLabel': '3D_B',
-                                });
                                 setTimeout(() => {
                                     that.challenge.book = true;
                                     that.getEventState();
@@ -165,13 +166,13 @@ const app = createApp({
                         console.dir(response);
                         if ( !that.challenge.book ) {
                             new bootstrap.Modal(document.getElementById('successModal')).show();
+                            dataLayer.push({
+                                'event': 'GAEventTrigger',
+                                'eventCategory': 'member-2022',
+                                'eventAction': 'finish',
+                                'eventLabel': '3D_B',
+                            });
                         }
-                        dataLayer.push({
-                            'event': 'GAEventTrigger',
-                            'eventCategory': 'member-2022',
-                            'eventAction': 'finish',
-                            'eventLabel': '3D_B',
-                        });
                         setTimeout(() => {
                             that.challenge.book = true;
                             that.getEventState();
@@ -180,10 +181,6 @@ const app = createApp({
                     .catch((error) => {
                         console.dir(error);
                     });
-                setTimeout(() => {
-                    that.challenge.book = true;
-                    that.getEventState();
-                }, 300);
             }
         },
         updateWidth(player, name) {

@@ -28,6 +28,7 @@ const app = createApp({
                     finished: false,
                 },
             },
+            eventLabel: '',
         }
     },
     mounted () {
@@ -42,7 +43,7 @@ const app = createApp({
                 .get(userMe)
                 .then((response) => {
                     if ( response.data.code === '0001' ) {
-                        // window.location.href = 'index.html'
+                        window.location.href = 'index.html'
                     }
                 })
                 .catch((error) => {
@@ -76,13 +77,16 @@ const app = createApp({
                         .get(learnSuccess)
                         .then((response) => {
                             console.dir(response);
-                            new bootstrap.Modal(document.getElementById('successModal')).show();
-                            // dataLayer.push({
-                            //     'event': 'GAEventTrigger',
-                            //     'eventCategory': 'member-2022',
-                            //     'eventAction': 'finish',
-                            //     'eventLabel': '3D_L',
-                            // });
+                            console.log(that.challenge.learn);
+                            if ( !that.challenge.learn ) {
+                                new bootstrap.Modal(document.getElementById('successModal')).show();
+                                dataLayer.push({
+                                    'event': 'GAEventTrigger',
+                                    'eventCategory': 'member-2022',
+                                    'eventAction': 'finish',
+                                    'eventLabel': '3D_L',
+                                });
+                            }
                             setTimeout(() => {
                                 that.challenge.learn = true;
                                 that.getEventState();

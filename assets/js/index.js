@@ -23,6 +23,7 @@ const app = createApp({
                 },
             },
             challenger: false,
+            eventLabel: '',
         }
     },
     mounted () {
@@ -57,9 +58,9 @@ const app = createApp({
                 .get(activityCreate)
                 .then((response) => {
                     let arry = response.data.items;
-                    console.log(arry);
+                    // console.log(arry);
                     arry.forEach((element, index) => {
-                        console.log(element.event_name, index);
+                        // console.log(element.event_name, index);
                         if ( element.is_finish === 1 ) {
                             this.challenge[element.event_name].state = true;
                             this.challenge[element.event_name].text = '挑戰成功';
@@ -78,7 +79,7 @@ const app = createApp({
             axios
                 .get(activityInfo)
                 .then((response) => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     this.challenge.read.number = response.data.items.read;
                     this.challenge.learn.number = response.data.items.learn;
                     this.challenge.book.number = response.data.items.book;

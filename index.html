@@ -5,8 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>探索天下，觸手可及——3D 知識力任務大挑戰</title>
+    <meta name="keywords" content="全球趨勢,中國政經,數位科技,風險,疫後,稽核,顛覆,永續,人才永續,ESG,認證,碳足跡,淨零碳排,基因,醫療科技,創新,應用,科技新報,產業鏈,供應鏈,新能源,元宇宙">
+    <meta name="description" content="突破疫情困局、擁抱新遊戲規則，2022天下經濟論壇，線上與線下跨地區、跨時區，邀請世界級領袖、企業，帶入更多全球最佳案例。與您一起探索突圍之道。">
+    <link rel="shortcut icon" href="https://www.cw.com.tw/assets_new/img/favicon.ico" type="image/x-icon" />
+    <meta property="og:title" content="2022天下經濟論壇">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://web.cw.com.tw/member-2022/" />
+    <meta property="og:image" content="https://web.cw.com.tw/member-2022/assets/images/share.jpg" />
+    <meta property="og:site_name" content="2022 天下經濟論壇冬季場－天下雜誌" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:description" content="突破疫情困局、擁抱新遊戲規則，2022天下經濟論壇，線上與線下跨地區、跨時區，邀請世界級領袖、企業，帶入更多全球最佳案例。與您一起探索突圍之道。">
+    <meta property="fb:admins" content="597428623" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="2022 天下經濟論壇冬季場－天下雜誌" />
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css" />
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -24,13 +36,6 @@
             <a href="https://www.cw.com.tw/" class="logo">
                 <img src="https://www.cw.com.tw/images/common/logo.svg" height="40" alt="">
             </a>
-            <!-- <nav class="ms-auto">
-                <ul class="d-flex">
-                    <li><a href="#!" class="btn ms-5">3D 知識力</a></li>
-                    <li><a href="#!" class="btn ms-5">挑戰任務</a></li>
-                    <li><a href="#!" class="btn ms-5">抽獎獎品與辦法</a></li>
-                </ul>
-            </nav> -->
         </div>
     </header>
     <main>
@@ -187,7 +192,7 @@
                                 <i class="icon icon-question fs-4 p-5 text-white bg-black bg-opacity-75" v-if="!challenge.book.state"></i>
                             </div>
                             <h5 class="fs-3 mb-20">博學力｜天下出版</h5>
-                            <a :href="challenge.learn.url" class="challenge-btn btn btn-lg btn-primary fs-6 w-100">
+                            <a :href="challenge.book.url" class="challenge-btn btn btn-lg btn-primary fs-6 w-100">
                                 {{ challenge.book.text }}
                                 <img src="assets/images/click.png" alt="" v-if="!challenge.book.state">
                             </a>
@@ -203,7 +208,7 @@
                                 <i class="icon icon-question fs-4 p-5 text-white bg-black bg-opacity-75" v-if="!challenge.learn.state"></i>
                             </div>
                             <h5 class="fs-3 mb-20">思辨力｜天下學習</h5>
-                            <a :href="challenge.book.url" class="challenge-btn btn btn-lg btn-primary fs-6 w-100">
+                            <a :href="challenge.learn.url" class="challenge-btn btn btn-lg btn-primary fs-6 w-100">
                                 {{ challenge.learn.text }}
                                 <img src="assets/images/click.png" alt="" v-if="!challenge.learn.state">
                             </a>
