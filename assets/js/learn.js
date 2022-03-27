@@ -73,7 +73,7 @@ const app = createApp({
         },
         clickPlayer(name) {
             this.video = this.learn[name].video;
-            new bootstrap.Modal(document.getElementById('videoModal')).show();
+            this.openVideoModal();
 
             // Api: 先參與遊戲 
             const learnCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=learn';
@@ -98,7 +98,6 @@ const app = createApp({
                         .get(learnSuccess)
                         .then((response) => {
                             console.dir(response);
-                            console.log(that.challenge.learn);
                             if ( !that.challenge.learn ) {
                                 new bootstrap.Modal(document.getElementById('successModal')).show();
                                 dataLayer.push({
@@ -111,13 +110,19 @@ const app = createApp({
                             that.challenge.learn = true;
                         })
                         .then(() => {
-                            that.getEventState('finish');
+                            console.log(that.challenge.learn);
+                            if ( !that.challenge.learn ) {
+                                that.getEventState('finish');
+                            }
                         })
                         .catch((error) => {
                             console.dir(error);
                         });
                 }
             });
+        },
+        openVideoModal() {
+            new bootstrap.Modal(document.getElementById('videoModal')).show();
         },
         getEventState(type) {
             const activityCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/get';

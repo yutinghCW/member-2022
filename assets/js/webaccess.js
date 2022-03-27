@@ -133,7 +133,9 @@ const app = createApp({
                         that.challenge.read = true;
                     })
                     .then(() => {
-                        that.getEventState('finish');
+                        if ( !that.challenge.read ) {
+                            that.getEventState('finish');
+                        }
                     })
                     .catch((error) => {
                         console.dir(error);

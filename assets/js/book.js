@@ -131,7 +131,9 @@ const app = createApp({
                             that.challenge.book = true;
                         })
                         .then(() => {
-                            that.getEventState('finish');
+                            if ( !that.challenge.book ) {
+                                that.getEventState('finish');
+                            }
                         })
                         .catch((error) => {
                             console.dir(error);
@@ -172,7 +174,9 @@ const app = createApp({
                                 that.challenge.book = true;
                             })
                             .then(() => {
-                                that.getEventState('finish');
+                                if ( !that.challenge.book ) {
+                                    that.getEventState('finish');
+                                }
                             })
                             .catch((error) => {
                                 console.dir(error);
@@ -200,7 +204,9 @@ const app = createApp({
                         that.challenge.book = true;
                     })
                     .then(() => {
-                        that.getEventState('finish');
+                        if ( !that.challenge.book ) {
+                            that.getEventState('finish');
+                        }
                     })
                     .catch((error) => {
                         console.dir(error);
