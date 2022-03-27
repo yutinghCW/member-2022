@@ -108,10 +108,10 @@ const app = createApp({
                                     'eventLabel': '3D_L',
                                 });
                             }
-                            setTimeout(() => {
-                                that.challenge.learn = true;
-                                that.getEventState('finish');
-                            }, 300);
+                            that.challenge.learn = true;
+                        })
+                        .then(() => {
+                            that.getEventState('finish');
                         })
                         .catch((error) => {
                             console.dir(error);

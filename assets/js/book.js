@@ -119,25 +119,27 @@ const app = createApp({
                         .get(bookSuccess)
                         .then((response) => {
                             console.dir(response);
+                            if ( !that.challenge.book ) {
+                                new bootstrap.Modal(document.getElementById('successModal')).show();
+                                dataLayer.push({
+                                    'event': 'GAEventTrigger',
+                                    'eventCategory': 'member-2022',
+                                    'eventAction': 'finish',
+                                    'eventLabel': '3D_B',
+                                });
+                            }
+                            that.challenge.book = true;
+                        })
+                        .then(() => {
+                            that.getEventState('finish');
                         })
                         .catch((error) => {
                             console.dir(error);
                         });
                     setTimeout(() => {
-                        that.challenge.book = true;
-                        that.getEventState('finish');
                         $(`.duration`).width(0);
                         clearInterval(update);
                     }, 300);
-                    if ( !that.challenge.book ) {
-                        new bootstrap.Modal(document.getElementById('successModal')).show();
-                        dataLayer.push({
-                            'event': 'GAEventTrigger',
-                            'eventCategory': 'member-2022',
-                            'eventAction': 'finish',
-                            'eventLabel': '3D_B',
-                        });
-                    }
                     return;
                 });
                 let update = setInterval(() => {
@@ -167,10 +169,10 @@ const app = createApp({
                                         'eventLabel': '3D_B',
                                     });
                                 }
-                                setTimeout(() => {
-                                    that.challenge.book = true;
-                                    that.getEventState('finish');
-                                }, 300);
+                                that.challenge.book = true;
+                            })
+                            .then(() => {
+                                that.getEventState('finish');
                             })
                             .catch((error) => {
                                 console.dir(error);
@@ -195,10 +197,10 @@ const app = createApp({
                                 'eventLabel': '3D_B',
                             });
                         }
-                        setTimeout(() => {
-                            that.challenge.book = true;
-                            that.getEventState('finish');
-                        }, 300);
+                        that.challenge.book = true;
+                    })
+                    .then(() => {
+                        that.getEventState('finish');
                     })
                     .catch((error) => {
                         console.dir(error);

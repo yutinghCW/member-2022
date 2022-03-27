@@ -122,26 +122,27 @@ const app = createApp({
                     .get(readSuccess)
                     .then((response) => {
                         console.dir(response);
+                        if ( !that.challenge.read ) {
+                            dataLayer.push({
+                                'event': 'GAEventTrigger',
+                                'eventCategory': 'member-2022',
+                                'eventAction': 'finish',
+                                'eventLabel': '3D_K',
+                            });
+                            new bootstrap.Modal(document.getElementById('successModal')).show();
+                        }
+                        that.challenge.read = true;
+                    })
+                    .then(() => {
+                        that.getEventState('finish');
                     })
                     .catch((error) => {
                         console.dir(error);
                     });
                 setTimeout(() => {
-                    that.challenge.read = true;
-                    that.getEventState('finish');
-                    that.clickSF();
                     $(`.duration`).width(0);
                     clearInterval(update);
                 }, 300);
-                if ( !that.challenge.read ) {
-                    dataLayer.push({
-                        'event': 'GAEventTrigger',
-                        'eventCategory': 'member-2022',
-                        'eventAction': 'finish',
-                        'eventLabel': '3D_K',
-                    });
-                    new bootstrap.Modal(document.getElementById('successModal')).show();
-                }
                 return;
             });
             let update = setInterval(() => {
