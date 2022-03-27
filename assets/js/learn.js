@@ -74,20 +74,21 @@ const app = createApp({
         clickPlayer(name) {
             this.video = this.learn[name].video;
             this.openVideoModal();
-            if ( this.challenge.learn ) {
-                return;
-            }
 
             // Api: 先參與遊戲 
             const learnCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=learn';
-            axios
-                .get(learnCreate)
-                .then((response) => {
-                    console.dir(response);
-                })
-                .catch((error) => {
-                    console.dir(error);
-                });
+
+            if ( !this.challenge.learn ) {
+                axios
+                    .get(learnCreate)
+                    .then((response) => {
+                        console.dir(response);
+                    })
+                    .catch((error) => {
+                        console.dir(error);
+                    });
+            }
+
             // Api: Modal 關閉後要送資料 
             const learnSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=learn&is_finish=1';
             $('#videoModal').on('shown.bs.modal', function () {

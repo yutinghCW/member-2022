@@ -100,59 +100,57 @@ const app = createApp({
         clickPlayer(name) {
             const readCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=read';
             const readSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=read&is_finish=1';
-            if ( this.challenge.read ) {
-                return;
-            }
-
-            axios
-                .get(readCreate)
-                .then((response) => {
-                    console.dir(response);
-                })
-                .catch((error) => {
-                    console.dir(error);
-                });
-            const array = Object.keys(this.webaccess).filter((item) => {
-                return item !== name;
-            });
-            array.forEach(item => {
-                this.webaccess[item].player.pause();
-            });
-            this.webaccess[name].player.playing() ? this.webaccess[name].player.pause() : this.webaccess[name].player.play();
-            this.webaccess[name].player.on('end', function() {
-                // console.log('Finished!');
+            if ( !this.challenge.read ) {
                 axios
-                    .get(readSuccess)
+                    .get(readCreate)
                     .then((response) => {
                         console.dir(response);
-                        if ( !that.challenge.read ) {
-                            dataLayer.push({
-                                'event': 'GAEventTrigger',
-                                'eventCategory': 'member-2022',
-                                'eventAction': 'finish',
-                                'eventLabel': '3D_K',
-                            });
-                            new bootstrap.Modal(document.getElementById('successModal')).show();
-                        }
-                        that.challenge.read = true;
-                    })
-                    .then(() => {
-                        if ( !that.challenge.read ) {
-                            that.getEventState('finish');
-                        }
                     })
                     .catch((error) => {
                         console.dir(error);
                     });
-                setTimeout(() => {
-                    $(`.duration`).width(0);
-                    clearInterval(update);
+                const array = Object.keys(this.webaccess).filter((item) => {
+                    return item !== name;
+                });
+                array.forEach(item => {
+                    this.webaccess[item].player.pause();
+                });
+                this.webaccess[name].player.playing() ? this.webaccess[name].player.pause() : this.webaccess[name].player.play();
+                this.webaccess[name].player.on('end', function() {
+                    // console.log('Finished!');
+                    axios
+                        .get(readSuccess)
+                        .then((response) => {
+                            console.dir(response);
+                            if ( !that.challenge.read ) {
+                                dataLayer.push({
+                                    'event': 'GAEventTrigger',
+                                    'eventCategory': 'member-2022',
+                                    'eventAction': 'finish',
+                                    'eventLabel': '3D_K',
+                                });
+                                new bootstrap.Modal(document.getElementById('successModal')).show();
+                            }
+                            that.challenge.read = true;
+                        })
+                        .then(() => {
+                            if ( !that.challenge.read ) {
+                                that.getEventState('finish');
+                            }
+                        })
+                        .catch((error) => {
+                            console.dir(error);
+                        });
+                    setTimeout(() => {
+                        $(`.duration`).width(0);
+                        clearInterval(update);
+                    }, 300);
+                    return;
+                });
+                let update = setInterval(() => {
+                    this.updateWidth(this.webaccess[name].player, name); 
                 }, 300);
-                return;
-            });
-            let update = setInterval(() => {
-                this.updateWidth(this.webaccess[name].player, name); 
-            }, 300);
+            }
         },
         updateWidth(player, name) {
             if (player.playing()) {
