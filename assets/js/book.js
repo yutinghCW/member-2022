@@ -79,7 +79,7 @@ const app = createApp({
                     this.eventLabel = '';
                     if ( response.data.code === '0001' ) {
                         window.location.href = 'index.html'
-                    } else {
+                    } else if ( response.data.code === '0000' ) {
                         if ( window.location.search.indexOf('from=login') && !this.getCookie('member-2022') ) {
                             this.setCookie('member-2022', 'set-cookie-for-member-2022', 90);
                             this.clickSF();
@@ -275,6 +275,7 @@ const app = createApp({
         },
         clickSF() {
             $("#sendBtn").click();
+            console.log('clicked SF');
         },
     }
 })
