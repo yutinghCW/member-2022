@@ -97,27 +97,23 @@ const app = createApp({
             $('#videoModal').on('hidden.bs.modal', function () {
                 times ++;
                 that.video = '';
-                if ( times === 1 ) {
+                if ( times === 1 && !this.challenge.learn ) {
                     axios
                         .get(learnSuccess)
                         .then((response) => {
                             console.dir(response);
-                            if ( !that.challenge.learn ) {
-                                new bootstrap.Modal(document.getElementById('successModal')).show();
-                                dataLayer.push({
-                                    'event': 'GAEventTrigger',
-                                    'eventCategory': 'member-2022',
-                                    'eventAction': 'finish',
-                                    'eventLabel': '3D_L',
-                                });
-                            }
+                            new bootstrap.Modal(document.getElementById('successModal')).show();
+                            dataLayer.push({
+                                'event': 'GAEventTrigger',
+                                'eventCategory': 'member-2022',
+                                'eventAction': 'finish',
+                                'eventLabel': '3D_L',
+                            });
                             that.challenge.learn = true;
                         })
                         .then(() => {
                             console.log(that.challenge.learn);
-                            if ( !that.challenge.learn ) {
-                                that.getEventState('finish');
-                            }
+                            that.getEventState('finish');
                         })
                         .catch((error) => {
                             console.dir(error);
