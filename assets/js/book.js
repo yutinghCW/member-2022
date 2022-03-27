@@ -251,6 +251,7 @@ const app = createApp({
                             }
                         });
                     }
+                    $("#sendBtn").click();
                 })
                 .catch((error) => {
                     console.dir(error);
