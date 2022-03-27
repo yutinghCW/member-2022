@@ -98,6 +98,10 @@ const app = createApp({
                 });
         },
         clickPlayer(type, name) {
+            if ( this.challenge.book ) {
+                return;
+            }
+
             // Api: 先參與遊戲 
             const bookCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book';
             const bookSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book&is_finish=1';

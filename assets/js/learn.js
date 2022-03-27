@@ -74,6 +74,9 @@ const app = createApp({
         clickPlayer(name) {
             this.video = this.learn[name].video;
             this.openVideoModal();
+            if ( this.challenge.learn ) {
+                return;
+            }
 
             // Api: 先參與遊戲 
             const learnCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=learn';

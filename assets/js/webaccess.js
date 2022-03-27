@@ -100,6 +100,10 @@ const app = createApp({
         clickPlayer(name) {
             const readCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=read';
             const readSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=read&is_finish=1';
+            if ( this.challenge.read ) {
+                return;
+            }
+
             axios
                 .get(readCreate)
                 .then((response) => {
