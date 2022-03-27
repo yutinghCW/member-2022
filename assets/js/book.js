@@ -251,7 +251,7 @@ const app = createApp({
                         });
                     }
                 })
-                .then(()=>{
+                .then(() => {
                     if ( type === 'finish' ) {
                         this.clickSF();
                     }

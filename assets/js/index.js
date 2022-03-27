@@ -53,7 +53,6 @@ const app = createApp({
                         this.challenge.book.url = 'publishing.html';
                         if ( window.location.search.indexOf('from=login') && !this.getCookie('member-2022') ) {
                             this.setCookie('member-2022', 'set-cookie-for-member-2022', 90);
-                            this.clickSF();
                             dataLayer.push({
                                 'event': 'GAEventTrigger',
                                 'eventCategory': 'member-2022',
