@@ -2,6 +2,8 @@
 @import "icon";
 @import "keyvisual";
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
+
 html,
 body {
     min-height: 100%;
@@ -11,6 +13,7 @@ body {
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: 'Roboto', 'Noto Sans TC', sans-serif;
     background-color: #ebe7de;
     overflow: hidden;
     &.completed {
@@ -133,6 +136,11 @@ footer {
     i.icon {
         display: block;
     }
+}
+
+.formbox {
+    opacity: 0;
+    z-index: -1 !important;
 }
 
 .icon-mouse {
@@ -332,9 +340,413 @@ footer {
 }
 
 .card-section {
+    position: relative;
     @include media-breakpoint-up(md) {
         display: flex;
         justify-content: space-between;
+    }
+    .flip {
+        position: absolute;
+        @include media-breakpoint-down(md) {
+            width: 22px;
+            height: auto;
+        }
+        &.flip-1 {
+            @at-root {
+                .card-section-hsieh#{&},
+                .card-section-lang#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 140px;
+                        left: -160px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 545px;
+                        right: -5px;
+                    }
+                }
+                .card-section-ding#{&},
+                .card-section-tsou#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 85px;
+                        right: -170px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        bottom: 50px;
+                        right: 10px;
+                    }
+                }
+                .card-section-sun#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 5px;
+                        right: -90px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        bottom: 170px;
+                        right: -5px;
+                    }
+                }
+                .card-section-sun2#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 255px;
+                        left: -170px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 260px;
+                        right: 80px;
+                    }
+                }
+                .card-section-hua#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 200px;
+                        left: -160px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        bottom: 235px;
+                        right: 5px;
+                    }
+                }
+                .card-section-liu#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 110px;
+                        right: -130px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        bottom: 360px;
+                        right: -15px;
+                    }
+                }
+                .card-section-tsai#{&},
+                .card-section-tsai2#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: -160px;
+                        left: -135px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 310px;
+                        right: -10px;
+                    }
+                }
+                .card-section-jim#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: -35px;
+                        left: -120px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        bottom: 175px;
+                        right: -5px;
+                    }
+                }
+                .card-section-tsai3#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: -85px;
+                        right: -165px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 435px;
+                        left: -15px;
+                    }
+                }
+                .card-section-biming#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 100px;
+                        left: -100px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        bottom: -70px;
+                        right: -5px;
+                    }
+                }
+                .card-section-facebook#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 10px;
+                        right: -100px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 500px;
+                        left: -15px;
+                    }
+                }
+                .card-section-clean#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 0;
+                        left: -145px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        bottom: 300px;
+                        right: -5px;
+                    }
+                }
+            }
+        }
+        &.flip-2 {
+            @at-root {
+                .card-section-hsieh#{&},
+                .card-section-lang#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: -30px;
+                        right: 250px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 15px;
+                        right: 45px;
+                    }
+                }
+                .card-section-ding#{&},
+                .card-section-tsou#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 0;
+                        left: -135px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: -15px;
+                        left: 190px;
+                    }
+                }
+                .card-section-sun#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 220px;
+                        left: -135px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: -20px;
+                        right: 80px;
+                    }
+                }
+                .card-section-sun2#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 40px;
+                        right: 0px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        bottom: 0px;
+                        right: 100% ;
+                    }
+                }
+                .card-section-hua#{&} {
+                    @include media-breakpoint-up(md) {
+                        bottom: -30px;
+                        left: 150px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: -15px;
+                        left: 225px;
+                    }
+                }
+                .card-section-liu#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 0;
+                        left: -125px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 0;
+                        left: 205px;
+                    }
+                }
+                .card-section-tsai#{&} {
+                    @include media-breakpoint-down(md) {
+                        top: -50px;
+                        left: 225px;
+                    }
+                }
+                .card-section-tsai#{&} {
+                    @include media-breakpoint-up(md) {
+                        bottom: 0;
+                        left: 350px;
+                    }
+                }
+                .card-section-tsai2#{&} {
+                    @include media-breakpoint-up(md) {
+                        bottom: 0;
+                        left: 135px;
+                    }
+                }
+                .card-section-jim#{&} {
+                    @include media-breakpoint-up(md) {
+                        bottom: -150px;
+                        left: 370px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: -40px;
+                        right: 60px;
+                    }
+                }
+                .card-section-tsai3#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 100px;
+                        left: -145px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 25px;
+                        left: 190px;
+                    }
+                }
+                .card-section-biming#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 10px;
+                        right: -135px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 30px;
+                        right: 80px;
+                    }
+                }
+                .card-section-facebook#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: -60px;
+                        left: -90px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 400px;
+                        right: -15px;
+                    }
+                }
+                .card-section-clean#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 100%;
+                        left: 145px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: -10px;
+                        right: 100px;
+                    }
+                }
+            }
+        }
+        &.flip-3 {
+            @at-root {
+                .card-section-hsieh#{&},
+                .card-section-lang#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 270px;
+                        right: -125px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 415px;
+                        left: -5px;
+                    }
+                }
+                .card-section-ding#{&},
+                .card-section-tsou#{&} {
+                    @include media-breakpoint-down(md) {
+                        top: 400px;
+                        left: -15px;
+                    }
+                }
+                .card-section-ding#{&} {
+                    @include media-breakpoint-up(md) {
+                        bottom: -20px;
+                        left: -75px;
+                    }
+                }
+                .card-section-tsou#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: -20px;
+                        left: 50px;
+                    }
+                }
+                .card-section-sun#{&} {
+                    @include media-breakpoint-up(md) {
+                        bottom: -45px;
+                        left: 370px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 450px;
+                        left: -15px;
+                    }
+                }
+                .card-section-sun2#{&} {
+                    @include media-breakpoint-up(md) {
+                        bottom: -200px;
+                        left: 430px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        bottom: -50px;
+                        right: 5px;
+                    }
+                }
+                .card-section-hua#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 100px;
+                        right: -125px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 400px;
+                        right: 100%;
+                    }
+                }
+                .card-section-liu#{&} {
+                    @include media-breakpoint-up(md) {
+                        bottom: 200px;
+                        left: 430px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 540px;
+                        left: -15px;
+                    }
+                }
+                .card-section-tsai#{&},
+                .card-section-tsai2#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 100px;
+                        right: -125px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 780px;
+                        left: -5px;
+                    }
+                }
+                .card-section-jim#{&} {
+                    @include media-breakpoint-up(md) {
+                        bottom: 100%;
+                        right: 0px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 420px;
+                        left: -10px;
+                    }
+                }
+                .card-section-tsai3#{&} {
+                    @include media-breakpoint-up(md) {
+                        bottom: -35px;
+                        left: 100%;
+                    }
+                    @include media-breakpoint-down(md) {
+                        bottom: -25px;
+                        right: 20px;
+                    }
+                }
+                .card-section-biming#{&} {
+                    @include media-breakpoint-up(md) {
+                        bottom: -120px;
+                        left: 280px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        bottom: -15px;
+                        left: -10px;
+                    }
+                }
+                .card-section-facebook#{&} {
+                    @include media-breakpoint-up(md) {
+                        bottom: -25px;
+                        left: 330px;
+                    }
+                    @include media-breakpoint-down(md) {
+                        bottom: -25px;
+                        left: 20px;
+                    }
+                }
+                .card-section-clean#{&} {
+                    @include media-breakpoint-up(md) {
+                        top: 75px;
+                        left: 100%;
+                    }
+                    @include media-breakpoint-down(md) {
+                        top: 800px;
+                        left: -10px;
+                    }
+                }
+            }
+        }
     }
     .card-text {
         @include media-breakpoint-up(md) {
@@ -345,8 +757,8 @@ footer {
         }
         .name {
             font-size: $h6-font-size*2;
-            @include media-breakpoint-up(md) {
-                // margin-right: -4em;
+            @include media-breakpoint-down(sm) {
+                letter-spacing: -0.06em;
             }
         }
     }

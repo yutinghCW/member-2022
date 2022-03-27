@@ -1,11 +1,15 @@
 import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.26/vue.esm-browser.min.js';
 let that = null;
 let times = 0;
-let eventLabel = '';
 const app = createApp({
     data() {
         return {
             video: '',
+            user: {
+                uid: '',
+                name: '',
+                email: '',
+            },
             challenge: {
                 read: false,
                 learn: false,
@@ -60,6 +64,10 @@ const app = createApp({
         that = this;
         this.checkLogin();
         this.getEventState();
+        var rellax = new Rellax('.rellax', {
+            speed: 0,
+            breakpoints:[768]
+        });
     },
     methods: {
         checkLogin() {
@@ -67,8 +75,24 @@ const app = createApp({
             axios
                 .get(userMe)
                 .then((response) => {
+                    console.log(response.data);
                     if ( response.data.code === '0001' ) {
-                        window.location.href = 'index.html'
+                        // window.location.href = 'index.html'
+                        if ( window.location.search.indexOf('from=login') ) {
+                            if ( !this.getCookie('member-2022') ) {
+                                this.setCookie('member-2022', 'set-cookie-for-member-2022', 90);
+                            } else {
+                                $("#sendBtn").click();
+                                dataLayer.push({
+                                    'event': 'GAEventTrigger',
+                                    'eventCategory': 'member-2022',
+                                    'eventAction': 'start',
+                                    'eventLabel': '',
+                                });
+                            }
+                        }
+                    } else {
+                        this.user = response.data.items[0];
                     }
                 })
                 .catch((error) => {
@@ -207,27 +231,26 @@ const app = createApp({
             axios
                 .get(activityCreate)
                 .then((response) => {
-                    eventLabel += '3D';
                     let arry = response.data.items;
-                    if ( typeof arry === 'undefined' ) {
-                        return;
+                    if ( arry.length > 0 ) {
+                        this.eventLabel += '3D';
+                        arry.forEach(element => {
+                            switch (element.event_name) {
+                                case 'read':
+                                    this.eventLabel += '_K';
+                                    break;
+                                case 'learn':
+                                    this.eventLabel += '_L';
+                                    break;
+                                case 'book':
+                                    this.eventLabel += '_B';
+                                    break;
+                            }
+                            if ( element.is_finish === 1 ) {
+                                this.challenge[element.event_name] = true;
+                            }
+                        });
                     }
-                    arry.forEach(element => {
-                        switch (element.event_name) {
-                            case 'read':
-                                eventLabel += '_K';
-                                break;
-                            case 'learn':
-                                eventLabel += '_L';
-                                break;
-                            case 'book':
-                                eventLabel += '_B';
-                                break;
-                        }
-                        if ( element.is_finish === 1 ) {
-                            this.challenge[element.event_name] = true;
-                        }
-                    });
                 })
                 .catch((error) => {
                     console.dir(error);
