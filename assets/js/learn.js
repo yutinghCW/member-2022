@@ -54,18 +54,15 @@ const app = createApp({
                     if ( response.data.code === '0001' ) {
                         window.location.href = 'index.html'
                     } else {
-                        if ( window.location.search.indexOf('from=login') ) {
-                            if ( !this.getCookie('member-2022') ) {
-                                this.setCookie('member-2022', 'set-cookie-for-member-2022', 90);
-                            } else {
-                                this.clickSF();
-                                dataLayer.push({
-                                    'event': 'GAEventTrigger',
-                                    'eventCategory': 'member-2022',
-                                    'eventAction': 'start',
-                                    'eventLabel': '',
-                                });
-                            }
+                        if ( window.location.search.indexOf('from=login') && !this.getCookie('member-2022') ) {
+                            this.setCookie('member-2022', 'set-cookie-for-member-2022', 90);
+                            this.clickSF();
+                            dataLayer.push({
+                                'event': 'GAEventTrigger',
+                                'eventCategory': 'member-2022',
+                                'eventAction': 'start',
+                                'eventLabel': '',
+                            });
                         }
                         this.user = response.data.items[0];
                     }
