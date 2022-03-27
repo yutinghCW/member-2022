@@ -53,11 +53,12 @@ const app = createApp({
                     console.log(response.data);
                     if ( response.data.code === '0001' ) {
                         window.location.href = 'index.html'
+                    } else {
                         if ( window.location.search.indexOf('from=login') ) {
                             if ( !this.getCookie('member-2022') ) {
                                 this.setCookie('member-2022', 'set-cookie-for-member-2022', 90);
                             } else {
-                                $("#sendBtn").click();
+                                this.clickSF();
                                 dataLayer.push({
                                     'event': 'GAEventTrigger',
                                     'eventCategory': 'member-2022',
@@ -66,7 +67,6 @@ const app = createApp({
                                 });
                             }
                         }
-                    } else {
                         this.user = response.data.items[0];
                     }
                 })
@@ -114,6 +114,7 @@ const app = createApp({
                             setTimeout(() => {
                                 that.challenge.learn = true;
                                 that.getEventState();
+                                that.clickSF();
                             }, 300);
                         })
                         .catch((error) => {
@@ -152,6 +153,9 @@ const app = createApp({
                 .catch((error) => {
                     console.dir(error);
                 });
+        },
+        clickSF() {
+            $("#sendBtn").click();
         },
     }
 })
