@@ -128,6 +128,7 @@ const app = createApp({
             axios
                 .get(activityCreate)
                 .then((response) => {
+                    console.log(response);
                     let arry = response.data.items;
                     if ( arry.length > 0 ) {
                         this.eventLabel += '3D';
@@ -153,6 +154,16 @@ const app = createApp({
                 .catch((error) => {
                     console.dir(error);
                 });
+        },
+        setCookie(name, value, day) {
+            var expires = new Date();
+            expires.setTime(expires.getTime() + (day*24*60*60*1000));
+            document.cookie = name + "=" + escape(value) + ";SameSite=Strict;expires=" + expires.toGMTString()
+        },
+        getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
         },
         clickSF() {
             $("#sendBtn").click();

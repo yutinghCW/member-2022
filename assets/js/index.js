@@ -2,6 +2,11 @@ import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.26/vue
 const app = createApp({
     data() {
         return {
+            user: {
+                uid: '',
+                name: '',
+                email: '',
+            },
             challenge: {
                 read: {
                     state: false,
@@ -46,6 +51,20 @@ const app = createApp({
                         this.challenge.read.url = 'webaccess.html';
                         this.challenge.learn.url = 'cwlearning.html';
                         this.challenge.book.url = 'publishing.html';
+                        if ( window.location.search.indexOf('from=login') ) {
+                            if ( !this.getCookie('member-2022') ) {
+                                this.setCookie('member-2022', 'set-cookie-for-member-2022', 90);
+                            } else {
+                                this.clickSF();
+                                dataLayer.push({
+                                    'event': 'GAEventTrigger',
+                                    'eventCategory': 'member-2022',
+                                    'eventAction': 'start',
+                                    'eventLabel': '',
+                                });
+                            }
+                        }
+                        this.user = response.data.items[0];
                     }
                 })
                 .catch((error) => {
@@ -57,6 +76,7 @@ const app = createApp({
             axios
                 .get(activityCreate)
                 .then((response) => {
+                    console.log(response);
                     let arry = response.data.items;
                     // console.log(arry);
                     arry.forEach((element, index) => {
