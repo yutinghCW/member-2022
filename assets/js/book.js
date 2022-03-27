@@ -76,6 +76,7 @@ const app = createApp({
                 .get(userMe)
                 .then((response) => {
                     console.log(response.data);
+                    this.eventLabel = '';
                     if ( response.data.code === '0001' ) {
                         window.location.href = 'index.html'
                     } else {

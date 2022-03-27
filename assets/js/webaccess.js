@@ -165,6 +165,7 @@ const app = createApp({
                 .get(activityCreate)
                 .then((response) => {
                     console.log(response);
+                    this.eventLabel = '';
                     let arry = response.data.items;
                     if ( arry.length > 0 ) {
                         this.eventLabel += '3D';
