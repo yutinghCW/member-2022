@@ -274,8 +274,10 @@ const app = createApp({
             if (parts.length === 2) return parts.pop().split(';').shift();
         },
         clickSF() {
-            $("#sendBtn").click();
-            console.log('clicked SF');
+            setTimeout(function() {
+                $("#sendBtn").click();
+                console.log('clicked SF2');
+            }, 100);
         },
     }
 })
