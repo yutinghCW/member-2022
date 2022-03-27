@@ -125,9 +125,8 @@ const app = createApp({
                         });
                     setTimeout(() => {
                         that.challenge.book = true;
-                        that.getEventState();
+                        that.getEventState('finish');
                         $(`.duration`).width(0);
-                        that.clickSF();
                         clearInterval(update);
                     }, 300);
                     if ( !that.challenge.book ) {
@@ -170,8 +169,7 @@ const app = createApp({
                                 }
                                 setTimeout(() => {
                                     that.challenge.book = true;
-                                    that.getEventState();
-                                    that.clickSF();
+                                    that.getEventState('finish');
                                 }, 300);
                             })
                             .catch((error) => {
@@ -199,8 +197,7 @@ const app = createApp({
                         }
                         setTimeout(() => {
                             that.challenge.book = true;
-                            that.getEventState();
-                            that.clickSF();
+                            that.getEventState('finish');
                         }, 300);
                     })
                     .catch((error) => {
@@ -227,7 +224,7 @@ const app = createApp({
                 this.book.audio[item].player.pause();
             });
         },
-        getEventState() {
+        getEventState(type) {
             const activityCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/get';
             axios
                 .get(activityCreate)
@@ -252,6 +249,11 @@ const app = createApp({
                                 this.challenge[element.event_name] = true;
                             }
                         });
+                    }
+                })
+                .then(()=>{
+                    if ( type === 'finish' ) {
+                        this.clickSF();
                     }
                 })
                 .catch((error) => {

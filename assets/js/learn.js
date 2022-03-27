@@ -110,8 +110,7 @@ const app = createApp({
                             }
                             setTimeout(() => {
                                 that.challenge.learn = true;
-                                that.getEventState();
-                                that.clickSF();
+                                that.getEventState('finish');
                             }, 300);
                         })
                         .catch((error) => {
@@ -120,7 +119,7 @@ const app = createApp({
                 }
             });
         },
-        getEventState() {
+        getEventState(type) {
             const activityCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/get';
             axios
                 .get(activityCreate)
@@ -146,6 +145,11 @@ const app = createApp({
                                 this.challenge[element.event_name] = true;
                             }
                         });
+                    }
+                })
+                .then(()=>{
+                    if ( type === 'finish' ) {
+                        this.clickSF();
                     }
                 })
                 .catch((error) => {
