@@ -42,18 +42,14 @@ const app = createApp({
                 },
                 audio : {
                     tsai: {
+                        url: 'https://storage.googleapis.com/www-cw-com-tw/voice/202202/voice-6209d497a3b63.mp3',
                         state: false,
                         finished: false,
-                        player: new Howl({
-                            src: 'https://storage.googleapis.com/www-cw-com-tw/voice/202202/voice-6209d497a3b63.mp3',
-                        }),
                     },
                     clean: {
+                        url: 'https://storage.googleapis.com/www-cw-com-tw/voice/202111/voice-619b5a4cc5f11.mp3',
                         state: false,
                         finished: false,
-                        player: new Howl({
-                            src: 'https://storage.googleapis.com/www-cw-com-tw/voice/202111/voice-619b5a4cc5f11.mp3',
-                        }),
                     },
                 },
             },
@@ -75,7 +71,7 @@ const app = createApp({
             axios
                 .get(userMe)
                 .then((response) => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     this.eventLabel = '';
                     if ( response.data.code === '0001' ) {
                         // window.location.href = 'index.html'
@@ -105,99 +101,39 @@ const app = createApp({
                 axios
                     .get(bookCreate)
                     .then((response) => {
-                        console.dir(response);
+                        // console.dir(response);
                     })
                     .catch((error) => {
                         console.dir(error);
                     });
             }
 
-            if ( type === 'audio' ) {
-                this.stopAudio();
-                this.book.audio[name].player.playing() ? this.book.audio[name].player.pause() : this.book.audio[name].player.play();
-                this.book.audio[name].player.on('end', function() {
-                    console.log('Finished!');
-                    if ( !this.challenge.book ) {
-                        axios
-                            .get(bookSuccess)
-                            .then((response) => {
-                                console.dir(response);
-                                new bootstrap.Modal(document.getElementById('successModal')).show();
-                                dataLayer.push({
-                                    'event': 'GAEventTrigger',
-                                    'eventCategory': 'member-2022',
-                                    'eventAction': 'finish',
-                                    'eventLabel': '3D_B',
-                                });
-                                that.challenge.book = true;
-                            })
-                            .then(() => {
-                                that.getEventState('finish');
-                            })
-                            .catch((error) => {
-                                console.dir(error);
-                            });
-                        setTimeout(() => {
-                            $(`.duration`).width(0);
-                            clearInterval(update);
-                        }, 300);
-                    }
-                    return;
-                });
-                let update = setInterval(() => {
-                    this.updateWidth(this.book.audio[name].player, name); 
-                }, 300);    
-            } else if ( type === 'video' ) {
-                this.stopAudio();
-                this.video = this.book.video[name].video;
-                new bootstrap.Modal(document.getElementById('videoModal')).show();
-                $('#videoModal').on('shown.bs.modal', function () {
-                    times = 0;
-                });
-                $('#videoModal').on('hidden.bs.modal', function () {
-                    times ++;
-                    that.video = '';
-                    if ( times === 1 && !this.challenge.book ) {
-                        axios
-                            .get(bookSuccess)
-                            .then((response) => {
-                                console.dir(response);
-                                new bootstrap.Modal(document.getElementById('successModal')).show();
-                                dataLayer.push({
-                                    'event': 'GAEventTrigger',
-                                    'eventCategory': 'member-2022',
-                                    'eventAction': 'finish',
-                                    'eventLabel': '3D_B',
-                                });
-                                that.challenge.book = true;
-                            })
-                            .then(() => {
-                                that.getEventState('finish');
-                            })
-                            .catch((error) => {
-                                console.dir(error);
-                            });
-                    }
-                });
-            } else if ( type === 'pdf' ) {
-                window.open(this.book.pdf[name].url);
-                if ( !that.challenge.book ) {
-                    new bootstrap.Modal(document.getElementById('successModal')).show();
+            if ( type === 'video' ) {
+                this.openVideoModal(name);
+            } else if ( type === 'pdf' ||  type === 'audio' ) {
+                if ( type === 'pdf' ) {
+                    window.open(this.book.pdf[name].url);
+                } else if (type === 'audio') {
+                    window.open(this.book.audio[name].url);
+                }
+                console.log(this.challenge.book);
+                if ( !this.challenge.book ) {
                     axios
                         .get(bookSuccess)
                         .then((response) => {
                             console.dir(response);
-                            new bootstrap.Modal(document.getElementById('successModal')).show();
+                            $('#successModal, .modal-backdrop').fadeIn();
+                            $('body').addClass('modal-open');
                             dataLayer.push({
                                 'event': 'GAEventTrigger',
                                 'eventCategory': 'member-2022',
                                 'eventAction': 'finish',
                                 'eventLabel': '3D_B',
                             });
-                            that.challenge.book = true;
+                            this.challenge.book = true;
                         })
                         .then(() => {
-                            that.getEventState('finish');
+                            this.getEventState('finish');
                         })
                         .catch((error) => {
                             console.dir(error);
@@ -217,19 +153,55 @@ const app = createApp({
             }
         },
         stopAudio() {
-            const array = Object.keys(this.book.audio).filter((item) => {
+            console.log(that.book);
+            const array = Object.keys(that.book.audio).filter((item) => {
                 return item !== name;
             });
             array.forEach(item => {
-                this.book.audio[item].player.pause();
+                console.log(that.book.audio[item]);
+                that.book.audio[item].player.pause();
             });
+        },
+        openVideoModal(name) {
+            times = 0;
+            that.video = '';
+            this.video = this.book.video[name].video;
+            $('#videoModal, .modal-backdrop').fadeIn();
+            $('body').addClass('modal-open');
+        },
+        openSuccessModal() {
+            // Api: Modal 關閉後要送資料 
+            const bookSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=learn&is_finish=1';
+            if ( times === 1 && !that.challenge.book ) {
+                axios
+                    .get(bookSuccess)
+                    .then((response) => {
+                        // console.dir(response);
+                        $('#successModal, .modal-backdrop').fadeIn();
+                        $('body').addClass('modal-open');
+                        dataLayer.push({
+                            'event': 'GAEventTrigger',
+                            'eventCategory': 'member-2022',
+                            'eventAction': 'finish',
+                            'eventLabel': '3D_B',
+                        });
+                        that.challenge.book = true;
+                    })
+                    .then(() => {
+                        // console.log(that.challenge.book);
+                        that.getEventState('finish');
+                    })
+                    .catch((error) => {
+                        console.dir(error);
+                    });
+            }
         },
         getEventState(type) {
             const activityCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/get';
             axios
                 .get(activityCreate)
                 .then((response) => {
-                    console.log(response);
+                    // console.log(response);
                     this.eventLabel = '';
                     let arry = response.data.items;
                     if ( arry.length > 0 ) {
@@ -270,6 +242,14 @@ const app = createApp({
             const value = `; ${document.cookie}`;
             const parts = value.split(`; ${name}=`);
             if (parts.length === 2) return parts.pop().split(';').shift();
+        },
+        closeModal(type) {
+            $('.modal, .modal-backdrop').fadeOut();
+            $('body').removeClass('modal-open');
+            if ( type === 'video' ) {
+                times ++;
+                this.openSuccessModal();
+            }
         },
         clickSF() {
             setTimeout(function() {

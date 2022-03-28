@@ -18,43 +18,42 @@ const app = createApp({
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_hsieh.mp3',
-                        // src: 'https://www.w3schools.com/html/horse.ogg',
+                        src: 'https://dev-www.cw.com.tw/dev-member-2022/assets/audio/webaccess_hsieh.mp3',
                     }),
                 },
                 ding: {
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_ding.mp3',
+                        src: 'https://dev-www.cw.com.tw/dev-member-2022/assets/audio/webaccess_ding.mp3',
                     }),
                 },
                 sun: {
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_sun.mp3',
+                        src: 'https://dev-www.cw.com.tw/dev-member-2022/assets/audio/webaccess_sun.mp3',
                     }),
                 },
                 hua: {
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_hua.mp3',
+                        src: 'https://dev-www.cw.com.tw/dev-member-2022/assets/audio/webaccess_hua.mp3',
                     }),
                 },
                 liu: {
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_liu.mp3',
+                        src: 'https://dev-www.cw.com.tw/dev-member-2022/assets/audio/webaccess_liu.mp3',
                     }),
                 },
                 tsai: {
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://web.cw.com.tw/_test-by-member-2022/assets/audio/webaccess_ding.mp3',
+                        src: 'https://dev-www.cw.com.tw/dev-member-2022/assets/audio/webaccess_ding.mp3',
                     }),
                 },
             },
@@ -76,7 +75,7 @@ const app = createApp({
             axios
                 .get(userMe)
                 .then((response) => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     if ( response.data.code === '0001' ) {
                         // window.location.href = 'index.html'
                     } else if ( response.data.code === '0000' ) {
@@ -104,7 +103,7 @@ const app = createApp({
                 axios
                     .get(readCreate)
                     .then((response) => {
-                        console.dir(response);
+                        // console.dir(response);
                     })
                     .catch((error) => {
                         console.dir(error);
@@ -119,18 +118,18 @@ const app = createApp({
             this.webaccess[name].player.playing() ? this.webaccess[name].player.pause() : this.webaccess[name].player.play();
             this.webaccess[name].player.on('end', function() {
                 console.log('Finished!');
-                if ( !this.challenge.read ) {
-                    axios
-                        .get(readSuccess)
+                if ( !that.challenge.read ) {
+                    axios.get(readSuccess)
                         .then((response) => {
-                            console.dir(response);
+                            // console.dir(response);
                             dataLayer.push({
                                 'event': 'GAEventTrigger',
                                 'eventCategory': 'member-2022',
                                 'eventAction': 'finish',
                                 'eventLabel': '3D_K',
                             });
-                            new bootstrap.Modal(document.getElementById('successModal')).show();
+                            $('#successModal, .modal-backdrop').fadeIn();
+                            $('body').addClass('modal-open');
                             that.challenge.read = true;
                         })
                         .then(() => {
@@ -166,7 +165,7 @@ const app = createApp({
             axios
                 .get(activityCreate)
                 .then((response) => {
-                    console.log(response);
+                    // console.log(response);
                     this.eventLabel = '';
                     let arry = response.data.items;
                     if ( arry.length > 0 ) {
@@ -207,6 +206,10 @@ const app = createApp({
             const value = `; ${document.cookie}`;
             const parts = value.split(`; ${name}=`);
             if (parts.length === 2) return parts.pop().split(';').shift();
+        },
+        closeModal() {
+            $('.modal, .modal-backdrop').fadeOut();
+            $('body').removeClass('modal-open');
         },
         clickSF() {
             setTimeout(function() {

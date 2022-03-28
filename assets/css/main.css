@@ -8296,6 +8296,11 @@ body.completed {
   overflow: auto;
 }
 
+body.modal-open {
+  overflow: hidden;
+  padding-right: 0px;
+}
+
 header {
   z-index: 2;
 }
@@ -8671,6 +8676,10 @@ footer a {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.modal-backdrop {
+  display: none;
 }
 
 .card-section {

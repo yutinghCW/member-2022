@@ -50,7 +50,7 @@ const app = createApp({
             axios
                 .get(userMe)
                 .then((response) => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     if ( response.data.code === '0001' ) {
                         // window.location.href = 'index.html'
                     } else if ( response.data.code === '0000' ) {
@@ -72,8 +72,7 @@ const app = createApp({
                 });
         },
         clickPlayer(name) {
-            this.video = this.learn[name].video;
-            this.openVideoModal();
+            this.openVideoModal(name);
 
             // Api: 先參與遊戲 
             const learnCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=learn';
@@ -88,48 +87,13 @@ const app = createApp({
                         console.dir(error);
                     });
             }
-
-            // Api: Modal 關閉後要送資料 
-            const learnSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=learn&is_finish=1';
-            $('#videoModal').on('shown.bs.modal', function () {
-                times = 0;
-            });
-            $('#videoModal').on('hidden.bs.modal', function () {
-                times ++;
-                that.video = '';
-                if ( times === 1 && !this.challenge.learn ) {
-                    axios
-                        .get(learnSuccess)
-                        .then((response) => {
-                            console.dir(response);
-                            new bootstrap.Modal(document.getElementById('successModal')).show();
-                            dataLayer.push({
-                                'event': 'GAEventTrigger',
-                                'eventCategory': 'member-2022',
-                                'eventAction': 'finish',
-                                'eventLabel': '3D_L',
-                            });
-                            that.challenge.learn = true;
-                        })
-                        .then(() => {
-                            console.log(that.challenge.learn);
-                            that.getEventState('finish');
-                        })
-                        .catch((error) => {
-                            console.dir(error);
-                        });
-                }
-            });
-        },
-        openVideoModal() {
-            new bootstrap.Modal(document.getElementById('videoModal')).show();
         },
         getEventState(type) {
             const activityCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/get';
             axios
                 .get(activityCreate)
                 .then((response) => {
-                    console.log(response);
+                    // console.log(response);
                     this.eventLabel = '';
                     let arry = response.data.items;
                     if ( arry.length > 0 ) {
@@ -170,6 +134,49 @@ const app = createApp({
             const value = `; ${document.cookie}`;
             const parts = value.split(`; ${name}=`);
             if (parts.length === 2) return parts.pop().split(';').shift();
+        },
+        openVideoModal(name) {
+            times = 0;
+            that.video = '';
+            this.video = this.learn[name].video;
+            $('#videoModal, .modal-backdrop').fadeIn();
+            $('body').addClass('modal-open');
+        },
+        openSuccessModal() {
+            // Api: Modal 關閉後要送資料 
+            const learnSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=learn&is_finish=1';
+            if ( times === 1 && !that.challenge.learn ) {
+                axios
+                    .get(learnSuccess)
+                    .then((response) => {
+                        // console.dir(response);
+                        $('#successModal, .modal-backdrop').fadeIn();
+                        $('body').addClass('modal-open');
+                        dataLayer.push({
+                            'event': 'GAEventTrigger',
+                            'eventCategory': 'member-2022',
+                            'eventAction': 'finish',
+                            'eventLabel': '3D_L',
+                        });
+                        that.challenge.learn = true;
+                    })
+                    .then(() => {
+                        // console.log(that.challenge.learn);
+                        that.getEventState('finish');
+                    })
+                    .catch((error) => {
+                        console.dir(error);
+                    });
+            }
+        },
+        closeModal(type) {
+            $('.modal, .modal-backdrop').fadeOut();
+            $('body').removeClass('modal-open');
+            this.video = '';
+            if ( type === 'video' ) {
+                times ++;
+                this.openSuccessModal();
+            }
         },
         clickSF() {
             setTimeout(function() {
