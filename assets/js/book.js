@@ -60,6 +60,7 @@ const app = createApp({
         that = this;
         this.checkLogin();
         this.getEventState();
+        AOS.init();
         var rellax = new Rellax('.rellax', {
             speed: 0,
             breakpoints:[768]

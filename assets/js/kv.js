@@ -126,12 +126,12 @@ $(window).scrollTop(0);
         let magnification = Number((scroll/(contentHeight-height)).toFixed(3));
         $('.flip').each(function() {
             // $(this).text($(this).attr('class'));
-            if ( scroll > (height / 3 * 2) ) {
+            if ( scroll > (height / 2) ) {
                 $(this).addClass('scroll');
-                $('.key-visual-text').fadeOut();
+                $('.key-visual-text, .icon-mouse').fadeOut();
             } else {
                 $(this).removeClass('scroll');
-                $('.key-visual-text').fadeIn();
+                $('.key-visual-text, .icon-mouse').fadeIn();
             }
             let unit = Number($(this).attr('data-offset')) / 170;
             let newMagnification = magnification * unit;
@@ -197,19 +197,6 @@ $(window).scrollTop(0);
             }
         });
 
-        if ( width >= 768 ) {
-            if ( scroll > lastScrollTop && scroll > (height / 3 * 2) ){
-                $('nav').fadeOut();
-            } else {
-            $('nav').fadeIn();
-            }
-        }
-
         lastScrollTop = scroll <= 0 ? 0 : scroll;
-        if ( scroll > (height / 3 * 2) ) {
-            $('#goTop').fadeIn();
-        } else {
-            $('#goTop').fadeOut();
-        }
     }, false);
 }());

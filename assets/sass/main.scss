@@ -151,8 +151,9 @@ footer {
     left: 50%;
     bottom: 100px;
     display: none;
-    width: 35px;
-    transform: translateX(-50%);
+    width: 36px;
+    margin-left: -18px;
+    animation: upDown 0.7s alternate infinite;
     .index-page & {
         position: fixed;
     }
@@ -343,8 +344,10 @@ footer {
     }
 }
 
-.modal-backdrop {
-    display: none;
+.inner-page {
+    .modal-backdrop {
+        display: none;
+    }
 }
 
 .card-section {
@@ -913,5 +916,14 @@ footer {
         top: -1.8%;
         left: 28%;
         width: 51.418439716312057%;
+    }
+}
+
+@keyframes upDown {
+    0% {
+        transform: translateY(-9px);
+    }
+    100% {
+        transform: translateY(9px);
     }
 }

@@ -35,6 +35,7 @@ const app = createApp({
         this.checkLogin();
         this.getChallengeState();
         this.getChallenger();
+        AOS.init();
     },
     methods: {
         checkLogin() {

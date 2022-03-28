@@ -8444,9 +8444,10 @@ footer a {
   left: 50%;
   bottom: 100px;
   display: none;
-  width: 35px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  width: 36px;
+  margin-left: -18px;
+  -webkit-animation: upDown 0.7s alternate infinite;
+          animation: upDown 0.7s alternate infinite;
 }
 
 .index-page .icon-mouse {
@@ -8678,7 +8679,7 @@ footer a {
   margin-right: auto;
 }
 
-.modal-backdrop {
+.inner-page .modal-backdrop {
   display: none;
 }
 
@@ -9453,5 +9454,27 @@ footer a {
   top: -1.8%;
   left: 28%;
   width: 51.418439716312057%;
+}
+
+@-webkit-keyframes upDown {
+  0% {
+    -webkit-transform: translateY(-9px);
+            transform: translateY(-9px);
+  }
+  100% {
+    -webkit-transform: translateY(9px);
+            transform: translateY(9px);
+  }
+}
+
+@keyframes upDown {
+  0% {
+    -webkit-transform: translateY(-9px);
+            transform: translateY(-9px);
+  }
+  100% {
+    -webkit-transform: translateY(9px);
+            transform: translateY(9px);
+  }
 }
 /*# sourceMappingURL=main.css.map */
