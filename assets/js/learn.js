@@ -153,16 +153,16 @@ const app = createApp({
                         // console.dir(response);
                         $('#successModal, .modal-backdrop').fadeIn();
                         $('body').addClass('modal-open');
+                        that.challenge.learn = true;
+                    })
+                    .then(() => {
+                        // console.log(that.challenge.learn);
                         dataLayer.push({
                             'event': 'GAEventTrigger',
                             'eventCategory': 'member-2022',
                             'eventAction': 'finish',
                             'eventLabel': '3D_L',
                         });
-                        that.challenge.learn = true;
-                    })
-                    .then(() => {
-                        // console.log(that.challenge.learn);
                         that.getEventState('finish');
                     })
                     .catch((error) => {

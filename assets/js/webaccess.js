@@ -123,17 +123,17 @@ const app = createApp({
                     axios.get(readSuccess)
                         .then((response) => {
                             // console.dir(response);
+                            $('#successModal, .modal-backdrop').fadeIn();
+                            $('body').addClass('modal-open');
+                            that.challenge.read = true;
+                        })
+                        .then(() => {
                             dataLayer.push({
                                 'event': 'GAEventTrigger',
                                 'eventCategory': 'member-2022',
                                 'eventAction': 'finish',
                                 'eventLabel': '3D_K',
                             });
-                            $('#successModal, .modal-backdrop').fadeIn();
-                            $('body').addClass('modal-open');
-                            that.challenge.read = true;
-                        })
-                        .then(() => {
                             that.getEventState('finish');
                         })
                         .catch((error) => {

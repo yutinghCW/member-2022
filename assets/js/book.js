@@ -119,23 +119,23 @@ const app = createApp({
                 } else if (type === 'audio') {
                     window.open(this.book.audio[name].url);
                 }
-                this.challenge.book = true;
+                console.log(this.challenge.book, !this.challenge.book, this.api.success);
                 if ( !this.challenge.book ) {
                     axios
                         .get(this.api.success)
                         .then((response) => {
-                            // console.dir(response);
+                            console.dir(response);
                             $('#successModal, .modal-backdrop').fadeIn();
                             $('body').addClass('modal-open');
+                            this.challenge.book = true;
+                        })
+                        .then(() => {
                             dataLayer.push({
                                 'event': 'GAEventTrigger',
                                 'eventCategory': 'member-2022',
                                 'eventAction': 'finish',
                                 'eventLabel': '3D_B',
                             });
-                            this.challenge.book = true;
-                        })
-                        .then(() => {
                             this.getEventState('finish');
                         })
                         .catch((error) => {
@@ -180,16 +180,16 @@ const app = createApp({
                         // console.dir(response);
                         $('#successModal, .modal-backdrop').fadeIn();
                         $('body').addClass('modal-open');
+                        that.challenge.book = true;
+                    })
+                    .then(() => {
+                        // console.log(that.challenge.book);
                         dataLayer.push({
                             'event': 'GAEventTrigger',
                             'eventCategory': 'member-2022',
                             'eventAction': 'finish',
                             'eventLabel': '3D_B',
                         });
-                        that.challenge.book = true;
-                    })
-                    .then(() => {
-                        // console.log(that.challenge.book);
                         that.getEventState('finish');
                     })
                     .catch((error) => {
