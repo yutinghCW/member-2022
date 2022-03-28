@@ -266,7 +266,7 @@ $kv-burning-orange: #ea6120;
             text-align: center;
             letter-spacing: 0.3em;
             transform: scaleY(0.6) translateY(-0.2em);
-            @include media-breakpoint-up(xl) {
+            @media screen and (min-width: 1036px) {
                 font-size: 2.3em;
             }
         }
@@ -287,7 +287,7 @@ $kv-burning-orange: #ea6120;
             text-align: center;
             letter-spacing: 0.3em;
             transform: scaleY(0.6) translateY(0.2em);
-            @include media-breakpoint-up(xl) {
+            @media screen and (min-width: 1036px) {
                 font-size: 2.3em;
             }
         }
@@ -315,7 +315,7 @@ $kv-burning-orange: #ea6120;
             letter-spacing: 0.2em;
             transform: scaleY(0.75) translateY(-50%);
             transform-origin: top;
-            @include media-breakpoint-up(xl) {
+            @media screen and (min-width: 1036px) {
                 font-size: 1.2em;
             }
         }
@@ -405,7 +405,7 @@ $kv-burning-orange: #ea6120;
             font-size: 2.9vw;
             text-align: center;
             transform: scaleY(0.75) translateY(-60%);
-            @include media-breakpoint-up(xl) {
+            @media screen and (min-width: 1036px) {
                 font-size: 2em;
             }
         }
@@ -430,7 +430,7 @@ $kv-burning-orange: #ea6120;
             width: 100%;
             font-size: 2.7vw;
             text-align: center;
-            @include media-breakpoint-up(xl) {
+            @media screen and (min-width: 1036px) {
                 font-size: 1.7em;
             }
             @include media-breakpoint-up(md) {
@@ -462,7 +462,7 @@ $kv-burning-orange: #ea6120;
             font-size: 3vw;
             text-align: center;
             line-height: 1;
-            @include media-breakpoint-up(xl) {
+            @media screen and (min-width: 1036px) {
                 font-size: 2em;
             }
             @include media-breakpoint-up(md) {

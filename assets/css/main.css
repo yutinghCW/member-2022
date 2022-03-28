@@ -7977,7 +7977,7 @@ fieldset:disabled .btn {
           transform: scaleY(0.6) translateY(-0.2em);
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1036px) {
   .flip-group .flip-7-3 > span {
     font-size: 2.3em;
   }
@@ -8005,7 +8005,7 @@ fieldset:disabled .btn {
           transform: scaleY(0.6) translateY(0.2em);
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1036px) {
   .flip-group .flip-8-1 > span {
     font-size: 2.3em;
   }
@@ -8041,7 +8041,7 @@ fieldset:disabled .btn {
           transform-origin: top;
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1036px) {
   .flip-group .flip-8-3 > span {
     font-size: 1.2em;
   }
@@ -8147,7 +8147,7 @@ fieldset:disabled .btn {
           transform: scaleY(0.75) translateY(-60%);
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1036px) {
   .flip-group .flip-11-1 > span {
     font-size: 2em;
   }
@@ -8178,7 +8178,7 @@ fieldset:disabled .btn {
   text-align: center;
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1036px) {
   .flip-group .flip-11-3 > span {
     font-size: 1.7em;
   }
@@ -8224,7 +8224,7 @@ fieldset:disabled .btn {
   line-height: 1;
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1036px) {
   .flip-group .flip-13-1 > span {
     font-size: 2em;
   }

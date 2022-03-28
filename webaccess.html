@@ -410,20 +410,10 @@
                             <button
                                 type="button"
                                 id="tsai_player"
-                                @click="
-                                    clickPlayer('tsai');
-                                    webaccess.tsai.state = !webaccess.tsai.state;
-                                "
-                                class="challenge-btn btn btn-lg text-white bg-success fs-5"
+                                class="challenge-btn btn btn-lg text-white bg-gray fs-5"
+                                disabled
                             >
-                                <span class="duration tsai_player-duration"></span>
-                                <span class="text" v-if="!webaccess.tsai.state">
-                                    我要聽音頻
-                                </span>
-                                <span class="text" v-else>
-                                    <i class="icon icon-pause-solid me-10"></i> 播放中
-                                </span>
-                                <img src="assets/images/click.png" alt="" v-if="!webaccess.tsai.state">
+                                敬請期待
                             </button>
                         </div>
                         <div class="card-image rellax mt-md-0 mt-30 mx-md-0 mx-auto" data-aos="fade-up" data-aos-duration="1000" data-delay="200" data-rellax-speed="0" data-rellax-desktop-speed="0.15">
