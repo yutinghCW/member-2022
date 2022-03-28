@@ -119,12 +119,12 @@ const app = createApp({
                 } else if (type === 'audio') {
                     window.open(this.book.audio[name].url);
                 }
-                console.log(this.challenge.book);
+                this.challenge.book = true;
                 if ( !this.challenge.book ) {
                     axios
                         .get(this.api.success)
                         .then((response) => {
-                            console.dir(response);
+                            // console.dir(response);
                             $('#successModal, .modal-backdrop').fadeIn();
                             $('body').addClass('modal-open');
                             dataLayer.push({
