@@ -112,6 +112,16 @@ const app = createApp({
                     console.dir(error);
                 });
         },
+        setCookie(name, value, day) {
+            var expires = new Date();
+            expires.setTime(expires.getTime() + (day*24*60*60*1000));
+            document.cookie = name + "=" + escape(value) + ";SameSite=Strict;expires=" + expires.toGMTString()
+        },
+        getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        },
     }
 })
 app.mount('#app')

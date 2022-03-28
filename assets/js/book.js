@@ -15,6 +15,10 @@ const app = createApp({
                 learn: false,
                 book: false,
             },
+            api: {
+                start: 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book',
+                success: 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book&is_finish=1',
+            },
             book: {
                 pdf : {
                     jim: {
@@ -96,11 +100,9 @@ const app = createApp({
         },
         clickPlayer(type, name) {
             // Api: 先參與遊戲 
-            const bookCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book';
-            const bookSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book&is_finish=1';
             if ( !this.challenge.book ) {
                 axios
-                    .get(bookCreate)
+                    .get(this.api.start)
                     .then((response) => {
                         // console.dir(response);
                     })
@@ -120,7 +122,7 @@ const app = createApp({
                 console.log(this.challenge.book);
                 if ( !this.challenge.book ) {
                     axios
-                        .get(bookSuccess)
+                        .get(this.api.success)
                         .then((response) => {
                             console.dir(response);
                             $('#successModal, .modal-backdrop').fadeIn();
@@ -171,11 +173,9 @@ const app = createApp({
             $('body').addClass('modal-open');
         },
         openSuccessModal() {
-            // Api: Modal 關閉後要送資料 
-            const bookSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=learn&is_finish=1';
             if ( times === 1 && !that.challenge.book ) {
                 axios
-                    .get(bookSuccess)
+                    .get(this.api.success)
                     .then((response) => {
                         // console.dir(response);
                         $('#successModal, .modal-backdrop').fadeIn();
