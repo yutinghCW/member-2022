@@ -205,7 +205,7 @@ $(function () {
     // 如果必填欄位都過了 才會到這邊
     if (status) {
       // 按下salesforce的按鈕
-      // $("#sfBtn").click();
+      $("#sfBtn").click();
       // 隱藏訂閱區塊
       $(".formbox form").hide();
       // 打包 要的資料
