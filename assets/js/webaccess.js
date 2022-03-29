@@ -18,42 +18,42 @@ const app = createApp({
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://dev-www.cw.com.tw/dev-member-2022/assets/audio/webaccess_hsieh.mp3',
+                        src: 'https://www.cw.com.tw/member-2022/assets/audio/webaccess_hsieh.mp3',
                     }),
                 },
                 ding: {
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://dev-www.cw.com.tw/dev-member-2022/assets/audio/webaccess_ding.mp3',
+                        src: 'https://www.cw.com.tw/member-2022/assets/audio/webaccess_ding.mp3',
                     }),
                 },
                 sun: {
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://dev-www.cw.com.tw/dev-member-2022/assets/audio/webaccess_sun.mp3',
+                        src: 'https://www.cw.com.tw/member-2022/assets/audio/webaccess_sun.mp3',
                     }),
                 },
                 hua: {
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://dev-www.cw.com.tw/dev-member-2022/assets/audio/webaccess_hua.mp3',
+                        src: 'https://www.cw.com.tw/member-2022/assets/audio/webaccess_hua.mp3',
                     }),
                 },
                 liu: {
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://dev-www.cw.com.tw/dev-member-2022/assets/audio/webaccess_liu.mp3',
+                        src: 'https://www.cw.com.tw/member-2022/assets/audio/webaccess_liu.mp3',
                     }),
                 },
                 tsai: {
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://dev-www.cw.com.tw/dev-member-2022/assets/audio/webaccess_ding.mp3',
+                        src: 'https://www.cw.com.tw/member-2022/assets/audio/webaccess_ding.mp3',
                     }),
                 },
             },
@@ -72,13 +72,13 @@ const app = createApp({
     },
     methods: {
         checkLogin() {
-            const userMe = 'https://dev-www.cw.com.tw/api/v1.0/user/me?fields=name,email,uid';
+            const userMe = 'https://www.cw.com.tw/api/v1.0/user/me?fields=name,email,uid';
             axios
                 .get(userMe)
                 .then((response) => {
                     // console.log(response.data);
                     if ( response.data.code === '0001' ) {
-                        // window.location.href = 'index.html'
+                        window.location.href = 'index.html'
                     } else if ( response.data.code === '0000' ) {
                         if ( window.location.search.indexOf('from=login') && !this.getCookie('member-2022') ) {
                             this.setCookie('member-2022', 'set-cookie-for-member-2022', 90);
@@ -98,8 +98,8 @@ const app = createApp({
                 });
         },
         clickPlayer(name) {
-            const readCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=read';
-            const readSuccess = 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=read&is_finish=1';
+            const readCreate = 'https://www.cw.com.tw/api/v1.0/activity/create?event_name=read';
+            const readSuccess = 'https://www.cw.com.tw/api/v1.0/activity/create?event_name=read&is_finish=1';
             if ( !this.challenge.read ) {
                 axios
                     .get(readCreate)
@@ -162,7 +162,7 @@ const app = createApp({
             }
         },
         getEventState(type) {
-            const activityCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/get';
+            const activityCreate = 'https://www.cw.com.tw/api/v1.0/activity/get';
             axios
                 .get(activityCreate)
                 .then((response) => {

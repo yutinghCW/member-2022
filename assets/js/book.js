@@ -5,6 +5,7 @@ const app = createApp({
     data() {
         return {
             video: '',
+            code: '72190',
             user: {
                 uid: '',
                 name: '',
@@ -16,8 +17,8 @@ const app = createApp({
                 book: false,
             },
             api: {
-                start: 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book',
-                success: 'https://dev-www.cw.com.tw/api/v1.0/activity/create?event_name=book&is_finish=1',
+                start: 'https://www.cw.com.tw/api/v1.0/activity/create?event_name=book',
+                success: 'https://www.cw.com.tw/api/v1.0/activity/create?event_name=book&is_finish=1',
             },
             book: {
                 pdf : {
@@ -72,14 +73,14 @@ const app = createApp({
     },
     methods: {
         checkLogin() {
-            const userMe = 'https://dev-www.cw.com.tw/api/v1.0/user/me?fields=name,email,uid';
+            const userMe = 'https://www.cw.com.tw/api/v1.0/user/me?fields=name,email,uid';
             axios
                 .get(userMe)
                 .then((response) => {
                     // console.log(response.data);
                     this.eventLabel = '';
                     if ( response.data.code === '0001' ) {
-                        // window.location.href = 'index.html'
+                        window.location.href = 'index.html'
                     } else if ( response.data.code === '0000' ) {
                         if ( window.location.search.indexOf('from=login') && !this.getCookie('member-2022') ) {
                             this.setCookie('member-2022', 'set-cookie-for-member-2022', 90);
@@ -198,7 +199,7 @@ const app = createApp({
             }
         },
         getEventState(type) {
-            const activityCreate = 'https://dev-www.cw.com.tw/api/v1.0/activity/get';
+            const activityCreate = 'https://www.cw.com.tw/api/v1.0/activity/get';
             axios
                 .get(activityCreate)
                 .then((response) => {
