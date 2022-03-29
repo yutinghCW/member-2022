@@ -3,6 +3,7 @@ let that = null;
 const app = createApp({
     data() {
         return {
+            code: 'https://maac.io/1G4Lb',
             user: {
                 uid: '',
                 name: '',
@@ -78,7 +79,7 @@ const app = createApp({
                 .then((response) => {
                     // console.log(response.data);
                     if ( response.data.code === '0001' ) {
-                        window.location.href = 'index.html'
+                        // window.location.href = 'index.html'
                     } else if ( response.data.code === '0000' ) {
                         if ( window.location.search.indexOf('from=login') && !this.getCookie('member-2022') ) {
                             this.setCookie('member-2022', 'set-cookie-for-member-2022', 90);
