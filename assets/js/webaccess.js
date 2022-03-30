@@ -3,7 +3,7 @@ let that = null;
 const app = createApp({
     data() {
         return {
-            code: 'https://maac.io/1G4Lb',
+            code: 'https://maac.io/1GcJt',
             user: {
                 uid: '',
                 name: '',
@@ -54,7 +54,7 @@ const app = createApp({
                     state: false,
                     finished: false,
                     player: new Howl({
-                        src: 'https://www.cw.com.tw/member-2022/assets/audio/webaccess_ding.mp3',
+                        src: 'https://www.cw.com.tw/member-2022/assets/audio/webaccess_tsai.mp3',
                     }),
                 },
             },

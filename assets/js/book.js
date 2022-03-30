@@ -40,7 +40,7 @@ const app = createApp({
                         finished: false,
                     },
                     biming: {
-                        video: 'https://www.youtube.com/embed/4dKh7NvALg4',
+                        video: 'https://www.youtube.com/embed/poaFw5X4goQ',
                         state: false,
                         finished: false,
                     },

@@ -403,17 +403,27 @@
                         </svg>
                         <div class="card-text" data-aos="fade-up" data-aos-duration="1000">
                             <h3 class="index text-success">06.</h3>
-                            <h2 class="name">蔡政宏 X 聽天下 Podcast</h2>
+                            <h2 class="name">蔡政宏 X 天下 Podcast</h2>
                             <p class="fs-7 fw-light">
                                 精闢觀點、深度解析，不只用看的也可以用聽的！ 提供聚焦財經、國際、趨勢的優質新聞、訪談與評論，用最短時間吸收最豐沛的資訊。
                             </p>
                             <button
                                 type="button"
                                 id="tsai_player"
-                                class="challenge-btn btn btn-lg text-white bg-gray fs-5"
-                                disabled
+                                @click="
+                                    clickPlayer('tsai');
+                                    webaccess.tsai.state = !webaccess.tsai.state;
+                                "
+                                class="challenge-btn btn btn-lg text-white bg-success fs-5"
                             >
-                                敬請期待
+                                <span class="duration tsai_player-duration"></span>
+                                <span class="text" v-if="!webaccess.tsai.state">
+                                    我要聽音頻
+                                </span>
+                                <span class="text" v-else>
+                                    <i class="icon icon-pause-solid me-10"></i> 播放中
+                                </span>
+                                <img src="assets/images/click.png" alt="" v-if="!webaccess.tsai.state">
                             </button>
                         </div>
                         <div class="card-image rellax mt-md-0 mt-30 mx-md-0 mx-auto" data-aos="fade-up" data-aos-duration="1000" data-delay="200" data-rellax-speed="0" data-rellax-desktop-speed="0.15">

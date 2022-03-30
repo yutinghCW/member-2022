@@ -178,7 +178,11 @@
                                 <i class="icon icon-question fs-4 p-5 text-white bg-black bg-opacity-75" v-if="!challenge.read.state"></i>
                             </div>
                             <h5 class="fs-3 mb-20">恆毅力｜天下報導</h5>
-                            <a :href="challenge.read.url" class="challenge-btn btn btn-lg btn-primary fs-6 w-100">
+                            <a
+                                :href="challenge.read.url"
+                                class="challenge-btn btn btn-lg btn-primary fs-6 w-100"
+                                :class="{'btn-success': challenge.read.state}"
+                            >
                                 {{ challenge.read.text }}
                                 <img src="assets/images/click.png" alt="" v-if="!challenge.read.state">
                             </a>
@@ -194,7 +198,11 @@
                                 <i class="icon icon-question fs-4 p-5 text-white bg-black bg-opacity-75" v-if="!challenge.book.state"></i>
                             </div>
                             <h5 class="fs-3 mb-20">博學力｜天下出版</h5>
-                            <a :href="challenge.book.url" class="challenge-btn btn btn-lg btn-primary fs-6 w-100">
+                            <a
+                                :href="challenge.book.url"
+                                class="challenge-btn btn btn-lg btn-primary fs-6 w-100"
+                                :class="{'btn-success': challenge.book.state}"
+                            >
                                 {{ challenge.book.text }}
                                 <img src="assets/images/click.png" alt="" v-if="!challenge.book.state">
                             </a>
@@ -210,7 +218,11 @@
                                 <i class="icon icon-question fs-4 p-5 text-white bg-black bg-opacity-75" v-if="!challenge.learn.state"></i>
                             </div>
                             <h5 class="fs-3 mb-20">思辨力｜天下學習</h5>
-                            <a :href="challenge.learn.url" class="challenge-btn btn btn-lg btn-primary fs-6 w-100">
+                            <a
+                                :href="challenge.learn.url"
+                                class="challenge-btn btn btn-lg btn-primary fs-6 w-100"
+                                :class="{'btn-success': challenge.learn.state}"
+                            >
                                 {{ challenge.learn.text }}
                                 <img src="assets/images/click.png" alt="" v-if="!challenge.learn.state">
                             </a>
@@ -278,7 +290,7 @@
                         </ol>
                     </div>
                     <div data-aos="fade-up" data-aos-duration="1000">
-                        <h4 class="mt-40 mb-10">抽獎及通知相關細節</h4>
+                        <h4 class="mt-40 mb-10">活動注意事項</h4>
                         <ol class="fs-7 my-0">
                             <li>參加者同意主辦及執行等相關單位得於本活動範圍及執行期間內，進行蒐集、處理、利用個人資料；並同意於中獎時，公布部分姓名等個人資料於中獎名單。</li>
                             <li>中獎者如因資料填寫不完整或不確實（需填寫：姓名、電話、地址、電子郵件）導主辦單位無法與其聯繫者，視為自動放棄中獎資格，恕不兌換。</li>
